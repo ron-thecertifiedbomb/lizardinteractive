@@ -1,0 +1,31 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="300mm"
+   height="23mm"
+   viewBox="0 0 180 25"
+   version="1.1">
+
+  <g>
+    <text
+       x="0"
+       y="20"
+       font-family="Gotham, sans-serif"
+       font-size="20"
+       fill="none"
+       stroke="white"
+       stroke-width="0.5"
+       stroke-dasharray="2000"
+       stroke-dashoffset="2000">
+
+      LIZARD INTERACTIVE
+
+      <animate
+        attributeName="stroke-dashoffset"
+        from="2000"
+        to="0"
+        dur="30s"
+        fill="freeze"
+        repeatCount="1" />
+    </text>
+  </g>
+</svg>
