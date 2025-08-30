@@ -9,11 +9,11 @@ export function LizardHeader() {
         <LizardDiv className="flex w-full items-center gap-4 bg-black">
             <LizardDiv direction="row" className="flex w-full justify-between items-center">
                 {/* Logo container */}
-                <LizardDiv className=" w-full  md:px-10 lg:px-20 py-2 flex items-center justify-center md:w-auto  lg:w-auto">
+                <LizardDiv className=" w-full   md:px-10 lg:px-20 py-2 flex items-center justify-center md:w-auto  lg:w-auto">
                     <LizardDiv className="w-50 h-auto sm:w-65 lg:w-70">   <LizardLogoContainer
                         svg={LizardAndTitleLogo}
                         className=";
-    [#88fb59ff] fill-[#88fb59ff] stroke-[#88fb59ff]"
+    [#88fb59ff] fill-[#88fb59ff] stroke-[#88fb59ff] text-center"
                     /></LizardDiv>
                  
                 </LizardDiv>
