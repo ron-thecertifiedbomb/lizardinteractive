@@ -4,8 +4,8 @@ import { LizardCardBorder, LizardCenterCard, LizardContent, LizardText } from '@
 export function SkillsScreen() {
   return (
     <LizardCardBorder className='flex-1    flex-col '>
-       <LizardContent
-              className="
+      <LizardContent
+        className="
                 box-content
                 w-full
                 flex  
@@ -18,28 +18,27 @@ export function SkillsScreen() {
                 rounded-sm
                 bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(130,12,12,0.18)_14%,rgba(0,0,0,1)_150%)]
               "
-            >
-      <LizardText className="text-[30px] text-white font-light uppercase mb-8 text-center">
-        Craftmanship
-      </LizardText>
+      >
+        <LizardText className="text-[30px] text-white font-light uppercase mb-8 text-center">
+          Craftmanship
+        </LizardText>
 
-      <div className="flex flex-wrap justify-center items-start gap-10">
-        <LizardThumbnail
-          title="Progress"
-          content="I have created a set of achievements for myself and I use this page to track them."
-          badge="Technology"
-          logoSrc="/assets/lizardinteractive.svg"
-   
-        />
+        <div className="flex flex-wrap justify-center items-start gap-10">
+          <LizardThumbnail
+            title="Progress"
+            content="I have created a set of achievements for myself and I use this page to track them."
 
-        <LizardCenterCard className='flex-1 min-w-[250px] max-w-[600px]' />
 
-        <LizardCard
-          badge="Technologies"
-          logoSrc="/assets/lizardinteractive.svg"
-          className="flex-1 min-w-[200px] max-w-[200px] min-h-[200px]"
-        />
-      </div>
+          />
+
+          <LizardCenterCard className='flex-1 min-w-[250px] max-w-[600px]' />
+
+          <LizardCard
+            badge="Technologies"
+            logoSrc="/assets/lizardinteractive.svg"
+            className="flex-1 min-w-[200px] max-w-[200px] min-h-[200px]"
+          />
+        </div>
       </LizardContent>
     </LizardCardBorder>
   )

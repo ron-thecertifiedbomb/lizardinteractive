@@ -1,7 +1,7 @@
 export { AppCard } from "./AppCard";
 export { AppCarousel } from "./AppCarousel";
 export { AppExploreCards } from "./AppExploreCards";
-export { AppFooter } from "./AppFooter";
+// export { AppFooter } from "./AppFooter";
 export { AppHeader } from "./AppHeader";
 export { AppImage } from "./AppImage";
 export { AppImageScreensaver } from "./AppImageScreenSaver";
