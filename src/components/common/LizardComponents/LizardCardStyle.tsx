@@ -22,7 +22,7 @@ export function LizardCardStyle({ className, logoClassName, items }: LizardCardS
         <LizardDiv direction="column" animation={slideRight} className={`${className}`}>
             {/* Logo inside border */}
             <LizardCardBorder className="mb-6 sm:mb-8">
-                <div className="border w-full flex items-center justify-center p-2 sm:p-4">
+                <div className="border w-full flex items-center justify-center p-2 lg:p-4">
                     <LizardLogo
                         className={logoClassName }
                     />

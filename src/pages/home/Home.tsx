@@ -18,24 +18,24 @@ export default function Home() {
 
 
   const cardData = [
-    { label: "name", value: "ronan sibunga", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase ", children: "name" }, valueProps: { className: "text-[10px] sm:text-[14px]  lg:text-[18px] text-[#E84A4A] uppercase", children: "name" } },
+    { label: "name", value: "ronan sibunga", labelProps: { className: "text-[16px] uppercase ", children: "name" }, valueProps: { className: " text-[12px] text-[#E84A4A] uppercase", children: "name" } },
 
-    { label: "occupation", value: "fullstack developer", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase ", children: "name" }, valueProps: { className: " text-[10px] sm:text-[14px] lg:text-[18px] text-[#E84A4A] uppercase", children: "occupation" } },
+    { label: "occupation", value: "fullstack developer", labelProps: { className: "text-[16px] uppercase ", children: "name" }, valueProps: { className: " lg:text-[14px]   text-[#E84A4A] uppercase", children: "occupation" } },
 
-    { label: "corporation", value: "lizard interactive", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase ", children: "name" }, valueProps: { className: " text-[10px]  sm:text-[14px] lg:text-[16px] text-[#E84A4A] uppercase", children: "corporation" } },
+    { label: "corporation", value: "lizard interactive", labelProps: { className: "text-[16px] uppercase ", children: "name" }, valueProps: { className: "  text-[12px] text-[#E84A4A] uppercase", children: "corporation" } },
 
     {
       label: "availability",
       value: "open for hire", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ", children: "availability" },
       valueProps: {
-        className: " text-[10px] sm:text-[14px] lg:text-[16px] inline-block border-2 bg-[#E84A4A] text-black px-2 py-1", children: "availability"
+        className: " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1", children: "availability"
       },
     },
     {
       label: "social",
       value: "open connection", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ", children: "social" },
       valueProps: {
-        className: " text-[10px] sm:text-[14px] lg:text-[16px]  inline-block border-2 border-[#E84A4A] px-2 py-1", children: "social"
+        className: " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1", children: "social"
       },
     },
   ];
@@ -91,11 +91,11 @@ const panelData = [
     <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
       {/* Left card - hide on mobile */}
       {isDesktop && (
-        <div className="flex w-full max-w-[220px] lg:justify-center items-start">
+        <div className="flex w-[10px] sm:w-[120px] lg:w-[140px] lg:justify-center items-start">
           <LizardCardStyle
             items={cardData}
             logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
-            className="w-[110px] sm:w-[170px] lg:w-full h-auto"
+            className="w-full h-auto"
           />
         </div>
       )}
@@ -106,12 +106,12 @@ const panelData = [
 
       {/* Right panel - hide on mobile */}
       {isDesktop && (
-        <LizardDiv animation={slideLeft} className="flex w-full max-w-[220px] items-start justify-start ">
+        <LizardDiv animation={slideLeft} className="flex w-[120px] sm:w-[170px]  lg:w-[220px] items-start justify-start ">
           <LizardInteractivePanel
             disabled
             items={panelData}
             heading="Activity Quest"
-            cardClassName="h-auto w-[120px] sm:w-[170px] lg:w-full"
+            cardClassName="h-auto w-full"
           />
         </LizardDiv>
       )}
