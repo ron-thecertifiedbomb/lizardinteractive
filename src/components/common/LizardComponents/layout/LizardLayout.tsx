@@ -4,12 +4,13 @@ import { LizardDiv, LizardHeader, LizardInteractiveNavigationControlSection, Liz
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
 import { slideUp } from "@/lib/motionMode";
-import { useScreenType } from "@/hooks";
+import { useScreenType } from "@/hooks/useScreenType";
+
 
 
 export function LizardLayout() {
     const location = useLocation();
-  const {isDesktop } = useScreenType();
+    const { isMobile } = useScreenType();
 
     // First-time splash screen
     const [firstLoad, setFirstLoad] = useState(() => {
@@ -76,7 +77,7 @@ export function LizardLayout() {
                         <LizardInteractivePanel cardClassName="w-full max-w-[230px]" />
                     </LizardDiv>
 
-                    {!isDesktop && (
+                    {isMobile && (
                         <LizardDiv
                             animation={slideUp}
                             className="flex justify-center w-full pointer-events-auto"

@@ -1,6 +1,7 @@
 
 import { LizardSection, IntroductionScreen, SkillsScreen, ProjectScreen, AboutMeScreen, LizardCardStyle, LizardInteractivePanel, LizardDiv } from '@/components/common/LizardComponents'
-import { useScreenType } from '@/hooks';
+import { useScreenType } from '@/hooks/useScreenType';
+
 import { slideLeft } from '@/lib/motionMode';
 
 import { useNavigationStore } from '@/store';
@@ -62,12 +63,12 @@ const panelData = [
   const { currentScreen, setShowPanel } = useNavigationStore()
 
   useEffect(() => {
-    if (isDesktop) {
+    if (isDesktop || isTablet) {
       setShowPanel(true);
     } else {
       setShowPanel(false);
     }
-  }, [isDesktop, setShowPanel]);
+  }, [isDesktop, ,isTablet, setShowPanel]);
 
 
   const renderScreen = () => {

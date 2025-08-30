@@ -1,6 +1,7 @@
 import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardComponents";
 import { appData } from "@/config/appData";
-import { useScreenType } from "@/hooks";
+import { useScreenType } from "@/hooks/useScreenType";
+
 import { useNavigationStore } from "@/store";
 
 type DisabledItem = {
