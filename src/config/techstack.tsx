@@ -19,7 +19,7 @@ import {
   SiFirebase,
   SiFigma,
 } from "@icons-pack/react-simple-icons";
-import { AfterEffectsIcon, LightRoomIcon, PhotoshopIcon, PremiereProIcon } from "@/components/common";
+import { AfterEffectsIcon, LightRoomIcon, PhotoshopIcon, PremiereProIcon } from "@/components/common/LizardComponents/LizardCustomIcons";
 
 
 

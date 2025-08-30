@@ -1,6 +1,6 @@
 // components/common/LizardCardStyle.tsx
-import { LizardLogo } from "@/components/common";
-import { LizardCardBorder, LizardDiv, LizardText } from "@/components/common/LizardComponents";
+
+import { LizardCardBorder, LizardDiv, LizardLogo, LizardText } from "@/components/common/LizardComponents";
 import { slideRight } from "@/lib/motionMode";
 
 interface LizardCardItem {

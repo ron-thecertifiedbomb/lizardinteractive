@@ -1,5 +1,5 @@
-import { LizardCard, LizardThumbnail } from '@/components/common'
-import { LizardCardBorder, LizardCenterCard, LizardContent, LizardText } from '@/components/common/LizardComponents'
+
+import { LizardCard, LizardCardBorder, LizardCenterCard, LizardContent, LizardText, LizardThumbnail } from '@/components/common/LizardComponents'
 
 export function SkillsScreen() {
   return (
