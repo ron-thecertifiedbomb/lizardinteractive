@@ -11,7 +11,7 @@ export default function Home() {
 
 
 
-  const { isMobile, isTablet,  isDesktop, width } = useScreenType();
+  const {  isTablet,  isDesktop, width } = useScreenType();
 
 
   console.log("Screen Width", width)
