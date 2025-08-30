@@ -2,6 +2,7 @@ export { LizardSection } from "../LizardComponents/layout/LizardSection";
 export { LizardMainContainer } from "../LizardComponents/layout/LizardMainContainer";
 export { LizardContent } from "../LizardComponents/layout/LizardContent";
 export { LizardSubContainer } from "../LizardComponents/layout/LizardSubContainer";
+export { LizardDiv } from "../LizardComponents/layout/LizardDiv";
 
 export { SkillsScreen } from "./screens/SkillsScreen";
 export { IntroductionScreen } from "./screens/IntroductionScreen";
@@ -32,6 +33,7 @@ export { LizardAnimatedBackground } from "./LizardAnimatedBackground";
 import LizardLogoAndTitle from "@/components/assets/lizardandtext.svg";
 import LizardLogoSVG from "@/components/assets/lizardicon.svg";
 import CoverSVG from "@/components/assets/cover.svg";
+import { LizardDiv } from './layout/LizardDiv';
 
 export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
   React.SVGProps<SVGSVGElement>

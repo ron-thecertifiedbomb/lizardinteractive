@@ -1,6 +1,7 @@
 // components/common/LizardCardStyle.tsx
 import { LizardLogo } from "@/components/common";
-import { LizardCardBorder, LizardText } from "@/components/common/LizardComponents";
+import { LizardCardBorder, LizardDiv, LizardText } from "@/components/common/LizardComponents";
+import { slideRight } from "@/lib/motionMode";
 
 interface LizardCardItem {
     label: string;
@@ -18,7 +19,7 @@ interface LizardCardStyleProps {
 export function LizardCardStyle({ className, logoClassName, items }: LizardCardStyleProps) {
     return (
 
-        <div className={`flex flex-col  ${className}`}>
+        <LizardDiv direction="column" animation={slideRight} className={`${className}`}>
             {/* Logo inside border */}
             <LizardCardBorder className="mb-6 sm:mb-8">
                 <div className="border w-full flex items-center justify-center p-2 sm:p-4">
@@ -46,6 +47,6 @@ export function LizardCardStyle({ className, logoClassName, items }: LizardCardS
                     </LizardText>
                 </div>
             ))}
-        </div>
+        </LizardDiv>
     );
 }

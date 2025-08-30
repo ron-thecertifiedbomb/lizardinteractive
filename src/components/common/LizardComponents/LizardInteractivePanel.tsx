@@ -1,5 +1,6 @@
-import { LizardImage, LizardText } from "@/components/common/LizardComponents";
+import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardComponents";
 import { appData } from "@/config/appData";
+import { slideLeft } from "@/lib/motionMode";
 import { useNavigationStore } from "@/store";
 
 type DisabledItem = {
@@ -42,7 +43,7 @@ export function LizardInteractivePanel({
       : appData.navigationPanels;
 
   return (
-    <div
+    <LizardDiv animation={slideLeft}
       className={`overflow-hidden flex justify-center 
         ${disabled ? "relative  pointer-events-none" : positionClassName}`}
     >
@@ -129,6 +130,6 @@ export function LizardInteractivePanel({
           );
         })}
       </div>
-    </div>
+    </LizardDiv>
   );
 }
