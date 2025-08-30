@@ -62,7 +62,7 @@ export function LizardInteractivePanel({
             key={panel.key}
             className={`min-h-0 h-auto box-content rounded-sm flex flex-col pl-2 transition-colors duration-300 ease-in-out
     ${disabled || isDisabledCard
-              ? "cursor-not-allowed bg-[#E84A4A] text-gray-400 opacity-60"
+              ? "cursor-not-allowed bg-[#E84A4A] text-gray-400"
                 : "cursor-pointer hover:scale-105 hover:shadow-lg"}
     ${!disabled && !isDisabledCard && isActive
                 ? "bg-[#E84A4A] text-white"
