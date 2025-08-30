@@ -77,7 +77,7 @@ export function LizardLayout() {
     return (
         <LizardMainContainer>
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1700px]">
+            <LizardSubContainer className="flex-1 w-full max-w-[1700px] ">
                 <Outlet />
 
                 {/* Panel wrapper to detect outside clicks */}
