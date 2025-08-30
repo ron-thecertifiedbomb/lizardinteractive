@@ -6,8 +6,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { AppContentContainer } from "../layout/AppContentContainer";
-import { AppImage } from "./AppImage";
+import { LizardImage } from "./LizardImage";
+import { LizardDiv } from "./layout/LizardDiv";
 
 interface CarouselItemType {
   id: number;
@@ -15,15 +15,15 @@ interface CarouselItemType {
   alt: string;
 }
 
-interface AppCarouselProps {
+interface LizardCarouselProps {
   items: CarouselItemType[];
   renderItem: (item: CarouselItemType) => React.ReactNode;
   maxWidth?: string;
 }
 
-export function AppCarousel({ items }: AppCarouselProps) {
+export function LizardCarousel({ items }: LizardCarouselProps) {
   return (
-    <AppContentContainer className=" pl-5 pr-6">
+    <LizardDiv className=" pl-5 pr-6">
       <Carousel
         plugins={[
           Autoplay({
@@ -34,10 +34,9 @@ export function AppCarousel({ items }: AppCarouselProps) {
         <CarouselContent>
           {items.map((item) => (
             <CarouselItem key={item.id}>
-              <AppImage
+              <LizardImage
                 src={item.src}
                 alt={item.alt}
-                height="h-50 md:h-90"
                 className="rounded-lg"
               />
             </CarouselItem>
@@ -46,6 +45,6 @@ export function AppCarousel({ items }: AppCarouselProps) {
         <CarouselPrevious hidden />
         <CarouselNext hidden />
       </Carousel>
-    </AppContentContainer>
+      </LizardDiv>
   );
 }

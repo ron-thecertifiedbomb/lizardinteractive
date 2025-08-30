@@ -1,17 +1,17 @@
 import React, { ReactNode, ReactElement } from "react";
 
 
-interface AppTechStackLogosProps {
+interface LizardTechStackLogosProps {
   skills?: string[];
   className?: string;
   stack?: { label: string; icon: ReactNode; url?: string }[];
 }
 
-export function AppTechStackLogos({
+export function LizardTechStackLogos({
   skills,
   className,
   stack = [],
-}: AppTechStackLogosProps) {
+}: LizardTechStackLogosProps) {
   const filteredStack = skills?.length
     ? stack.filter((tech) => skills.includes(tech.label))
     : stack;

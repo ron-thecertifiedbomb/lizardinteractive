@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
-import { AppImage, AppLabel } from "@/components/common";
-import { AppMainContainer } from "@/components/layout";
+import { LizardImage, LizardMainContainer, LizardText } from ".";
 
-interface AppLoadingBarProps {
+
+interface LizardLoadingBarProps {
   logoUrl?: string;
   text?: string;
   onFinish?: () => void;
   duration?: number;
 }
 
-export function AppLoadingBar({
+export function LizardLoadingBar({
   logoUrl,
   text = "Loading...",
   onFinish,
   duration = 2, 
-}: AppLoadingBarProps) {
+}: LizardLoadingBarProps) {
   return (
-    <AppMainContainer>
+    <LizardMainContainer>
       <motion.div
         className="h-screen w-screen flex flex-col items-center justify-center gap-1"
         initial={{ opacity: 0 }} // start invisible
@@ -35,7 +35,7 @@ export function AppLoadingBar({
             }}
             transform-origin="50% 50%"
           >
-            <AppImage
+            <LizardImage
               src={logoUrl}
               alt="logo"
               className="w-8 max-w-[40vw] sm:w-12 sm:max-w-[25vw] lg:w-18 lg:max-w-[30vw] h-auto object-contain"
@@ -44,7 +44,7 @@ export function AppLoadingBar({
         )}
 
         {/* Text */}
-        <AppLabel variant="p">{text}</AppLabel>
+        <LizardText variant="p">{text}</LizardText>
 
         {/* ShadCN-style progress bar */}
         <div className="w-15 sm:w-30 lg:w-30 h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -57,6 +57,6 @@ export function AppLoadingBar({
           />
         </div>
       </motion.div>
-    </AppMainContainer>
+    </LizardMainContainer>
   );
 }

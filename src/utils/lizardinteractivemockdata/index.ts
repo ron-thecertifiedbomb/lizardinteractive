@@ -1,1 +1,0 @@
-// export { centerCard } from "./mockdata";

@@ -1,7 +1,7 @@
 import { socials } from "@/config/sociallinks";
 import React from "react";
 
-export function AppSocialLinks() {
+export function LizardSocialLinks() {
     return (
         <div className="flex gap-[2px]">
             {socials.map((social) => (

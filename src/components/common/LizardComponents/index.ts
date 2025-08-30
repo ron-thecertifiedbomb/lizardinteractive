@@ -3,6 +3,7 @@ export { LizardMainContainer } from "../LizardComponents/layout/LizardMainContai
 export { LizardContent } from "../LizardComponents/layout/LizardContent";
 export { LizardSubContainer } from "../LizardComponents/layout/LizardSubContainer";
 export { LizardDiv } from "../LizardComponents/layout/LizardDiv";
+export { LizardLayout } from "../LizardComponents/layout/LizardLayout";
 
 export { SkillsScreen } from "./screens/SkillsScreen";
 export { IntroductionScreen } from "./screens/IntroductionScreen";
@@ -26,13 +27,17 @@ export { LizardCardHeader } from "./LizardCardHeader";
 export { LizardCardBorder } from "./LizardCardBorder";
 export { LizardCardStyle } from "./LizardCardStyle";
 export { LizardAnimatedBackground } from "./LizardAnimatedBackground";
-
+export { LizardMarquee } from "./LizardMarquee";
+export { LizardCarousel } from "./LizardCarousel";
+export { LizardThumbnail } from "./LizardThumbnail";
+export { LizardTechStackLogos } from "./LizardTechStackLogos";
 
 
 
 import LizardLogoAndTitle from "@/components/assets/lizardandtext.svg";
 import LizardLogoSVG from "@/components/assets/lizardicon.svg";
 import CoverSVG from "@/components/assets/cover.svg";
+
 
 
 export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<

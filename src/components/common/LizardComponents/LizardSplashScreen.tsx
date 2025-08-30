@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { AppImage, AppLabel } from "@/components/common";
+import { LizardImage, LizardText } from ".";
 
-interface AppSplashScreenProps {
+
+interface LizardSplashScreenProps {
   logoUrl?: string;
   text?: string;
   className?: string;
@@ -10,13 +11,13 @@ interface AppSplashScreenProps {
   duration?: number; // optional, default 10s
 }
 
-export function AppSplashScreen({
+export function LizardSplashScreen({
   logoUrl,
   text = "",
   className = "",
   onFinish,
   duration = 10, // default 10 seconds
-}: AppSplashScreenProps) {
+}: LizardSplashScreenProps) {
   useEffect(() => {
     if (onFinish) {
       const timer = setTimeout(() => {
@@ -38,13 +39,13 @@ export function AppSplashScreen({
         transition={{ type: "spring", stiffness: 120, damping: 12 }}
       >
         {logoUrl && (
-          <AppImage
+          <LizardImage
             src={logoUrl}
             alt="logo"
             className="w-15 max-w-[40vw] sm:w-18 sm:max-w-[25vw] h-auto object-contain"
           />
         )}
-        <AppLabel variant="h2">{text}</AppLabel>
+        <LizardText variant="h2">{text}</LizardText>
       </motion.div>
     </div>
   );

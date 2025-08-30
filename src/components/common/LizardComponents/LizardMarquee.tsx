@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-interface AppMarqueeProps {
+interface LizardMarqueeProps {
   children: React.ReactNode[];
   speed?: number;
   className?: string;
@@ -8,13 +8,13 @@ interface AppMarqueeProps {
   gap?: number;
 }
 
-export function AppMarquee({
+export function LizardMarquee({
   children,
   speed = 50,
   className,
   direction = "left",
   gap = 16,
-}: AppMarqueeProps) {
+}: LizardMarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   const [contentWidth, setContentWidth] = useState(0);
