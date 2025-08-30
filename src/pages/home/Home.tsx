@@ -10,7 +10,7 @@ export default function Home() {
 
 
 
-  const { isMobile,  isDesktop, width } = useScreenType();
+  const { isMobile, isTablet,  isDesktop, width } = useScreenType();
 
 
   console.log("Screen Width", width)
@@ -89,7 +89,7 @@ const panelData = [
   return (
     <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
       {/* Left card - hide on mobile */}
-      {!isMobile && (
+      {isDesktop && (
         <div className="flex w-full max-w-[220px] lg:justify-center items-start">
           <LizardCardStyle
             items={cardData}
@@ -104,7 +104,7 @@ const panelData = [
       </LizardSection>
 
       {/* Right panel - hide on mobile */}
-      {!isMobile && (
+      {isDesktop && (
         <LizardDiv animation={slideLeft} className="flex w-full max-w-[220px] items-start justify-start ">
           <LizardInteractivePanel
             disabled

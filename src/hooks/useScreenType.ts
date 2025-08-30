@@ -20,8 +20,8 @@ export function useScreenType(): ScreenType {
       const width = window.innerWidth;
       setScreen({
         width,
-        isMobile: width < 640, // < sm (tailwind small breakpoint)
-        isTablet: width >= 640 && width < 1024, // sm to lg
+        isMobile: width <= 926, // < sm (tailwind small breakpoint)
+        isTablet: width >= 926 && width < 1024, // sm to lg
         isDesktop: width >= 1024, // lg and above
       });
     };
