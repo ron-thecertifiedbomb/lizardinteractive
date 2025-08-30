@@ -16,7 +16,7 @@ export function LizardMainContainer({ children, className = "" }: LizardMainCont
     <main
       id="lizard-main-container"
       className={cn(
-        "min-h-screen w-full flex flex-col items-center justify-start overflow-y-auto scroll-smooth",
+        "min-h-screen w-full flex flex-col items-center overflow-y-auto scroll-smooth",
         className
       )}
     >

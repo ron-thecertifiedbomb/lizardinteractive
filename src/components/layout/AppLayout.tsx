@@ -81,7 +81,7 @@ export function AppLayout() {
   return (
     <LizardMainContainer>
       <LizardHeader />
-<LizardSubContainer>
+      <LizardSubContainer className="flex-1 w-full max-w-[1700px]">
       <Outlet />
 
       {/* Panel wrapper to detect outside clicks */}

@@ -24,6 +24,9 @@ module.exports = {
         lg: "var(--radius-lg)",
         xl: "var(--radius-xl)",
       },
+      backgroundImage: {
+        "lizard-cover": "url('/src/components/assets/cover.svg')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

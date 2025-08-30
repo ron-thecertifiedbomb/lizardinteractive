@@ -13,7 +13,7 @@ export function LizardAnimatedBackground({
 }: LizardAnimatedBackgroundProps) {
     return (
         <motion.div
-            className={cn("absolute inset-0 -z-10 w-full h-full overflow-hidden", className)}
+            className={cn("overflow-hidden", className)} // 👈 fixed height
             animate={
                 pulse
                     ? {
@@ -27,7 +27,8 @@ export function LizardAnimatedBackground({
             }
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
         >
-            <Cover className="w-full h-full object-cover" />
+            <Cover className="w-full h-[800px]" />
         </motion.div>
+
     );
 }

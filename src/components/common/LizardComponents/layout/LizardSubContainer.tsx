@@ -1,7 +1,5 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-
-import { LizardAnimatedBackground } from "../LizardAnimatedBackground";
 import { useNavigationStore } from "@/store";
 
 interface LizardSubContainerProps {
@@ -18,17 +16,13 @@ export function LizardSubContainer({ children, className = "" }: LizardSubContai
     <div
       id="lizard-sub-container"
       className={cn(
-        "relative flex-1 w-full flex flex-col items-center justify-start overflow-y-auto scroll-smooth pt-6",
+        "relative flex flex-col justify-items-start items-start ",
         className
       )}
     >
-      {/* Render animated background only on IntroductionScreen */}
       {isIntroScreen && (
-        <div className="absolute inset-0 -z-10 bg-black">
-          <LizardAnimatedBackground className="w-full h-full object-cover" />
-        </div>
+        <div className="absolute inset-0 -z-10 w-full h-full bg-[url('/assets/cover.svg')] bg-cover bg-center" />
       )}
-
       {children}
     </div>
   );
