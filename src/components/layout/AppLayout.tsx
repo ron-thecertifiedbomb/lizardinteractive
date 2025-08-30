@@ -11,7 +11,7 @@ import { useNavigationStore } from "@/store";
 
 export function AppLayout() {
   const location = useLocation();
-  const { showPanel, setShowPanel } = useNavigationStore();
+  const {  setShowPanel } = useNavigationStore();
   const panelWrapperRef = useRef<HTMLDivElement>(null);
 
   // First-time splash screen

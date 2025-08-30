@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import {
   AppTransitioningText,
-  AppTint,
   AppImageScreensaver,
   AppDialog,
 } from "@/components/common";

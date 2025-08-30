@@ -17,14 +17,14 @@ export default function Home() {
       label: "availability",
       value: "open for hire", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ", children: "availability" },
       valueProps: {
-        className: "inline-block border-2 bg-[#E84A4A] text-black px-2 py-1", children: "availability"
+        className: " text-[10px] sm:text-[14px] lg:text-[16px] inline-block border-2 bg-[#E84A4A] text-black px-2 py-1", children: "availability"
       },
     },
     {
       label: "social",
       value: "open connection", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ", children: "social" },
       valueProps: {
-        className: "inline-block border-2 border-[#E84A4A] px-2 py-1", children: "social"
+        className: " text-[10px] sm:text-[14px] lg:text-[16px]  inline-block border-2 border-[#E84A4A] px-2 py-1", children: "social"
       },
     },
   ];
@@ -68,10 +68,10 @@ const panelData = [
   }
 
   return (
-    <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-4 lg:px-0">
+    <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
       {/* Left fixed card aligned closer to center */}
       <div className="flex w-full max-w-[220px] lg:justify-center items-start">
-        <LizardCardStyle items={cardData} logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto" className='w-[140px] sm:w-[170px] lg:w-full h-auto' />
+        <LizardCardStyle items={cardData} logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto" className='w-[110px] sm:w-[170px] lg:w-full h-auto' />
       </div>
 
       {/* Center section stretches but maxes at 1200px */}

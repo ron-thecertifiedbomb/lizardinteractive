@@ -1,19 +1,14 @@
-import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
 import { LizardText } from "@/components/common/LizardComponents/LizardText";
 import { LizardLogo } from "./LizardLogo";
 
 interface LizardThumbnailProps {
   title: string;
   content?: string;
-  badge?: string;
-  logoSrc?: string;
 }
 
 export function LizardThumbnail({
   title,
   content,
-  badge,
-  logoSrc,
 }: LizardThumbnailProps) {
   return (
     <div

@@ -1,1 +1,1 @@
-export { centerCard } from "./mockdata";
+// export { centerCard } from "./mockdata";
