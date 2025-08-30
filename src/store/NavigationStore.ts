@@ -1,5 +1,6 @@
+import { lizardData } from "@/config/lizardData";
 import { create } from "zustand";
-import { appData } from "@/config/appData";
+
 
 interface NavigationStore {
   currentScreen: string;
@@ -10,15 +11,33 @@ interface NavigationStore {
 
   activePanel?: string;
   setActivePanel: (panelKey?: string) => void;
+
+  getPanelData: (
+    panelKey: string
+  ) => { heading: string; content: string | any[] } | null;
 }
 
 export const useNavigationStore = create<NavigationStore>((set) => ({
-  currentScreen: appData.introduction.screen,
+  currentScreen: lizardData.navigationPanels[0]?.heading || "",
+
   setCurrentScreen: (screen) => set({ currentScreen: screen }),
 
   showPanel: false,
   setShowPanel: (value) => set({ showPanel: value }),
 
-  activePanel: appData.navigationPanels[0].key,
+  activePanel: lizardData.navigationPanels[0]?.heading,
   setActivePanel: (panelKey) => set({ activePanel: panelKey }),
+
+  getPanelData: (currentScreen) => {
+    const panel = lizardData.sections.find(
+      (p) => p.heading === currentScreen
+    );
+
+    if (!panel) return null;
+
+    return {
+      heading: panel.heading,
+      content: panel.content, // string | array
+    };
+  },
 }));

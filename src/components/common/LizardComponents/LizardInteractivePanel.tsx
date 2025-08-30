@@ -1,5 +1,6 @@
 import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardComponents";
-import { appData } from "@/config/appData";
+import { lizardData } from "@/config/lizardData";
+
 import { useScreenType } from "@/hooks/useScreenType";
 
 import { useNavigationStore } from "@/store";
@@ -34,17 +35,29 @@ export function LizardInteractivePanel({
   cardClassName,
   positionClassName = "",
 }: LizardInteractivePanelProps) {
-  const { setCurrentScreen, activePanel, setActivePanel, showPanel, setShowPanel } =
+
+
+
+  const { currentScreen, setCurrentScreen, activePanel, setActivePanel, showPanel, setShowPanel, getPanelData } =
     useNavigationStore();
   
   
+  
+  const data = getPanelData(currentScreen);
+
+  console.log(data?.content)
+  console.log(currentScreen)
   const { isMobile } = useScreenType();
 
+
+
+
+
   
-  const panelsToRender: (Panel | { key: string; items: DisabledItem[]; heading?: string })[] =
+  const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; content?: string })[] =
     disabled && items.length > 0
-      ? [{ key: "single-disabled", items, heading }]
-      : appData.navigationPanels;
+      ? [{ heading: "single-disabled", items, content: "" }]
+      : lizardData.navigationPanels;
 
   return (
     <LizardDiv direction="row"
@@ -59,7 +72,7 @@ export function LizardInteractivePanel({
 
         return (
           <LizardDiv
-            key={panel.key}
+            key={panel.heading}
             className={`min-h-0 h-auto box-content rounded-sm flex flex-col pl-1 lg:pl-2 transition-colors duration-300 ease-in-out
     ${disabled || isDisabledCard
               ? "cursor-not-allowed bg-[#E84A4A] text-gray-400"
@@ -75,7 +88,7 @@ export function LizardInteractivePanel({
               if (disabled || isDisabledCard) return;
               if (!("screen" in panel)) return;
               setCurrentScreen(panel.screen!);
-              setActivePanel(panel.key);
+              setActivePanel(panel.heading);
               if (isMobile) {
                 setShowPanel(false);
               }

@@ -68,7 +68,7 @@ export const appData: AppData = {
       key: "aboutme",
       heading: "About Me",
       content:
-        "I'm a creative individual.",
+        "I am a dedicated professional with a passion for delivering high-quality services to my clients.",
       screen: "AboutMeScreen",
     },
   ],
@@ -186,3 +186,8 @@ export const appData: AppData = {
     screen: "AboutMeScreen",
   },
 };
+
+
+
+
+

@@ -9,6 +9,7 @@ export { SkillsScreen } from "./screens/SkillsScreen";
 export { IntroductionScreen } from "./screens/IntroductionScreen";
 export { ProjectScreen } from "./screens/ProjectScreen";
 export { AboutMeScreen } from "./screens/AboutMeScreen";
+export { LizardCenterScreen } from "./screens/LizardCenterScreen";
 
 export { LizardCard } from "./LizardCard";
 export { LizardHeader } from "./LizardHeader";
