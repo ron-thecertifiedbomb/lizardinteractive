@@ -68,10 +68,10 @@ const panelData = [
   }
 
   return (
-    <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 ">
+    <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-4 lg:px-0">
       {/* Left fixed card aligned closer to center */}
       <div className="flex w-full max-w-[220px] lg:justify-center items-start">
-        <LizardCardStyle items={cardData} logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto" className='w-[140px] sm:w-[170px] lg:w-full h-auto px-4' />
+        <LizardCardStyle items={cardData} logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto" className='w-[140px] sm:w-[170px] lg:w-full h-auto' />
       </div>
 
       {/* Center section stretches but maxes at 1200px */}
@@ -80,7 +80,7 @@ const panelData = [
       </LizardSection>
 
       {/* Right fixed card */}
-      <div className="w-full max-w-[220px] ">
+      <div className=" flex w-full max-w-[220px] items-start justify-end lg:justify-center">
         <LizardInteractivePanel
           disabled
           items={panelData}
