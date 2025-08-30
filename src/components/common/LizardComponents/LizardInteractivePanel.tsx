@@ -2,7 +2,6 @@ import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardCo
 import { appData } from "@/config/appData";
 import { useScreenType } from "@/hooks";
 import { useNavigationStore } from "@/store";
-import { useEffect } from "react";
 
 type DisabledItem = {
   label: string;

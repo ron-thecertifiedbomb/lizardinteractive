@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { LizardDiv, LizardHeader, LizardInteractiveNavigationControlSection, LizardInteractivePanel, LizardMainContainer, LizardSubContainer } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
-import { slideDown, slideUp } from "@/lib/motionMode";
+import { slideUp } from "@/lib/motionMode";
 import { useScreenType } from "@/hooks";
 
 
