@@ -1,43 +1,57 @@
-import { lizardData } from "@/config/lizardData";
+import { appData } from "@/config/appData";
+import { navigationPanels } from "@/config/navigationPanels";
 import { create } from "zustand";
-
+import type { AppData, NavigationPanel } from "@/types/appData";
 
 interface NavigationStore {
-  currentScreen: string;
-  setCurrentScreen: (screen: string) => void;
+  section: keyof AppData; // current section key
+  setSection: (sectionKey: keyof AppData) => void;
 
   showPanel: boolean;
   setShowPanel: (value: boolean) => void;
 
-  activePanel?: string;
-  setActivePanel: (panelKey?: string) => void;
+  activePanelKey?: string;
+  setActivePanel: (panelKey: string) => void;
 
-  getPanelData: (
+  currentSection: (
     panelKey: string
   ) => { heading: string; content: string | any[] } | null;
 }
 
 export const useNavigationStore = create<NavigationStore>((set) => ({
-  currentScreen: lizardData.navigationPanels[0]?.heading || "",
+  section: navigationPanels[0].section,
 
-  setCurrentScreen: (screen) => set({ currentScreen: screen }),
+  setSection: (sectionKey) => set({ section: sectionKey }),
 
   showPanel: false,
   setShowPanel: (value) => set({ showPanel: value }),
 
-  activePanel: lizardData.navigationPanels[0]?.heading,
-  setActivePanel: (panelKey) => set({ activePanel: panelKey }),
+  activePanelKey: navigationPanels[0].key,
+  setActivePanel: (panelKey) => set({ activePanelKey: panelKey }),
 
-  getPanelData: (currentScreen) => {
-    const panel = lizardData.sections.find(
-      (p) => p.heading === currentScreen
+  currentSection: (panelKey) => {
+    // Find panel by key
+    const panel: NavigationPanel | undefined = navigationPanels.find(
+      (p) => p.key === panelKey
     );
 
     if (!panel) return null;
 
+    // Use section to get data from appData
+    const sectionData = appData[panel.section];
+
+    // For sections with items (projects, skills)
+    if ("items" in sectionData) {
+      return {
+        heading: sectionData.heading,
+        content: sectionData.items,
+      };
+    }
+
+    // For sections with only heading + content
     return {
-      heading: panel.heading,
-      content: panel.content, // string | array
+      heading: sectionData.heading,
+      content: sectionData.content,
     };
   },
 }));

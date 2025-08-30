@@ -1,9 +1,11 @@
 import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardComponents";
-import { lizardData } from "@/config/lizardData";
+import { appData } from "@/config/appData";
+import { navigationPanels } from "@/config/navigationPanels";
 
 import { useScreenType } from "@/hooks/useScreenType";
 
 import { useNavigationStore } from "@/store";
+import { AppData } from "@/types/appData";
 
 type DisabledItem = {
   label: string;
@@ -16,8 +18,9 @@ type DisabledItem = {
 type Panel = {
   key: string;
   heading: string;
-  content: string;
-  screen?: string;
+  overview: string;
+  section?: string;
+  isActive?: boolean
 };
 
 type LizardInteractivePanelProps = {
@@ -38,15 +41,15 @@ export function LizardInteractivePanel({
 
 
 
-  const { currentScreen, setCurrentScreen, activePanel, setActivePanel, showPanel, setShowPanel, getPanelData } =
+  const { section, activePanelKey, setSection,  setActivePanel, showPanel, setShowPanel, } =
     useNavigationStore();
   
   
   
-  const data = getPanelData(currentScreen);
+  const data = section;
 
-  console.log(data?.content)
-  console.log(currentScreen)
+
+  console.log(data)
   const { isMobile } = useScreenType();
 
 
@@ -54,10 +57,10 @@ export function LizardInteractivePanel({
 
 
   
-  const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; content?: string })[] =
+  const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
     disabled && items.length > 0
-      ? [{ heading: "single-disabled", items, content: "" }]
-      : lizardData.navigationPanels;
+      ? [{ heading: "single-disabled", items, overview: "" }]
+      : navigationPanels;
 
   return (
     <LizardDiv direction="row"
@@ -68,8 +71,8 @@ export function LizardInteractivePanel({
     >
       {panelsToRender.map((panel) => {
         const isDisabledCard = "items" in panel;
-        const isActive = !isDisabledCard && activePanel === panel.key;
-
+        const isActive = !isDisabledCard && activePanelKey === panel.heading;
+        console.log('active panel', activePanelKey)
         return (
           <LizardDiv
             key={panel.heading}
@@ -86,8 +89,7 @@ export function LizardInteractivePanel({
   `}
             onClick={() => {
               if (disabled || isDisabledCard) return;
-              if (!("screen" in panel)) return;
-              setCurrentScreen(panel.screen!);
+              setSection(panel.heading as keyof AppData);
               setActivePanel(panel.heading);
               if (isMobile) {
                 setShowPanel(false);
@@ -139,12 +141,12 @@ export function LizardInteractivePanel({
               </div>
             ) : (
               <div className="bg-black flex-1 flex px-1 lg:px-2">
-                {"content" in panel && (
+                  {"overview" in panel && (
                   <LizardText
                     variant="p"
                       className="text-[8px] sm:text-[12px] lg:text-[16px] p-1 sm:p-2 lg:p-3 text-[#b3b3b3] font-light"
                   >
-                    {panel.content.toUpperCase()}
+                      {panel.overview.toUpperCase()}
                   </LizardText>
                 )}
               </div>

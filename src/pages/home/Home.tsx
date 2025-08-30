@@ -60,7 +60,7 @@ const panelData = [
     valueProps: { className: "text-[12px] lg:text-[16px]  py-1 uppercase text-[#7A7A7A] tracking-tight w-full leading-none mb-1", children: "To elevate user experiences by pioneering extensive interactivity in UI/UX design. I strive to create interfaces that are not just usable, but truly engaging and dynamic." },
   },
 ];
-  const {setShowPanel } = useNavigationStore()
+  const { section, setShowPanel } = useNavigationStore()
 
   useEffect(() => {
     if (isDesktop || isTablet) {
@@ -75,25 +75,23 @@ const panelData = [
 
   const renderScreen = () => {
 
-    switch (currentScreen) {
-      case 'IntroductionScreen':
+    switch (section) {
+      case 'overview':
         return <IntroductionScreen />
-      case 'ProjectsScreen':
+      case 'projects':
         return <ProjectScreen />
-      case 'SkillsScreen':
+      case 'skills':
         return <SkillsScreen />
-      case 'AboutMeScreen':
+      case 'skills':
         return <AboutMeScreen />
 
       default:
         return <IntroductionScreen />
     }
   }
-  const { getPanelData, currentScreen } =
-    useNavigationStore();
 
-  const data = getPanelData(currentScreen);
-  console.log('data', data)
+  const currentSection = section;
+  console.log('section', currentSection)
 
   return (
     <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
@@ -109,10 +107,10 @@ const panelData = [
       )}
       {/* Center section stretches but maxes at 1200px */}
       <LizardSection className="flex flex-col flex-1 w-full justify-center">
-        <LizardCenterScreen
+        {/* <LizardCenterScreen
           heading={data?.heading}
           content={data?.content}
-        />
+        /> */}
       </LizardSection>
 
       {/* Right panel - hide on mobile */}
