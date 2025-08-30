@@ -6,11 +6,11 @@ import { LizardLogoContainer } from "./LizardLogoContainer";
 export function LizardHeader() {
 
     return (
-        <LizardDiv className="flex w-full items-center gap-4 bg-black p-3">
+        <LizardDiv className="flex w-full items-center gap-4 bg-black">
             <LizardDiv direction="row" className="flex w-full justify-between items-center">
                 {/* Logo container */}
-                <LizardDiv className=" w-full  md:px-10 lg:px-20 py-2 flex items-center justify-center md:w-auto  lg:w-auto">
-                    <LizardDiv >   <LizardLogoContainer
+                <LizardDiv className=" w-full   md:px-10 lg:px-20 py-2 flex items-center justify-center md:w-auto  lg:w-auto">
+                    <LizardDiv className="w-40 h-auto sm:w-50 lg:w-60">   <LizardLogoContainer
                         svg={LizardTitle}
                         className=";
     [#88fb59ff] fill-[#88fb59ff] stroke-[#88fb59ff] text-center"
