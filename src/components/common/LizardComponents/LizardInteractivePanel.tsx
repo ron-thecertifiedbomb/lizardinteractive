@@ -48,7 +48,7 @@ export function LizardInteractivePanel({
 
   return (
     <LizardDiv direction="row"
-      className={`overflow-hidden inline-flex justify-center gap-4 transition-transform duration-500 ease-in-out
+      className={`overflow-hidden inline-flex justify-center gap-1 lg:gap-4 transition-transform duration-500 ease-in-out
         ${disabled ? "relative pointer-events-none translate-y-0" : showPanel ? "translate-y-0" : "translate-y-full pointer-events-none"}
         ${positionClassName}
       `}
@@ -60,10 +60,10 @@ export function LizardInteractivePanel({
         return (
           <LizardDiv
             key={panel.key}
-            className={`min-h-0 h-auto box-content rounded-sm flex flex-col pl-2 transition-colors duration-300 ease-in-out
+            className={`min-h-0 h-auto box-content rounded-sm flex flex-col pl-1 lg:pl-2 transition-colors duration-300 ease-in-out
     ${disabled || isDisabledCard
               ? "cursor-not-allowed bg-[#E84A4A] text-gray-400"
-                : "cursor-pointer hover:scale-105 hover:shadow-lg"}
+                : "cursor-pointer hover:opacity-[0.8] hover:shadow-lg"}
     ${!disabled && !isDisabledCard && isActive
                 ? "bg-[#E84A4A] text-white"
                 : !disabled && !isDisabledCard
@@ -85,12 +85,12 @@ export function LizardInteractivePanel({
             <div className="w-full relative overflow-hidden">
               {isDisabledCard ? (
                 heading && (
-                  <div className="text-[14px] lg:text-[25px] pl-3 py-1 text-white font-light">
+                  <div className="text-[14px] lg:text-[25px] pl-1 lg:pl-3 py-1 text-white font-light">
                     <LizardText variant="h1">{heading.toUpperCase()}</LizardText>
                   </div>
                 )
               ) : (
-                <div className="text-[25px] pl-3 py-1 text-white font-light">
+                  <div className="text-[12px] sm:text-[20px] lg:text-[25px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
                 </div>
               )}
@@ -125,11 +125,11 @@ export function LizardInteractivePanel({
                 ))}
               </div>
             ) : (
-              <div className="bg-black flex-1 flex px-2">
+              <div className="bg-black flex-1 flex px-1 lg:px-2">
                 {"content" in panel && (
                   <LizardText
-                    variant="h1"
-                    className="text-[14px] p-3 text-[#b3b3b3] font-light"
+                    variant="p"
+                      className="text-[8px] sm:text-[12px] lg:text-[16px] p-1 sm:p-2 lg:p-3 text-[#b3b3b3] font-light"
                   >
                     {panel.content.toUpperCase()}
                   </LizardText>

@@ -23,7 +23,7 @@ export function LizardInteractiveButton({
     >
       <LizardLogoContainer
         svg={LizardLogo}
-        className="w-8 h-8 sm:w-10 sm:h-10  fill-white stroke-white"
+        className="w-6 h-6 sm:w-6 sm:h-6  fill-white stroke-white"
       />
     </div>
 
