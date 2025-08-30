@@ -1,10 +1,20 @@
-import { useScrollToHeroOnLoad } from '@/hooks/useScrollToTopWithHeader'
-import { LizardSection, IntroductionScreen, SkillsScreen, ProjectScreen, AboutMeScreen, LizardCardStyle, LizardInteractivePanel } from '@/components/common/LizardComponents'
+
+import { LizardSection, IntroductionScreen, SkillsScreen, ProjectScreen, AboutMeScreen, LizardCardStyle, LizardInteractivePanel, LizardDiv } from '@/components/common/LizardComponents'
+import { useScreenType } from '@/hooks';
+import { slideLeft } from '@/lib/motionMode';
 
 import { useNavigationStore } from '@/store';
+import { useEffect } from 'react';
 
 export default function Home() {
-  useScrollToHeroOnLoad()
+
+
+
+  const { isMobile, isTablet, isDesktop, width } = useScreenType();
+
+
+  console.log("Screen Width", width)
+
 
   const cardData = [
     { label: "name", value: "ronan sibunga", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase ", children: "name" }, valueProps: { className: "text-[10px] sm:text-[14px]  lg:text-[18px] text-[#E84A4A] uppercase", children: "name" } },
@@ -49,7 +59,16 @@ const panelData = [
     valueProps: { className: "text-[12px] lg:text-[16px]  py-1 uppercase text-[#7A7A7A] tracking-tight w-full leading-none mb-1", children: "To elevate user experiences by pioneering extensive interactivity in UI/UX design. I strive to create interfaces that are not just usable, but truly engaging and dynamic." },
   },
 ];
-  const { currentScreen } = useNavigationStore()
+  const { currentScreen, setShowPanel } = useNavigationStore()
+
+  useEffect(() => {
+    if (isDesktop) {
+      setShowPanel(true);
+    } else {
+      setShowPanel(false);
+    }
+  }, [isDesktop, setShowPanel]);
+
 
   const renderScreen = () => {
     switch (currentScreen) {
@@ -69,26 +88,33 @@ const panelData = [
 
   return (
     <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
-      {/* Left fixed card aligned closer to center */}
-      <div className="flex w-full max-w-[220px] lg:justify-center items-start">
-        <LizardCardStyle items={cardData} logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto" className='w-[110px] sm:w-[170px] lg:w-full h-auto' />
-      </div>
-
+      {/* Left card - hide on mobile */}
+      {!isMobile && (
+        <div className="flex w-full max-w-[220px] lg:justify-center items-start">
+          <LizardCardStyle
+            items={cardData}
+            logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
+            className="w-[110px] sm:w-[170px] lg:w-full h-auto"
+          />
+        </div>
+      )}
       {/* Center section stretches but maxes at 1200px */}
       <LizardSection className="flex flex-col flex-1 w-full justify-center">
         {renderScreen()}
       </LizardSection>
 
-      {/* Right fixed card */}
-      <div className=" flex w-full max-w-[220px] items-start justify-end lg:justify-center">
-        <LizardInteractivePanel
-          disabled
-          items={panelData}
-          heading="Activity Quest"
-          cardClassName="h-auto w-[120px] sm:w-[170px] lg:w-full"
-
-        />
-      </div>
+      {/* Right panel - hide on mobile */}
+      {!isMobile && (
+        <LizardDiv animation={slideLeft} className="flex w-full max-w-[220px] items-start justify-start ">
+          <LizardInteractivePanel
+            disabled
+            items={panelData}
+            heading="Activity Quest"
+            cardClassName="h-auto w-[120px] sm:w-[170px] lg:w-full"
+          />
+        </LizardDiv>
+      )}
+     
     </div>
   )
 }

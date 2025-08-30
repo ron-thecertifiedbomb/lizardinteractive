@@ -1,4 +1,3 @@
-// export { useScrollToTopWithHeader } from "./useScrollToTopWithHeader";
 import { useEffect, useState } from "react";
 
 type ScreenType = {
