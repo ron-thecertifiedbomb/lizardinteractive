@@ -18,12 +18,12 @@ export function LizardInteractiveButton({
 
     <div
       onClick={onClick}
-      className={`${className} cursor-pointer`}
+      className={`${className} cursor-pointer pb-2`}
 
     >
       <LizardLogoContainer
         svg={LizardLogo}
-        className="w-12 h-12 fill-white stroke-white"
+        className="w-8 h-8 sm:w-10 sm:h-10  fill-white stroke-white"
       />
     </div>
 

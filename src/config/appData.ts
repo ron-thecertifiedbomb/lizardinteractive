@@ -68,7 +68,7 @@ export const appData: AppData = {
       key: "aboutme",
       heading: "About Me",
       content:
-        "I am a dedicated professional with a passion for delivering high-quality services to my clients.",
+        "I'm a creative individual.",
       screen: "AboutMeScreen",
     },
   ],
