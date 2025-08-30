@@ -15,15 +15,17 @@ export default function Home() {
 
     {
       label: "availability",
-      value: "open for hire", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase ", children: "availability" },
-      valueClassName:
-        "px-2 py-1 mt-2 uppercase tracking-tight text-black bg-[#E84A4A] w-full leading-none mb-1",
+      value: "open for hire", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ", children: "availability" },
+      valueProps: {
+        className: "inline-block border-2 bg-[#E84A4A] text-black px-2 py-1", children: "availability"
+      },
     },
     {
       label: "social",
-      value: "open connection", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase ", children: "social" },
-      valueClassName:
-        "px-2 py-1 mt-2 uppercase tracking-tight text-[#E84A4A] border-2 border-[#E84A4A] w-full leading-none",
+      value: "open connection", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ", children: "social" },
+      valueProps: {
+        className: "inline-block border-2 border-[#E84A4A] px-2 py-1", children: "social"
+      },
     },
   ];
 

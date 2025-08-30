@@ -37,11 +37,11 @@ export function LizardCardStyle({ className, logoClassName, items }: LizardCardS
                     >
                         {item.label}
                     </LizardText>
-                      <LizardText
-            variant="p"
-            className={`text-[12px] sm:text-[14px] md:text-[16px] uppercase text-[#E84A4A] w-full leading-none ${item.valueClassName || "mb-1"} ${item.valueProps?.className || ""}`}
-            {...item.valueProps}
-        >
+                    <LizardText
+                        variant="p"
+                        {...item.valueProps}
+                        className={`text-[12px] sm:text-[14px] md:text-[16px] uppercase text-[#E84A4A] w-full leading-none ${item.valueProps?.className || ""}`}
+                    >
                         {item.value}
                     </LizardText>
                 </div>
