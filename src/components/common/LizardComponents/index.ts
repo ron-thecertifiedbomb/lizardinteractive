@@ -34,11 +34,14 @@ export { LizardTechStackLogos } from "./LizardTechStackLogos";
 
 
 
+import LizardTextLogo from "@/components/assets/text.svg";
 import LizardLogoAndTitle from "@/components/assets/lizardinteractive.svg";
 import LizardLogoSVG from "@/components/assets/lizardicon.svg";
 import CoverSVG from "@/components/assets/cover.svg";
 
-
+export const LizardTitle = LizardTextLogo as unknown as React.FC<
+  React.SVGProps<SVGSVGElement>
+>;
 
 export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
   React.SVGProps<SVGSVGElement>

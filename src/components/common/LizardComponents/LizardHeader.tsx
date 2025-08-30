@@ -1,5 +1,5 @@
 
-import { LizardAndTitleLogo, LizardDiv } from ".";
+import { LizardTitle, LizardDiv } from ".";
 import { LizardDateAndTime } from "./LizardDateAndTime";
 import { LizardLogoContainer } from "./LizardLogoContainer";
 
@@ -11,7 +11,7 @@ export function LizardHeader() {
                 {/* Logo container */}
                 <LizardDiv className=" w-full   md:px-10 lg:px-20 py-2 flex items-center justify-center md:w-auto  lg:w-auto">
                     <LizardDiv className="w-50 h-auto sm:w-65 lg:w-70">   <LizardLogoContainer
-                        svg={LizardAndTitleLogo}
+                        svg={LizardTitle}
                         className=";
     [#88fb59ff] fill-[#88fb59ff] stroke-[#88fb59ff] text-center"
                     /></LizardDiv>
