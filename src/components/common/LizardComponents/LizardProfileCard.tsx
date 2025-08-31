@@ -1,31 +1,52 @@
+// components/common/LizardCardStyle.tsx
 
-import { LizardCardBorder, LizardCardHeader, } from "@/components/common/LizardComponents";
-import { LizardLogoContainer } from "./LizardLogoContainer";
-import { LizardLogo } from "./LizardLogo";
+import { LizardCardBorder, LizardDiv, LizardLogo, LizardText } from "@/components/common/LizardComponents";
+import { slideRight } from "@/lib/motionMode";
 
-export function LizardProfileCard() {
+interface LizardCardItem {
+    label: string;
+    value: string;
+    valueClassName?: string;
+    labelProps?: React.ComponentProps<typeof LizardText>; // extra props for label
+    valueProps?: React.ComponentProps<typeof LizardText>; // extra props for value
+}
+interface LizardProfileCardProps {
+    className?: string;
+    logoClassName?: string;
+    items: LizardCardItem[];
+}
 
-  const profileItems = [
-    { label: "Name", value: "Ronan Sibunga" },
-    { label: "Occupation", value: "Fullstack Developer" },
-    { label: "Corporation", value: "Lizard Interactive" },
-    { label: "Availability", value: "Open for Hire", type: "highlight" as const },
-    { label: "Social", value: "Open Connection", type: "bordered" as const },
-  ];
+export function LizardProfileCard({ className, logoClassName, items }: LizardProfileCardProps) {
+    return (
 
-  return (
-    <div className="max-w-[260px] w-full h-auto">
-      <LizardCardBorder cornerSize="8px" className="p-4 border">
-        
-        <LizardLogoContainer
-          svg={LizardLogo}
-          className="w-12 h-12 fill-white stroke-white"
-        />
-      </LizardCardBorder>
+        <LizardDiv direction="column" animation={slideRight} className={`${className}`}>
+            {/* Logo inside border */}
+            <LizardCardBorder className="mb-6 sm:mb-8">
+                <div className="border w-full flex items-center justify-center p-2 lg:p-4">
+                    <LizardLogo
+                        className={logoClassName }
+                    />
+                </div>
+            </LizardCardBorder>
 
-
-
-      <LizardCardHeader items={profileItems} className="mt-8 w-full" />
-    </div>
-  );
+            {items.map((item, index) => (
+                <div key={index} className="mb-2 sm:mb-3">
+                    <LizardText
+                        variant="h1"
+                        className={`text-[12px] sm:text-[14px] lg:text-[16px] uppercase  w-full mb-1 ${item.labelProps?.className || ""}`}
+                        {...item.labelProps}
+                    >
+                        {item.label}
+                    </LizardText>
+                    <LizardText
+                        variant="p"
+                        {...item.valueProps}
+                        className={`text-[12px] sm:text-[14px] md:text-[16px] uppercase text-[#E84A4A] w-full leading-none ${item.valueProps?.className || ""}`}
+                    >
+                        {item.value}
+                    </LizardText>
+                </div>
+            ))}
+        </LizardDiv>
+    );
 }

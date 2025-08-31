@@ -25,10 +25,9 @@ export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNa
 export { LizardIcons } from "./LizardIcons";
 export { LizardLocator } from "./LizardLocator";
 export { LizardCoordinates } from "./LizardCoordinates";
-export { LizardProfileCard } from "./LizardProfileCard";
 export { LizardCardHeader } from "./LizardCardHeader";
 export { LizardCardBorder } from "./LizardCardBorder";
-export { LizardCardStyle } from "./LizardCardStyle";
+export { LizardProfileCard } from "./LizardProfileCard";
 export { LizardAnimatedBackground } from "./LizardAnimatedBackground";
 export { LizardMarquee } from "./LizardMarquee";
 export { LizardCarousel } from "./LizardCarousel";

@@ -1,8 +1,6 @@
 import { LizardText, LizardDiv } from '@/components/common/LizardComponents'
-
-
 import { Skill } from '@/types/appData';
-import { fadeIn } from '@/lib/motionMode';
+
 
 type LizardCardContent = string | Skill[] | null;
 

@@ -1,5 +1,6 @@
 
 import {LizardCardStyle, LizardInteractivePanel, LizardDiv, LizardRenderScreen, } from '@/components/common/LizardComponents'
+import { LizardProfileCard } from '@/components/common/LizardComponents/LizardProfileCard';
 import { useScreenType } from '@/hooks/useScreenType';
 
 import { slideLeft } from '@/lib/motionMode';
@@ -9,13 +10,7 @@ import { useEffect } from 'react';
 
 
 export default function Home() {
-
-
-
-  const { isTablet, isDesktop, width } = useScreenType();
-
-
-  console.log("Screen Width", width)
+  const { isTablet, isDesktop } = useScreenType();
 
 
   const cardData = [
@@ -76,22 +71,22 @@ export default function Home() {
 
   return (
     <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
-      {/* Left card - hide on mobile */}
+
       {isDesktop && (
         <div className="flex w-[10px] sm:w-[120px] lg:w-[140px] lg:justify-center items-start">
-          <LizardCardStyle
+          <LizardProfileCard
             items={cardData}
             logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
             className="w-full h-auto"
           />
         </div>
       )}
-      {/* Center section stretches but maxes at 1200px */}
+
       <LizardDiv className="flex flex-col flex-1 w-full justify-center">
         <LizardRenderScreen section={section} />
       </LizardDiv>
 
-      {/* Right panel - hide on mobile */}
+
       {isDesktop && (
         <LizardDiv animation={slideLeft} className="flex w-[10px] sm:w-[120px] lg:w-[140px] items-start">
           <LizardInteractivePanel
