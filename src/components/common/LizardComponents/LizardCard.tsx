@@ -1,82 +1,56 @@
-import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
-import { LizardText } from "@/components/common/LizardComponents/LizardText";
-import { LizardIcons } from "./LizardIcons";
+import { LizardText, LizardDiv } from '@/components/common/LizardComponents'
 
-import { multimediaStack, webTechStack } from "@/config/techstack";
-import { useSkillsStore } from "@/store";
+
+import { Skill } from '@/types/appData';
+import { fadeIn } from '@/lib/motionMode';
+
+type LizardCardContent = string | Skill[] | null;
 
 interface LizardCardProps {
-  badge?: string;
-  logoSrc?: string;
-  className?: string;
+
+    heading: string
+    content: LizardCardContent;
 }
+export function LizardCard({ heading, content }: LizardCardProps) {
 
-export function LizardCard({ badge, logoSrc, className = "" }: LizardCardProps) {
-  const { getFilteredSkills } = useSkillsStore();
-  const filteredSkills = getFilteredSkills();
-  const allTechStack = [...webTechStack, ...multimediaStack];
+    return (
 
-  return (
-    <div
-      className={`
-        relative rounded-sm overflow-hidden
-        border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)]
-        bg-gradient-to-r from-black/20 via-red-900/20 to-black/1 p-4
-        ${className}
-      `}
-    >
-      {/* Badge */}
-      {badge && (
-        <div className="bg-red-500 p-2 rounded-sm flex items-center justify-center mb-5 w-full relative overflow-hidden">
-          <LizardText className="text-[20px] text-white font-light uppercase">
-            {badge}
-          </LizardText>
 
-          {logoSrc && (
-            <div className="absolute right-[-45px] top-12 translate-y-1/2 w-20 h-20 pointer-events-none">
-              <LizardImage
-                src={logoSrc}
-                alt="logo"
-                objectFit="contain"
-                className="w-6 h-6 opacity-34 scale-150"
-              />
-            </div>
-          )}
-        </div>
-      )}
+        <LizardDiv>
+            <LizardText className="text-[20px] font-bold mb-4  text-center">{heading}</LizardText>
+            <LizardDiv direction="row" className='gap-2'>
+                {Array.isArray(content) ? (
+                    content.map((item: Skill, idx: number) => (
+                        <LizardDiv key={idx} className='gap-4 rounded-sm border'>
 
-      {/* Faint watermark */}
-      {logoSrc && (
-        <LizardImage
-          src={logoSrc}
-          alt="logo"
-          objectFit="contain"
-          className="absolute top-30 right-1 transform -translate-y-1/2 w-18 sm:w-16 lg:w-60 h-auto opacity-[0.03] fill-black pointer-events-none"
-        />
-      )}
+                            <LizardDiv direction="column" className="gap-2">
+                                <LizardText className="text-[25px]">{item.title}</LizardText>
+                                <LizardText className="text-[16px] text-gray-400">{item.description}</LizardText>
+                            </LizardDiv>
 
-      {/* Card content */}
-      <div className="flex flex-col p-2">
-        {filteredSkills.map((skill) => {
-          const skillIcons = allTechStack.filter((tech) =>
-            (skill.techStack ?? []).includes(tech.label)
-          );
+                            {item.techStack && item.techStack.length > 0 && (
+                                <LizardDiv direction='row' className="flex flex-wrap gap-2">
+                                    {item.techStack.map((tech, techIdx) => (
+                                        <LizardDiv
+                                            key={techIdx}
+                                            className="px-2 py-1 bg-gray-800 text-white rounded"
+                                        >
+                                            <LizardText className="text-xs">{tech}</LizardText>
+                                        </LizardDiv>
+                                    ))}
+                                </LizardDiv>
+                            )}
+                        </LizardDiv>
 
-          return (
-            <LizardIcons
-              key={skill.type}
-              stack={skillIcons.map((tech) => ({
-                ...tech,
-                icon:
-                  typeof tech.icon === "function"
-                    ? tech.icon
-                    : () => <>{tech.icon}</>,
-              }))}
-              iconClassName="w-6 h-6"
-            />
-          );
-        })}
-      </div>
-    </div>
-  );
+                    ))
+                ) : (
+                    <LizardDiv className=' w-full max-w-[800px] p-2 rounded-sm'>
+                        <LizardText className='text-[20px]'>{content}</LizardText>
+                    </LizardDiv>
+                )}
+            </LizardDiv>
+        </LizardDiv>
+
+
+    );
 }

@@ -12,6 +12,7 @@ export { AboutMeScreen } from "./screens/AboutMeScreen";
 export { LizardCenterScreen } from "./screens/LizardCenterScreen";
 export { LizardRenderScreen } from "./screens/LizardRenderScreen";
 
+
 export { LizardCard } from "./LizardCard";
 export { LizardHeader } from "./LizardHeader";
 export { LizardText } from "./LizardText";

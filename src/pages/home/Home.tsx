@@ -1,5 +1,5 @@
 
-import {LizardCardStyle, LizardInteractivePanel, LizardDiv,  LizardRenderScreen } from '@/components/common/LizardComponents'
+import {LizardCardStyle, LizardInteractivePanel, LizardDiv, LizardRenderScreen, } from '@/components/common/LizardComponents'
 import { useScreenType } from '@/hooks/useScreenType';
 
 import { slideLeft } from '@/lib/motionMode';
