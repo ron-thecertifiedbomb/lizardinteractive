@@ -1,5 +1,5 @@
 
-import {LizardCardStyle, LizardInteractivePanel, LizardDiv, LizardRenderScreen, } from '@/components/common/LizardComponents'
+import { LizardInteractivePanel, LizardDiv, LizardRenderScreen, } from '@/components/common/LizardComponents'
 import { LizardProfileCard } from '@/components/common/LizardComponents/LizardProfileCard';
 import { useScreenType } from '@/hooks/useScreenType';
 

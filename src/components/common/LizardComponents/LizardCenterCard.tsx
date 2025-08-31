@@ -8,17 +8,17 @@ interface LizardCenterCardProps {
 }
 
 export function LizardCenterCard({ className = "" }: LizardCenterCardProps) {
-  const { skills, selectedSkillType, setSelectedSkillType } = useSkillsStore();
+  const { services, selectedSkillType, setSelectedSkillType } = useSkillsStore();
 
   return (
     <div className={`flex flex-col gap-4 ${className}`}>
-      {skills.map((skill) => {
-        const isSelected = selectedSkillType === skill.type;
+      {services.map((service: any) => {
+        const isSelected = selectedSkillType === service.type;
 
         return (
           <div
-            key={skill.type}
-            onClick={() => setSelectedSkillType(skill.type)}
+            key={service.type}
+            onClick={() => setSelectedSkillType(service.type)}
             className={`
               w-full flex flex-row items-center
               rounded-sm border-[0.5px] border-[rgba(255,255,255,0.1)]
@@ -32,8 +32,8 @@ export function LizardCenterCard({ className = "" }: LizardCenterCardProps) {
             {/* Image */}
             <div className="flex-shrink-0 flex justify-center items-center p-6 border-r border-[rgba(255,255,255,0.1)]">
               <LizardImage
-                src={skill.imageSrc}
-                alt={skill.imageAlt || "logo"}
+                src={service.imageSrc}
+                alt={service.imageAlt || "logo"}
                 objectFit="contain"
                 className="w-10 h-auto"
               />
@@ -46,15 +46,15 @@ export function LizardCenterCard({ className = "" }: LizardCenterCardProps) {
                 className={`font-iceland text-[25px] mb-2 font-medium uppercase ${isSelected ? "text-[#E84A4A]" : "text-[#b3b3b3]"
                   }`}
               >
-                {skill.title}
+                {service.title}
               </LizardText>
 
-              {skill.description && (
+              {service.description && (
                 <LizardText
                   variant="p"
                   className="text-[14px] text-[#b3b3b3]  tracking-wide uppercase"
                 >
-                  {skill.description}
+                  {service.description}
                 </LizardText>
               )}
             </div>

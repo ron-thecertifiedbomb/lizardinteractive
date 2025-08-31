@@ -1,6 +1,5 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { useNavigationStore } from "@/store";
 import { LizardDiv } from "./LizardDiv";
 import { fadeIn } from "@/lib/motionMode";
 

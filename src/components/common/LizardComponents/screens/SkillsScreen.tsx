@@ -1,5 +1,5 @@
 
-import { LizardCard, LizardCardBorder, LizardCenterCard, LizardContent, LizardText, LizardThumbnail } from '@/components/common/LizardComponents'
+import {  LizardCardBorder, LizardCenterCard, LizardContent, LizardText, LizardThumbnail } from '@/components/common/LizardComponents'
 
 export function SkillsScreen() {
   return (
@@ -33,11 +33,11 @@ export function SkillsScreen() {
 
         <LizardCenterCard className='flex-1 min-w-[250px] max-w-[600px]' />
 
-        <LizardCard
+        {/* <LizardCard
           badge="Technologies"
           logoSrc="/assets/lizardinteractive.svg"
           className="flex-1 min-w-[200px] max-w-[200px] min-h-[200px]"
-        />
+        /> */}
       </div>
       </LizardContent>
     </LizardCardBorder>

@@ -4,7 +4,7 @@ import { Skill, SkillsSection } from "@/types/appData";
 
 
 interface SkillsStore {
-  services: SkillsSection;
+  services: SkillsSection[];
   hoveredSkill?: string;
   selectedSkillType?: string;
 

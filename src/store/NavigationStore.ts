@@ -1,8 +1,8 @@
 
 import { navigationPanels } from "@/config/navigationPanels";
 import { create } from "zustand";
-import type { AppData, NavigationPanel } from "@/types/appData";
-import { useAppDataStore } from "./AppDataStore";
+import type { AppData } from "@/types/appData";
+
 
 
 
