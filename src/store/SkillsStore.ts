@@ -1,20 +1,22 @@
 import { create } from "zustand";
-import { Skill, appData } from "@/config/appData";
+import { appData } from "@/config/appData";
+import { Skill, SkillsSection } from "@/types/appData";
+
 
 interface SkillsStore {
-  skills: Skill[];
+  skills: SkillsSection;
   hoveredSkill?: string;
   selectedSkillType?: string;
 
   setHoveredSkill: (skillType?: string) => void;
   setSelectedSkillType: (type?: string) => void;
-  getFilteredSkills: () => Skill[];
+  getFilteredSkills: () => SkillsSection[];
 }
 
 export const useSkillsStore = create<SkillsStore>((set, get) => ({
-  skills: appData.skills,
+  skills: appData.skills.items,
   hoveredSkill: undefined,
-  selectedSkillType: appData.skills[0]?.type,
+  selectedSkillType: appData.skills.items[0]?.type,
 
   setHoveredSkill: (skillType) => set({ hoveredSkill: skillType }),
   setSelectedSkillType: (type) => set({ selectedSkillType: type }),
@@ -22,6 +24,9 @@ export const useSkillsStore = create<SkillsStore>((set, get) => ({
   getFilteredSkills: () => {
     const { skills, selectedSkillType } = get();
     if (!selectedSkillType) return skills;
-    return skills.filter((skill) => skill.type === selectedSkillType);
+    return appData.skills.items.filter(
+      (item: Skill ) => item.type === selectedSkillType
+    );
   },
 }));
+

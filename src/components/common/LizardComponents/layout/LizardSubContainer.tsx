@@ -10,9 +10,9 @@ interface LizardSubContainerProps {
 }
 
 export function LizardSubContainer({ children, className = "" }: LizardSubContainerProps) {
-  const { currentScreen } = useNavigationStore();
 
-  const isIntroScreen = currentScreen === "IntroductionScreen";
+
+
 
   return (
     <LizardDiv
@@ -23,9 +23,9 @@ export function LizardSubContainer({ children, className = "" }: LizardSubContai
         className
       )}
     >
-      {isIntroScreen && (
+      
         <div className="absolute inset-0 -z-10 w-full h-full bg-[url('/assets/cover.svg')] bg-cover bg-center" />
-      )}
+
       {children}
     </LizardDiv>
   );

@@ -6,10 +6,11 @@ export { LizardDiv } from "../LizardComponents/layout/LizardDiv";
 export { LizardLayout } from "../LizardComponents/layout/LizardLayout";
 
 export { SkillsScreen } from "./screens/SkillsScreen";
-export { IntroductionScreen } from "./screens/IntroductionScreen";
+
 export { ProjectScreen } from "./screens/ProjectScreen";
 export { AboutMeScreen } from "./screens/AboutMeScreen";
 export { LizardCenterScreen } from "./screens/LizardCenterScreen";
+export { LizardRenderScreen } from "./screens/LizardRenderScreen";
 
 export { LizardCard } from "./LizardCard";
 export { LizardHeader } from "./LizardHeader";

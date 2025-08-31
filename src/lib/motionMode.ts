@@ -30,7 +30,7 @@ export const fadeIn: {
 } = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  transition: { duration: 1, ease: "easeOut" },
+  transition: { duration: 1.3, ease: "easeOut" },
 };
 
 // Slide down with fade

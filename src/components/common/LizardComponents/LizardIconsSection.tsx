@@ -37,7 +37,7 @@ export function LizardIconsSection({
           {stack.map((tech) => (
             <div
               key={tech.label}
-              className="flex-shrink-0 flex items-center justify-center mx-4"
+              className="flex-shrink-0 flex items-center justify-center"
             >
               <LizardTechStackLogos stack={[tech]} className={iconClassName} />
             </div>

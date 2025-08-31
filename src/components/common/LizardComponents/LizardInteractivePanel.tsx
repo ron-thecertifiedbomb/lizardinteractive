@@ -1,10 +1,11 @@
 import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardComponents";
-import { appData } from "@/config/appData";
+
 import { navigationPanels } from "@/config/navigationPanels";
 
 import { useScreenType } from "@/hooks/useScreenType";
 
 import { useNavigationStore } from "@/store";
+
 import { AppData } from "@/types/appData";
 
 type DisabledItem = {
@@ -41,22 +42,14 @@ export function LizardInteractivePanel({
 
 
 
-  const { section, activePanelKey, setSection,  setActivePanel, showPanel, setShowPanel, } =
+  const { activePanelKey, setSection, setActivePanel, showPanel, setShowPanel, } =
     useNavigationStore();
-  
-  
-  
-  const data = section;
 
 
-  console.log(data)
+
+
   const { isMobile } = useScreenType();
 
-
-
-
-
-  
   const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
     disabled && items.length > 0
       ? [{ heading: "single-disabled", items, overview: "" }]
@@ -71,14 +64,14 @@ export function LizardInteractivePanel({
     >
       {panelsToRender.map((panel) => {
         const isDisabledCard = "items" in panel;
-        const isActive = !isDisabledCard && activePanelKey === panel.heading;
-        console.log('active panel', activePanelKey)
+        const isActive = !isDisabledCard && activePanelKey === panel.key;
+
         return (
           <LizardDiv
             key={panel.heading}
             className={`min-h-0 h-auto box-content rounded-sm flex flex-col pl-1 lg:pl-2 transition-colors duration-300 ease-in-out
     ${disabled || isDisabledCard
-              ? "cursor-not-allowed bg-[#E84A4A] text-gray-400"
+                ? "cursor-not-allowed bg-[#E84A4A] text-gray-400"
                 : "cursor-pointer hover:opacity-[0.8] hover:shadow-lg"}
     ${!disabled && !isDisabledCard && isActive
                 ? "bg-[#E84A4A] text-white"
@@ -89,8 +82,9 @@ export function LizardInteractivePanel({
   `}
             onClick={() => {
               if (disabled || isDisabledCard) return;
+
               setSection(panel.heading as keyof AppData);
-              setActivePanel(panel.heading);
+              setActivePanel(panel.key);
               if (isMobile) {
                 setShowPanel(false);
               }
@@ -105,7 +99,7 @@ export function LizardInteractivePanel({
                   </div>
                 )
               ) : (
-                  <div className="text-[12px] sm:text-[20px] lg:text-[25px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
+                <div className="text-[12px] sm:text-[20px] lg:text-[25px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
                 </div>
               )}
@@ -141,12 +135,12 @@ export function LizardInteractivePanel({
               </div>
             ) : (
               <div className="bg-black flex-1 flex px-1 lg:px-2">
-                  {"overview" in panel && (
+                {"overview" in panel && (
                   <LizardText
                     variant="p"
-                      className="text-[8px] sm:text-[12px] lg:text-[16px] p-1 sm:p-2 lg:p-3 text-[#b3b3b3] font-light"
+                    className="text-[8px] sm:text-[12px] lg:text-[16px] p-1 sm:p-2 lg:p-3 text-[#b3b3b3] font-light"
                   >
-                      {panel.overview.toUpperCase()}
+                    {panel.overview.toUpperCase()}
                   </LizardText>
                 )}
               </div>
