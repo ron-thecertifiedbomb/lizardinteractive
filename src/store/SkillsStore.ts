@@ -4,7 +4,7 @@ import { Skill, SkillsSection } from "@/types/appData";
 
 
 interface SkillsStore {
-  skills: SkillsSection;
+  services: SkillsSection;
   hoveredSkill?: string;
   selectedSkillType?: string;
 
@@ -14,18 +14,18 @@ interface SkillsStore {
 }
 
 export const useSkillsStore = create<SkillsStore>((set, get) => ({
-  skills: appData.skills.items,
+  services: appData.services.items,
   hoveredSkill: undefined,
-  selectedSkillType: appData.skills.items[0]?.type,
+  selectedSkillType: appData.services.items[0]?.type,
 
   setHoveredSkill: (skillType) => set({ hoveredSkill: skillType }),
   setSelectedSkillType: (type) => set({ selectedSkillType: type }),
 
   getFilteredSkills: () => {
-    const { skills, selectedSkillType } = get();
-    if (!selectedSkillType) return skills;
-    return appData.skills.items.filter(
-      (item: Skill ) => item.type === selectedSkillType
+    const { services, selectedSkillType } = get();
+    if (!selectedSkillType) return services;
+    return appData.services.items.filter(
+      (item: Skill) => item.type === selectedSkillType
     );
   },
 }));

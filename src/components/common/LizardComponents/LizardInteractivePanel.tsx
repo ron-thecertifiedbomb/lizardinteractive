@@ -99,7 +99,7 @@ export function LizardInteractivePanel({
                   </div>
                 )
               ) : (
-                <div className="text-[12px] sm:text-[20px] lg:text-[25px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
+                <div className="text-[12px] sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
                 </div>
               )}
@@ -138,7 +138,7 @@ export function LizardInteractivePanel({
                 {"overview" in panel && (
                   <LizardText
                     variant="p"
-                    className="text-[8px] sm:text-[12px] lg:text-[16px] p-1 sm:p-2 lg:p-3 text-[#b3b3b3] font-light"
+                    className="text-[8px] sm:text-[12px] lg:text-[14px] p-1 sm:p-2 lg:p-3 text-[#b3b3b3] font-light"
                   >
                     {panel.overview.toUpperCase()}
                   </LizardText>

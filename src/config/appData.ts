@@ -4,7 +4,7 @@ export const appData: AppData = {
   overview: {
     heading: "Overview",
     content:
-      "This is my LizardInteractive portfolio — my own business. I am a creative and passionate individual with a strong love for learning.",
+      "This is the LizardInteractive portfolio — my own business. I am a creative and passionate individual with a strong love for learning.",
   },
 
   projects: {
@@ -33,8 +33,8 @@ export const appData: AppData = {
     ],
   },
 
-  skills: {
-    heading: "Skills",
+  services: {
+    heading: "Services",
     content: "Here are my core skills and technologies I work with:",
     items: [
       {

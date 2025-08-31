@@ -53,6 +53,6 @@ export interface AboutMe {
 export interface AppData {
   overview: Overview;
   projects: Projects;
-  skills: Skills;
+  services: Services;
   aboutme: AboutMe;
 }

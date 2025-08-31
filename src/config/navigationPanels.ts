@@ -5,7 +5,7 @@ export const navigationPanels: NavigationPanel[] = [
     key: "overview",
     heading: "Overview",
     overview:
-      "This is my LizardInteractive portfolio — my own business. I am a creative and passionate individual with a strong love for learning.",
+      "This is the LizardInteractive portfolio — my own business. I am a creative and passionate individual with a strong love for learning.",
     section: "overview",
     isActive: true,
   },
@@ -17,10 +17,10 @@ export const navigationPanels: NavigationPanel[] = [
     isActive: false,
   },
   {
-    key: "skills",
-    heading: "Skills",
+    key: "services",
+    heading: "Services",
     overview: "What I offer & technologies I work with",
-    section: "skills",
+    section: "services",
     isActive: false,
   },
   {
