@@ -67,28 +67,25 @@ export default function Home() {
   }, [isDesktop, , isTablet, setShowPanel]);
 
 
-
-
   return (
-    <div className="flex w-full flex-1 max-w-[1800px] mx-auto justify-center gap-4 px-2 lg:px-4">
-
+    <LizardDiv direction='row' className="flex w-full flex-1 mx-auto justify-center bg-[url('/assets/cover.svg')] bg-center bg-no-repeat">
       {isDesktop && (
-        <div className="flex w-[10px] sm:w-[120px] lg:w-[140px] lg:justify-center items-start">
+        <LizardDiv className=" pt-13 flex w-[10px] sm:w-[120px] lg:w-[140px]">
           <LizardProfileCard
             items={cardData}
             logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
             className="w-full h-auto"
           />
-        </div>
+        </LizardDiv>
       )}
 
-      <LizardDiv className="flex flex-col flex-1 w-full justify-center">
+      <LizardDiv className="flex flex-col flex-1 w-full items-center justify-center px-10 ">
         <LizardRenderScreen section={section} />
       </LizardDiv>
 
 
       {isDesktop && (
-        <LizardDiv animation={slideLeft} className="flex w-[10px] sm:w-[120px] lg:w-[140px] items-start">
+        <LizardDiv animation={slideLeft} className=" pt-13 flex w-[10px] sm:w-[120px] lg:w-[140px] items-start">
           <LizardInteractivePanel
             disabled
             items={panelData}
@@ -98,6 +95,6 @@ export default function Home() {
         </LizardDiv>
       )}
 
-    </div>
+    </LizardDiv>
   )
 }

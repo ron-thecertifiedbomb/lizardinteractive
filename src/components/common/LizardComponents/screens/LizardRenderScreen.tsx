@@ -1,4 +1,4 @@
-import { LizardDiv, LizardCardBorder, LizardCard, LizardCarousel, LizardText } from '@/components/common/LizardComponents'
+import { LizardDiv, LizardCardBorder, LizardCarousel, LizardText } from '@/components/common/LizardComponents'
 import { fadeIn } from '@/lib/motionMode';
 import { useSectionStore } from '@/store';
 
@@ -22,8 +22,8 @@ export function LizardRenderScreen({ section }: LizardRenderScreenProps) {
   const { heading, items } = currentSectionData;
 
   return (
-    <LizardDiv className='flex h-full w-full lg:p-15 border rounded-xl  shadow-[0_0_20px_#ffffff10]'>
-      <LizardCardBorder cornerSize="100px" className="py-2 px-2 lg:px-5 flex-1">
+    <LizardDiv className='flex w-full h-full max-h-[740px] border rounded-xl  shadow-[0_0_20px_#ffffff10]'>
+      <LizardCardBorder cornerSize="100px" className="flex-1 py-14 px-8 lg:px-15 w-full">
         <LizardDiv
           key={section}
           animation={fadeIn}

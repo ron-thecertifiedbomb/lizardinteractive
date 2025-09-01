@@ -9,10 +9,6 @@ interface LizardSubContainerProps {
 }
 
 export function LizardSubContainer({ children, className = "" }: LizardSubContainerProps) {
-
-
-
-
   return (
     <LizardDiv
       animation={fadeIn}
@@ -22,8 +18,8 @@ export function LizardSubContainer({ children, className = "" }: LizardSubContai
         className
       )}
     >
-      
-        <div className="absolute inset-0 -z-10 w-full h-full bg-[url('/assets/cover.svg')] bg-cover bg-center" />
+
+      {/* <div className="absolute inset-0 -z-10 w-full h-full bg-[url('/assets/cover.svg')] bg-cover bg-center" /> */}
 
       {children}
     </LizardDiv>

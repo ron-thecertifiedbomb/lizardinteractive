@@ -20,8 +20,6 @@ export function LizardMainContainer({ children, className = "" }: LizardMainCont
         className
       )}
     >
-   
-
       {children}
     </main>
   );

@@ -4,9 +4,11 @@ export { LizardContent } from "../LizardComponents/layout/LizardContent";
 export { LizardSubContainer } from "../LizardComponents/layout/LizardSubContainer";
 export { LizardDiv } from "../LizardComponents/layout/LizardDiv";
 export { LizardLayout } from "../LizardComponents/layout/LizardLayout";
+export { LizardHeader } from "./LizardHeader";
+export { LizardFooter } from "./LizardFooter";
+
 
 export { SkillsScreen } from "./screens/SkillsScreen";
-
 export { ProjectScreen } from "./screens/ProjectScreen";
 export { AboutMeScreen } from "./screens/AboutMeScreen";
 export { LizardCenterScreen } from "./screens/LizardCenterScreen";
@@ -14,7 +16,6 @@ export { LizardRenderScreen } from "./screens/LizardRenderScreen";
 
 
 export { LizardCard } from "./LizardCard";
-export { LizardHeader } from "./LizardHeader";
 export { LizardText } from "./LizardText";
 export { LizardCenterCard } from "./LizardCenterCard";
 export { LizardImage } from "./LizardImage";

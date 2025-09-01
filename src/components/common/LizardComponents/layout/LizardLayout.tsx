@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { LizardDiv, LizardHeader, LizardInteractiveNavigationControlSection, LizardInteractivePanel, LizardMainContainer, LizardSubContainer } from "@/components/common/LizardComponents";
+import { LizardFooter, LizardHeader, LizardMainContainer, LizardSubContainer } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
 import { slideUp } from "@/lib/motionMode";
@@ -63,29 +63,11 @@ export function LizardLayout() {
     }
 
     return (
-        <LizardMainContainer>
+        <LizardMainContainer className="bg-black">
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative ">
+            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative  bg-cover bg-center ">
                 <Outlet />
-
-                {/* Panel wrapper to detect outside clicks */}
-                <LizardDiv className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none w-full">
-                    <LizardDiv
-                        animation={slideUp}
-                        className="relative w-full flex justify-center items-center overflow-hidden pointer-events-auto"
-                    >
-                        <LizardInteractivePanel cardClassName="w-full max-w-[230px]" />
-                    </LizardDiv>
-
-                    {isMobile && (
-                        <LizardDiv
-                            animation={slideUp}
-                            className="flex justify-center w-full pointer-events-auto"
-                        >
-                            <LizardInteractiveNavigationControlSection />
-                        </LizardDiv>
-                    )}
-                </LizardDiv>
+                <LizardFooter animation="slideup" footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' screenType={isMobile} />
             </LizardSubContainer>
         </LizardMainContainer>
     );
