@@ -5,6 +5,13 @@ export const appData: AppData = {
     heading: "Overview",
     content:
       "This is the LizardInteractive portfolio — my own business. I am a creative and passionate individual with a strong love for learning.",
+    items: [
+      {
+        title: "Lizard Interactive Story",
+        description:
+          "I am a creative and passionate individual with a strong love for learning. I thrive on exploring new ideas, embracing challenges, and constantly growing both personally and professionally.",
+      },
+    ],
   },
 
   projects: {
@@ -39,8 +46,6 @@ export const appData: AppData = {
     items: [
       {
         type: "Web Development",
-        imageSrc: "/assets/cardimg.png",
-        imageAlt: "Laptop with code editor",
         title: "Web Development",
         description:
           "Building modern, responsive websites using React, Next.js, and TailwindCSS.",
@@ -58,8 +63,6 @@ export const appData: AppData = {
       },
       {
         type: "Mobile Development",
-        imageSrc: "/assets/cardimg1.png",
-        imageAlt: "Mobile app interface",
         title: "Mobile Development",
         description:
           "Creating cross-platform mobile apps with React Native for both iOS and Android.",
@@ -74,8 +77,6 @@ export const appData: AppData = {
       },
       {
         type: "Fullstack Application",
-        imageSrc: "/assets/cardimg2.png",
-        imageAlt: "Fullstack workflow diagram",
         title: "Fullstack Application",
         description:
           "Developing scalable fullstack applications with seamless frontend and backend integration.",
@@ -92,8 +93,6 @@ export const appData: AppData = {
       },
       {
         type: "Video Editing",
-        imageSrc: "/assets/cardimg3.png",
-        imageAlt: "Video editing timeline",
         title: "Video Editing",
         description:
           "Producing high-quality video content with professional editing, transitions, and effects.",
@@ -112,5 +111,12 @@ export const appData: AppData = {
     heading: "About Me",
     content:
       "I am a creative and passionate individual with a strong love for learning. I thrive on exploring new ideas, embracing challenges, and constantly growing both personally and professionally.",
+    items: [
+      {
+        title: "About Lizard Interactive",
+        description:
+          "I am a creative and passionate individual with a strong love for learning. I thrive on exploring new ideas, embracing challenges, and constantly growing both personally and professionally.",
+      },
+    ],
   },
 };

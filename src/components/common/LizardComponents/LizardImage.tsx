@@ -1,7 +1,7 @@
 
 
 interface LizardImageProps {
-  src: string;
+  src?: string;
   alt?: string;
   className?: string;
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";

@@ -1,13 +1,13 @@
 import { create } from "zustand";
-import type { AppData } from "@/types/appData";
+import type { AppData, Items } from "@/types/appData";
 import { useAppDataStore } from "./AppDataStore";
 
 interface SectionStore {
-  currentSectionData: { heading: string; content: string | any[] } | null;
+  currentSectionData: { heading: string; items: Items[] } | null;
 
   getSectionByHeading: (
     heading: string
-  ) => { heading: string; content: string | any[] } | null;
+  ) => { heading: string; items: Items[] } | null;
 
   setCurrentSectionData: (heading: string) => void;
 }
@@ -26,9 +26,9 @@ export const useSectionStore = create<SectionStore>((set, get) => ({
 
     const section = appData[sectionKey];
     if ("items" in section) {
-      return { heading: section.heading, content: section.items };
+      return { heading: section.heading, items: section.items };
     }
-    return { heading: section.heading, content: section.content };
+    return { heading: section.heading, items: section.items };
   },
 
   setCurrentSectionData: (heading: string) => {
