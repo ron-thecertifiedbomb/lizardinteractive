@@ -1,6 +1,6 @@
 
 
-import { Lizard } from "@/components/icons/svg";
+import { Lizard, LizardIcon, LizardStroke } from "@/components/icons/svg";
 import { LizardLogoContainer } from "./LizardLogoContainer";
 interface LizardInteractiveButtonProps {
   onClick?: () => void;
@@ -23,8 +23,11 @@ export function LizardInteractiveButton({
 
     >
       <LizardLogoContainer
-        svg={Lizard}
-        className="w-6 h-6 sm:w-6 sm:h-6  fill-white stroke-white"
+        svg={LizardIcon}
+        logoStroke=" stroke-white stroke-[7]"
+        logoWidth="w-10"
+        logoHeight="h-10"
+        className=" drop-shadow-[0_0_8px_rgba(255,255,255,3)]"
       />
     </div>
 

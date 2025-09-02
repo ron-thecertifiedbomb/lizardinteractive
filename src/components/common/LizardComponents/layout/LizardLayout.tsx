@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import {  LizardProfileCard,  } from "@/components/common/LizardComponents";
+import { LizardProfileCard, } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
-import { slideLeft, slideRight, slideUp} from "@/lib/motionMode";
+import { slideLeft, slideRight, slideUp } from "@/lib/motionMode";
 import { useScreenType } from "@/hooks/useScreenType";
 import { profile, tools } from "@/config/appData";
 import { LizardMainContainer } from "./LizardMainContainer";
 import { LizardHeader } from "../LizardHeader";
 import { LizardSubContainer } from "./LizardSubContainer";
 import { LizardFooter } from "../LizardFooter";
+import { Lizard, LizardTitle } from "@/components/icons";
 
 
 export function LizardLayout() {
@@ -68,20 +69,20 @@ export function LizardLayout() {
     return (
         <LizardMainContainer className="bg-black">
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1380px] relative   overflow-hidden  ">
-                {/* <LizardProfileCard
-                    cardPosition={'absolute top-14 left-[-170px]'}
+            <LizardSubContainer className="flex-1 w-full max-w-[1380px] relative overflow-hidden  ">
+                <LizardProfileCard
+                    cardPosition={'absolute top-14 left-[12px]'}
                     animation={slideRight}
-                    selectedLogo={5}
+                    svg={LizardTitle}
                     items={profile}
                     logoFill="fill-none"
-                    logoPadding="p-1"
+                    logoPadding=""
                     logoHeight="h-30"
-                    logoWidth="w-30"
-                    logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
+                    logoWidth="w-40"
+                    logoStroke=" stroke-[#E84A4A] stroke-[3]"
                     cardWidth="w-40"
                     transition='duration-500 ease-in-out '
-                /> */}
+                />
                 <Outlet />
                 {/* <LizardProfileCard
                     animation={slideLeft}

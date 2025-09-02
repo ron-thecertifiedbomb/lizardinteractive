@@ -34,6 +34,7 @@ interface LizardProfileCardProps {
 }
 
 export function LizardProfileCard({
+    svg,
     cardPosition,
     animation,
     cardWidth,
@@ -51,7 +52,7 @@ export function LizardProfileCard({
 
             <LizardCardBorder className="mb-6 sm:mb-8">
                 <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
-                    <LizardLogoContainer svg={Lizard} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
+                    <LizardLogoContainer svg={svg} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
                 </LizardDiv>
             </LizardCardBorder>
             {items.map((item, index) => (

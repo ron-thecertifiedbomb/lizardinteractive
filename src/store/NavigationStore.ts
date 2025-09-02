@@ -11,11 +11,17 @@ interface NavigationStore {
   setActivePanel: (panelKey: string) => void;
 }
 
+
+
+
 export const useNavigationStore = create<NavigationStore>((set) => ({
+
   section: navigationPanels[0].section,
   setSection: (sectionKey) => set({ section: sectionKey }),
   showPanel: false,
   setShowPanel: (value) => set({ showPanel: value }),
   activePanelKey: null,
   setActivePanel: (panelKey) => set({ activePanelKey: panelKey }),
+
+
 }));
