@@ -1,5 +1,6 @@
 
-import {  LizardDiv, LizardText } from "@/components/common/LizardComponents";
+import {  LizardText } from "@/components/common/LizardComponents";
+import { LizardDiv } from "@/components/common/LizardComponents/layout";
 import { slideRight } from "@/lib/motionMode";
 
 export function PlayGround() {

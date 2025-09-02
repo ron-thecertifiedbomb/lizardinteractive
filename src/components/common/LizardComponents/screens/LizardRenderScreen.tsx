@@ -38,16 +38,7 @@ export function LizardRenderScreen({ section }: LizardRenderScreenProps) {
             <LizardCarousel items={items} >
             </LizardCarousel>
           </LizardDiv>
-
-
         </LizardDiv>
-
-
-
-
-
-
-
       </LizardCardBorder>
     </LizardDiv>
   );

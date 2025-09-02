@@ -1,5 +1,6 @@
-import { LizardText, LizardDiv, LizardImage } from '@/components/common/LizardComponents'
+import { LizardText, LizardImage } from '@/components/common/LizardComponents'
 import { Items } from '@/types/appData';
+import { LizardDiv } from './layout';
 
 
 

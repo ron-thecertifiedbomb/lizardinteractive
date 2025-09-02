@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.5850977"
+     inkscape:cx="-21.134344"
+     inkscape:cy="142.8934"
+     inkscape:window-width="2560"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g3"
+     transform="matrix(0.76522712,0,0,0.76522712,295.9623,3.1785374)"
+     inkscape:export-filename="logostroke.svg"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <g
+       id="g2"
+       transform="translate(-538.92498,17.890453)">
+      <g
+         id="g1">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#88fb59;stroke-width:1.559;stroke-dasharray:none;stroke-opacity:1"
+           d="m 273.69084,42.752057 -43.65993,74.576153 h 89.90424 l -21.97832,-35.436633 -15.41488,0.202528 10.84045,19.855145 -35.40509,-0.20254 26.45463,-41.990555 z"
+           id="path1" />
+      </g>
+      <path
+         style="fill:none;fill-opacity:1;stroke:#88fb59;stroke-width:1.559;stroke-dasharray:none;stroke-opacity:1"
+         d="m 289.85849,67.177002 -9.00395,9.504928 h 15.15466 z"
+         id="path2" />
+    </g>
+    <ellipse
+       style="display:inline;fill:none;fill-opacity:1;stroke:#88fb59;stroke-width:1.78494;stroke-dasharray:none;stroke-opacity:1"
+       cx="-266.67578"
+       cy="110.30878"
+       rx="71.652199"
+       ry="73.865814"
+       id="ellipse2" />
+    <ellipse
+       style="display:inline;fill:none;fill-opacity:1;stroke:#88fb59;stroke-width:1.559;stroke-dasharray:none;stroke-opacity:1"
+       cx="-266.67578"
+       cy="110.30878"
+       rx="62.582241"
+       ry="64.515648"
+       id="ellipse2-4" />
+  </g>
+</svg>

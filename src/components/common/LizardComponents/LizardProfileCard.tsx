@@ -2,32 +2,32 @@
 
 import {
     LizardCardBorder,
-    LizardDiv,
-
-    LizardLogo,
-
+    LizardLogoContainer,
     LizardText,
 } from "@/components/common/LizardComponents";
 
 import { HTMLMotionProps } from "framer-motion";
+import { LizardDiv } from "./layout";
+import { Lizard } from "@/components/icons";
+
 
 interface LizardCardItem {
     label: string;
     value: string;
     valueClassName?: string;
-    labelProps?: React.ComponentProps<typeof LizardText>; // extra props for label
-    valueProps?: React.ComponentProps<typeof LizardText>; // extra props for value
+    labelProps?: React.ComponentProps<typeof LizardText>;
+    valueProps?: React.ComponentProps<typeof LizardText>;
 }
 
 interface LizardProfileCardProps {
+    svg: React.FC<React.SVGProps<SVGSVGElement>>;
     transition?: string;
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
     cardWidth?: string;
-    logoFill: string;   
+    logoFill: string;
     logoStroke: string;
     logoPadding: string;
-    selectedLogo: number;
     logoHeight: string;
     logoWidth: string;
     items: LizardCardItem[];
@@ -43,7 +43,6 @@ export function LizardProfileCard({
     logoHeight,
     logoWidth,
     logoPadding,
-    selectedLogo,
     items,
 }: LizardProfileCardProps) {
     return (
@@ -52,7 +51,7 @@ export function LizardProfileCard({
 
             <LizardCardBorder className="mb-6 sm:mb-8">
                 <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
-                    <LizardLogo selectedLogo={selectedLogo} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
+                    <LizardLogoContainer svg={Lizard} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
                 </LizardDiv>
             </LizardCardBorder>
             {items.map((item, index) => (

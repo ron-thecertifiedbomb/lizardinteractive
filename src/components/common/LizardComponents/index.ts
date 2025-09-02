@@ -1,19 +1,3 @@
-export { LizardSection } from "../LizardComponents/layout/LizardSection";
-export { LizardMainContainer } from "../LizardComponents/layout/LizardMainContainer";
-export { LizardContent } from "../LizardComponents/layout/LizardContent";
-export { LizardSubContainer } from "../LizardComponents/layout/LizardSubContainer";
-export { LizardDiv } from "../LizardComponents/layout/LizardDiv";
-export { LizardLayout } from "../LizardComponents/layout/LizardLayout";
-export { LizardHeader } from "./LizardHeader";
-export { LizardFooter } from "./LizardFooter";
-
-
-export { SkillsScreen } from "./screens/SkillsScreen";
-export { ProjectScreen } from "./screens/ProjectScreen";
-export { AboutMeScreen } from "./screens/AboutMeScreen";
-export { LizardCenterScreen } from "./screens/LizardCenterScreen";
-export { LizardRenderScreen } from "./screens/LizardRenderScreen";
-
 
 export { LizardCard } from "./LizardCard";
 export { LizardText } from "./LizardText";
@@ -34,24 +18,5 @@ export { LizardMarquee } from "./LizardMarquee";
 export { LizardCarousel } from "./LizardCarousel";
 export { LizardThumbnail } from "./LizardThumbnail";
 export { LizardTechStackLogos } from "./LizardTechStackLogos";
+export { LizardLogoContainer } from "./LizardLogoContainer";
 
-export { LizardLogo } from "./LizardLogo";
-// import LizardTextLogo from "@/components/assets/text.svg";
-// import LizardLogoAndTitle from "@/components/assets/lizardinteractive.svg";
-// import LizardLogoSVG from "@/components/assets/lizardicon.svg";
-// import CoverSVG from "@/components/assets/cover.svg";
-
-// export const LizardTitle = LizardTextLogo as unknown as React.FC<
-//   React.SVGProps<SVGSVGElement>
-// >;
-
-// export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
-//   React.SVGProps<SVGSVGElement>
-// >;
-
-// export const LizardLogo = LizardLogoSVG as unknown as React.FC<
-//   React.SVGProps<SVGSVGElement>
-// >;
-// export const Cover = CoverSVG as unknown as React.FC<
-//   React.SVGProps<SVGSVGElement>
-// >;

@@ -2,49 +2,46 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="370.60947mm"
-   height="49.21283mm"
-   viewBox="0 0 370.60946 49.21283"
+   width="90.852982mm"
+   height="12.064251mm"
+   viewBox="0 0 90.852982 12.064251"
    version="1.1"
    id="svg1"
-   xml:space="preserve"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs1" 
-     
-     
-      /><g
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
      id="layer1"
-     transform="translate(-174.04008,-234.11377)"><path
-
-       d="m 198.23072,239.80158 -15.93936,27.22613 h 32.82269 l -8.02412,-12.93675 -5.6278,0.0693 3.95762,7.24873 -12.92575,-0.0693 9.658,-15.32988 z"
-       id="path1" 
-             width="310.86102"
-       height="37.861282"
-       />
-       
-       <path
-  
-       d="m 204.42383,249.24175 -3.28623,3.47021 h 5.53269 z"
-       id="path2" /><ellipse
-       id="path3"
-       cx="197.94064"
-       cy="258.72018"
-       rx="22.847834"
-       ry="23.55369" /><text
-       xml:space="preserve"
-       
-       x="244.74158"
-       y="266.83426"
-       id="text1-1"><tspan
-         id="tspan1-1"
-         
-         x="244.74158"
-         y="266.83426">LIZARD INTERACTIVE</tspan></text><rect
-
-       id="rect3"
-       width="170"
-       height="37.861282"
-       x="232.88182"
-       y="238.97984"
-       ry="5.0999207" /></g></svg>
+     transform="translate(313.4599,-434.76805)">
+    <path
+       style="fill:#88fb59;fill-opacity:1;stroke:none;stroke-width:0.0500326;stroke-opacity:1"
+       d="m -307.70866,436.84313 -3.9075,6.67446 h 8.0463 l -1.96703,-3.17153 -1.37961,0.0181 0.9702,1.77701 -3.1687,-0.0181 2.36765,-3.75809 z"
+       id="path1" />
+    <path
+       style="fill:#88fb59;fill-opacity:1;stroke-width:0.0500326"
+       d="m -306.26168,439.02913 -0.80584,0.85067 h 1.35632 z"
+       id="path2" />
+    <ellipse
+       style="display:inline;fill:none;fill-opacity:1;stroke:#88fb59;stroke-width:0.516141;stroke-dasharray:none;stroke-opacity:1"
+       cx="-307.6008"
+       cy="440.8002"
+       rx="5.6010218"
+       ry="5.7740583"
+       id="ellipse2" />
+    <text
+       style="font-weight:500;font-size:6.25037px;font-family:Gotham;dominant-baseline:middle;text-anchor:middle;fill:none;stroke:#88fb59;stroke-width:0.205965;stroke-opacity:1"
+       x="-260.93222"
+       y="440.60159"
+       dy="0.73543364"
+       id="text2">LIZARD INTERACTIVE</text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#88fb59;stroke-width:0.444543;stroke-linecap:round;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1"
+       width="76.205872"
+       height="9.2814865"
+       x="-299.03506"
+       y="435.96097"
+       ry="1.2502177"
+       id="rect2" />
+  </g>
+</svg>

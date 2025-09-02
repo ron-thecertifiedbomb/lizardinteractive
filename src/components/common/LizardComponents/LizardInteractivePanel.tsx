@@ -1,4 +1,4 @@
-import { LizardDiv, LizardImage, LizardText } from "@/components/common/LizardComponents";
+import {  LizardImage, LizardText } from "@/components/common/LizardComponents";
 
 import { navigationPanels } from "@/config/navigationPanels";
 
@@ -7,6 +7,7 @@ import { useScreenType } from "@/hooks/useScreenType";
 import { useNavigationStore } from "@/store";
 
 import { AppData } from "@/types/appData";
+import { LizardDiv } from "./layout";
 
 type DisabledItem = {
   label: string;

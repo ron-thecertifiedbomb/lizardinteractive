@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { LizardImage, LizardMainContainer, LizardText } from ".";
+import { LizardImage, LizardText } from ".";
+import { LizardMainContainer } from "./layout";
 
 
 interface LizardLoadingBarProps {

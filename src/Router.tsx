@@ -3,7 +3,8 @@ import NotMatch from "./pages/NotMatch";
 import Home from "./pages/home/Home";
 import Sample from "./pages/Sample";
 import { PlayGround } from "@/pages";
-import { LizardLayout } from "./components/common/LizardComponents";
+import { LizardLayout } from "./components/common/LizardComponents/layout";
+
 
 
 export default function Router() {

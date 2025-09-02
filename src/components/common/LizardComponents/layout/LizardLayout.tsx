@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { LizardFooter, LizardHeader, LizardMainContainer, LizardProfileCard, LizardSubContainer } from "@/components/common/LizardComponents";
+import {  LizardProfileCard,  } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
-import { slideLeft, slideRight} from "@/lib/motionMode";
+import { slideLeft, slideRight, slideUp} from "@/lib/motionMode";
 import { useScreenType } from "@/hooks/useScreenType";
 import { profile, tools } from "@/config/appData";
-
+import { LizardMainContainer } from "./LizardMainContainer";
+import { LizardHeader } from "../LizardHeader";
+import { LizardSubContainer } from "./LizardSubContainer";
+import { LizardFooter } from "../LizardFooter";
 
 
 export function LizardLayout() {
@@ -62,12 +65,11 @@ export function LizardLayout() {
             />
         );
     }
-
     return (
         <LizardMainContainer className="bg-black">
             <LizardHeader />
             <LizardSubContainer className="flex-1 w-full max-w-[1380px] relative   overflow-hidden  ">
-                <LizardProfileCard
+                {/* <LizardProfileCard
                     cardPosition={'absolute top-14 left-[-170px]'}
                     animation={slideRight}
                     selectedLogo={5}
@@ -79,9 +81,9 @@ export function LizardLayout() {
                     logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
                     cardWidth="w-40"
                     transition='duration-500 ease-in-out '
-                />
+                /> */}
                 <Outlet />
-                <LizardProfileCard
+                {/* <LizardProfileCard
                     animation={slideLeft}
                     selectedLogo={5}
                     items={tools}
@@ -93,8 +95,8 @@ export function LizardLayout() {
                     logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
                     cardWidth="w-40"
                     transition='duration-500 ease-in-out '
-                />
-                <LizardFooter animation="slideup" footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' screenType={isMobile} />
+                /> */}
+                <LizardFooter animation={slideUp} footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' screenType={isMobile} />
             </LizardSubContainer>
         </LizardMainContainer>
     );

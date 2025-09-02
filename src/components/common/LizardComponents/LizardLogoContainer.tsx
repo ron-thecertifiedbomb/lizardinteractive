@@ -1,10 +1,14 @@
 import React from "react";
 
 interface LizardLogoContainerProps {
-    svg: React.FC<React.SVGProps<SVGSVGElement>>; // imported SVG component
+    logoFill?: string;
+    logoStroke?: string;
+    logoHeight?: string;
+    logoWidth?: string;
+    svg: React.FC<React.SVGProps<SVGSVGElement>>; 
     className?: string;
 }
 
-export function LizardLogoContainer({ svg: SvgIcon, className }: LizardLogoContainerProps) {
-    return <SvgIcon className={className} width="100%" height="100%" />;
+export function LizardLogoContainer({ svg: SvgIcon, logoFill, logoStroke, logoWidth, logoHeight, className }: LizardLogoContainerProps) {
+    return <SvgIcon className={`${logoFill} ${logoStroke} ${logoWidth} ${logoHeight} ${className} w-100% h-100%`} />;
 }
