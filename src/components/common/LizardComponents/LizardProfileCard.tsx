@@ -3,10 +3,13 @@
 import {
     LizardCardBorder,
     LizardDiv,
+
     LizardLogo,
+
     LizardText,
 } from "@/components/common/LizardComponents";
-import { slideRight } from "@/lib/motionMode";
+
+import { HTMLMotionProps } from "framer-motion";
 
 interface LizardCardItem {
     label: string;
@@ -17,57 +20,63 @@ interface LizardCardItem {
 }
 
 interface LizardProfileCardProps {
-    screenType: boolean;
-    className?: string;
-    logoClassName?: string;
+    transition?: string;
+    cardPosition?: string;
+    animation?: HTMLMotionProps<"div">;
+    cardWidth?: string;
+    logoFill: string;
+    logoStroke: string;
+    logoPadding: string;
+    selectedLogo: number;
+    logoHeight: string;
+    logoWidth: string;
     items: LizardCardItem[];
 }
 
 export function LizardProfileCard({
-    screenType,
-    className,
-    logoClassName,
+    cardPosition,
+    animation,
+    cardWidth,
+    transition,
+    logoFill,
+    logoStroke,
+    logoHeight,
+    logoWidth,
+    logoPadding,
+    selectedLogo,
     items,
 }: LizardProfileCardProps) {
     return (
-        <LizardDiv className={className}>
-            {screenType && (
-              
-                    <LizardDiv
-                        direction="column"
-                        animation={slideRight}
-                        className="w-full"
-                    >
-                        {/* Logo inside border */}
-                        <LizardCardBorder className="mb-6 sm:mb-8">
-                        <LizardDiv className="border w-full flex items-center justify-center p-2 lg:p-4 ">
-                                <LizardLogo className={logoClassName} />
-                        </LizardDiv>
-                        </LizardCardBorder>
 
-                        {items.map((item, index) => (
-                            <LizardDiv key={index} className="mb-2 sm:mb-3">
-                                <LizardText
-                                    variant="h1"
-                                    className={`text-[12px] sm:text-[14px] lg:text-[16px] uppercase w-full mb-1 ${item.labelProps?.className || ""
-                                        }`}
-                                    {...item.labelProps}
-                                >
-                                    {item.label}
-                                </LizardText>
-                                <LizardText
-                                    variant="p"
-                                    className={`text-[12px] sm:text-[14px] md:text-[16px] uppercase text-[#E84A4A] w-full leading-none ${item.valueProps?.className || ""
-                                        }`}
-                                    {...item.valueProps}
-                                >
-                                    {item.value}
-                                </LizardText>
-                            </LizardDiv>
-                        ))}
-                    </LizardDiv>
-           
-            )}
+        <LizardDiv animation={animation} className={`className  ${cardPosition} ${cardWidth} ${transition}`} >
+
+            <LizardCardBorder className="mb-6 sm:mb-8">
+                <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
+                    <LizardLogo selectedLogo={selectedLogo} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
+                </LizardDiv>
+            </LizardCardBorder>
+            {items.map((item, index) => (
+                <LizardDiv key={index} className="mb-2 sm:mb-3">
+                    <LizardText
+                        variant="h1"
+                        className={`text-[12px] sm:text-[14px] lg:text-[16px] uppercase w-full mb-1 ${item.labelProps?.className || ""
+                            }`}
+                        {...item.labelProps}
+                    >
+                        {item.label}
+                    </LizardText>
+                    <LizardText
+                        variant="p"
+                        className={`text-[12px] sm:text-[14px] md:text-[16px] uppercase text-[#E84A4A] w-full leading-none ${item.valueProps?.className || ""
+                            }`}
+                        {...item.valueProps}
+                    >
+                        {item.value}
+                    </LizardText>
+                </LizardDiv>
+            ))}
         </LizardDiv>
+
+
     );
 }

@@ -1,10 +1,21 @@
-import LizardLogoSVG from "@/components/assets/lizard.svg";
-import React from "react";
+import React from "react"; import LizardText from "@/components/assets/text.svg"; import LizardLogoAndTitle from "@/components/assets/lizard.svg"; import Lizard from "@/components/assets/lizard.svg"; import Cover from "@/components/assets/cover.svg"; import LizardRound from "@/components/assets/lizardround.svg"; import LizardRoundStroke from "@/components/assets/lizardroundstroke.svg";
 
 interface LizardLogoProps {
-  className?: string; // Tailwind for size & color
+  selectedLogo: number
+  logoFill: string;
+  logoStroke: string;
+  logoWidth?: string;
+  logoHeight?: string;
+  className: string
 }
-export function LizardLogo({ className }: LizardLogoProps) {
-  const SvgComponent = LizardLogoSVG as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
-  return <SvgComponent className={className} />;
-}
+
+export function LizardLogo({ selectedLogo, logoFill, logoStroke, logoWidth, logoHeight, className }: LizardLogoProps) {
+  const lists = [LizardText, LizardLogoAndTitle, Lizard, Cover, LizardRound, LizardRoundStroke]
+  const selectedSvg = lists[selectedLogo]
+
+
+
+  const SvgComponent = selectedSvg as unknown as React.FC<React.SVGProps<SVGSVGElement>>;
+
+  return <SvgComponent className={`${logoFill} ${logoStroke} ${logoWidth} ${logoHeight} ${className}`} />; 
+} 

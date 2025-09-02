@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { LizardFooter, LizardHeader, LizardMainContainer, LizardProfileCard, LizardSubContainer } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
-import { slideUp } from "@/lib/motionMode";
+import { slideLeft, slideRight, slideUp } from "@/lib/motionMode";
 import { useScreenType } from "@/hooks/useScreenType";
 import { profile, tools } from "@/config/appData";
 
@@ -66,20 +66,35 @@ export function LizardLayout() {
     return (
         <LizardMainContainer className="bg-black">
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative bg-[url('/assets/cover.svg')] bg-center bg-no-repeat  overflow-hidden ">
+            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative bg-[url('/assets/cover.svg')] bg-center bg-no-repeat  overflow-hidden  ">
+
                 <LizardProfileCard
-                    screenType={isDesktop}
+                    cardPosition={'absolute top-12 left-[0px]'}
+                    animation={slideRight}
+                    selectedLogo={3}
                     items={profile}
-                    logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
-                    className="absolute top-12 transition-transform duration-500 ease-in-out left-[0px]"
+                    logoFill="fill-[#E84A4A]    "
+                    logoPadding="p-2"
+                    logoHeight="h-30"
+                    logoWidth="w-30"
+                    logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
+                    cardWidth="w-40"
+                    transition='duration-500 ease-in-out left-[0px] '
                 />
 
                 <Outlet />
                 <LizardProfileCard
-                    screenType={isDesktop}
+                    animation={slideLeft}
+                    selectedLogo={2}
                     items={tools}
-                    logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
-                    className="absolute top-12 transition-transform duration-500 ease-in-out right-[0px]"
+                    logoFill=" fill-none"
+                    logoPadding="p-2"
+                    logoHeight="h-30"
+                    logoWidth="w-30"
+                    cardPosition={'absolute top-12 right-[0px]'}
+                    logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
+                    cardWidth="w-40"
+                    transition='duration-500 ease-in-out '
                 />
                 <LizardFooter animation="slideup" footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' screenType={isMobile} />
             </LizardSubContainer>

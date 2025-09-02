@@ -36,7 +36,6 @@ export { LizardThumbnail } from "./LizardThumbnail";
 export { LizardTechStackLogos } from "./LizardTechStackLogos";
 
 
-
 import LizardTextLogo from "@/components/assets/text.svg";
 import LizardLogoAndTitle from "@/components/assets/lizardinteractive.svg";
 import LizardLogoSVG from "@/components/assets/lizardicon.svg";

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cover } from "."; // Your inline SVG component
+// import { Cover } from "."; // Your inline SVG component
 import { cn } from "@/lib/utils";
 
 interface LizardAnimatedBackgroundProps {
@@ -27,7 +27,7 @@ export function LizardAnimatedBackground({
             }
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
         >
-            <Cover className="w-full h-[800px]" />
+            {/* <Cover className="w-full h-[800px]" /> */}
         </motion.div>
 
     );
