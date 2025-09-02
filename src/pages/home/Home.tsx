@@ -31,12 +31,13 @@ export default function Home() {
       <LizardDiv animation={bounceIn} className="flex flex-col flex-1 w-full max- items-center justify-center lg:px-10 bg-transparent ">
         <LizardLogoContainer
           svg={LizardStroke}
-          logoStroke="stroke-[#88fb59ff] stroke-[1.4]"
+          logoStroke="stroke-[#88fb59ff] stroke-[2]"
           className="
-drop-shadow-[0_0_15px_#88fb59ff]
-    hover:drop-shadow-[0_0_25px_#88fb59ff]
+drop-shadow-[0_0_15px_#E84A4A]
+    hover:drop-shadow-[0_0_25px_#E84A4A]
     transition-all duration-300
         cursor-pointer
+        opacity-[20]
   "
         />
 

@@ -17,12 +17,13 @@ export function LizardHeader() {
                             svg={LizardTitle}
                             // logoWidth="w-80"
                             // logoHeight="h-10"
-                            logoStroke="stroke-[#E84A4A] stroke-[3]"
+                            logoStroke="stroke-[#E84A4A] stroke-4"
                             logoFill=""
                             className="
-drop-shadow-[0_0_15px_#88fb59ff]
+drop-shadow-[0_0_20px_#88fb59ff]
     hover:drop-shadow-[0_0_25px_#88fb59ff]
     transition-all duration-300
+    opacity-90
    
   "
                         /></LizardDiv>
