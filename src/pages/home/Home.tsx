@@ -1,6 +1,7 @@
 
 import { LizardInteractivePanel, LizardDiv, LizardRenderScreen, } from '@/components/common/LizardComponents'
 import { LizardProfileCard } from '@/components/common/LizardComponents/LizardProfileCard';
+import { profile } from '@/config/appData';
 import { useScreenType } from '@/hooks/useScreenType';
 
 import { slideLeft } from '@/lib/motionMode';
@@ -12,29 +13,6 @@ import { useEffect } from 'react';
 export default function Home() {
   const { isTablet, isDesktop } = useScreenType();
 
-
-  const cardData = [
-    { label: "name", value: "ronan sibunga", labelProps: { className: "text-[16px] uppercase ", children: "name" }, valueProps: { className: " text-[12px] text-[#E84A4A] uppercase", children: "name" } },
-
-    { label: "occupation", value: "fullstack developer", labelProps: { className: "text-[16px] uppercase ", children: "name" }, valueProps: { className: " lg:text-[14px]   text-[#E84A4A] uppercase", children: "occupation" } },
-
-    { label: "corporation", value: "lizard interactive", labelProps: { className: "text-[16px] uppercase ", children: "name" }, valueProps: { className: "  text-[12px] text-[#E84A4A] uppercase", children: "corporation" } },
-
-    {
-      label: "availability",
-      value: "open for hire", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ", children: "availability" },
-      valueProps: {
-        className: " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1", children: "availability"
-      },
-    },
-    {
-      label: "social",
-      value: "open connection", labelProps: { className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ", children: "social" },
-      valueProps: {
-        className: " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1", children: "social"
-      },
-    },
-  ];
 
   const panelData = [
     {
@@ -68,32 +46,26 @@ export default function Home() {
 
 
   return (
-    <LizardDiv direction='row' className="flex w-full flex-1 mx-auto justify-center bg-[url('/assets/cover.svg')] bg-center bg-no-repeat">
-      {isDesktop && (
-        <LizardDiv className=" pt-13 flex w-[10px] sm:w-[120px] lg:w-[140px]">
-          <LizardProfileCard
-            items={cardData}
-            logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
-            className="w-full h-auto"
-          />
-        </LizardDiv>
-      )}
+    <LizardDiv direction='row' className="flex w-full flex-1 mx-auto justify-center items-center ">
 
-      <LizardDiv className="flex flex-col flex-1 w-full items-center justify-center px-10 ">
+
+
+
+      <LizardDiv className="flex flex-col flex-1 w-full items-center justify-center lg:px-10 max-w-[1400px]">
         <LizardRenderScreen section={section} />
       </LizardDiv>
 
 
-      {isDesktop && (
+      {/* {isDesktop && (
         <LizardDiv animation={slideLeft} className=" pt-13 flex w-[10px] sm:w-[120px] lg:w-[140px] items-start">
           <LizardInteractivePanel
             disabled
             items={panelData}
             heading="Activity Quest"
-            cardClassName="h-auto w-full "
+            cardClassName="h-auto w-full"
           />
         </LizardDiv>
-      )}
+      )} */}
 
     </LizardDiv>
   )

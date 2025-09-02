@@ -120,3 +120,129 @@ export const appData: AppData = {
     ],
   },
 };
+
+
+
+
+  export const profile = [
+    {
+      label: "corporation",
+      value: "lizard interactive",
+      labelProps: { className: "text-[16px] uppercase ", children: "name" },
+      valueProps: {
+        className: " text-[12px] text-[#E84A4A] uppercase",
+        children: "name",
+      },
+    },
+
+    {
+      label: "category",
+      value: "Multimedia Solutions",
+      labelProps: { className: "text-[16px] uppercase ", children: "name" },
+      valueProps: {
+        className: " lg:text-[14px]   text-[#E84A4A] uppercase",
+        children: "category",
+      },
+    },
+
+    {
+      label: "Location",
+      value: "Philippines",
+      labelProps: { className: "text-[16px] uppercase ", children: "name" },
+      valueProps: {
+        className: "  text-[12px] text-[#E84A4A] uppercase",
+        children: "Location",
+      },
+    },
+
+    {
+      label: "contact us",
+      value: "inquiry",
+      labelProps: {
+        className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ",
+        children: "availability",
+      },
+      valueProps: {
+        className:
+          " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1",
+        children: "availability",
+      },
+    },
+    {
+      label: "email",
+      value: "open connection",
+      labelProps: {
+        className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ",
+        children: "social",
+      },
+      valueProps: {
+        className:
+          " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1",
+        children: "social",
+      },
+    },
+  ];
+
+
+
+
+    export const tools = [
+      {
+        label: "Maps",
+        value: "open map",
+        labelProps: { className: "text-[16px] uppercase ", children: "name" },
+        valueProps: {
+          className: " text-[12px] text-[#E84A4A] uppercase",
+          children: "name",
+        },
+      },
+
+      {
+        label: "category",
+        value: "Multimedia Solutions",
+        labelProps: { className: "text-[16px] uppercase ", children: "name" },
+        valueProps: {
+          className: " lg:text-[14px]   text-[#E84A4A] uppercase",
+          children: "category",
+        },
+      },
+
+      {
+        label: "Location",
+        value: "Philippines",
+        labelProps: { className: "text-[16px] uppercase ", children: "name" },
+        valueProps: {
+          className: "  text-[12px] text-[#E84A4A] uppercase",
+          children: "Location",
+        },
+      },
+
+      {
+        label: "contact us",
+        value: "inquiry",
+        labelProps: {
+          className:
+            "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ",
+          children: "availability",
+        },
+        valueProps: {
+          className:
+            " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1",
+          children: "availability",
+        },
+      },
+      {
+        label: "email",
+        value: "open connection",
+        labelProps: {
+          className:
+            "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ",
+          children: "social",
+        },
+        valueProps: {
+          className:
+            " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1",
+          children: "social",
+        },
+      },
+    ];

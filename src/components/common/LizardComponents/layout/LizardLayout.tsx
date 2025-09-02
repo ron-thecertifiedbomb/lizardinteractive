@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { LizardFooter, LizardHeader, LizardMainContainer, LizardSubContainer } from "@/components/common/LizardComponents";
+import { LizardFooter, LizardHeader, LizardMainContainer, LizardProfileCard, LizardSubContainer } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
 import { slideUp } from "@/lib/motionMode";
 import { useScreenType } from "@/hooks/useScreenType";
+import { profile, tools } from "@/config/appData";
 
 
 
 export function LizardLayout() {
     const location = useLocation();
-    const { isMobile } = useScreenType();
+    const { isMobile, isDesktop } = useScreenType();
 
     // First-time splash screen
     const [firstLoad, setFirstLoad] = useState(() => {
@@ -65,8 +66,21 @@ export function LizardLayout() {
     return (
         <LizardMainContainer className="bg-black">
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative  bg-cover bg-center ">
+            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative bg-[url('/assets/cover.svg')] bg-center bg-no-repeat  overflow-hidden ">
+                <LizardProfileCard
+                    screenType={isDesktop}
+                    items={profile}
+                    logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
+                    className="absolute top-12 transition-transform duration-500 ease-in-out left-[0px]"
+                />
+
                 <Outlet />
+                <LizardProfileCard
+                    screenType={isDesktop}
+                    items={tools}
+                    logoClassName=" fill-white w-10 md:w-16 lg:w-20 h-auto"
+                    className="absolute top-12 transition-transform duration-500 ease-in-out right-[0px]"
+                />
                 <LizardFooter animation="slideup" footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' screenType={isMobile} />
             </LizardSubContainer>
         </LizardMainContainer>
