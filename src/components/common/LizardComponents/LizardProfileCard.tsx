@@ -24,7 +24,7 @@ interface LizardProfileCardProps {
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
     cardWidth?: string;
-    logoFill: string;
+    logoFill: string;   
     logoStroke: string;
     logoPadding: string;
     selectedLogo: number;

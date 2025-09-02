@@ -17,7 +17,7 @@ export function LizardHeader() {
     [#88fb59ff] fill-[#88fb59ff] stroke-[#88fb59ff] text-center"
                         />
                      */}
-                        <LizardLogo selectedLogo={5} logoStroke="stroke-[#88fb59ff] stroke-[0.4]" logoWidth="w-15" logoheight="h-15" />
+                        <LizardLogo selectedLogo={5} logoStroke="stroke-[#88fb59ff] stroke-[0.4]" logoWidth="w-15" logoHeight="h-15" />
                     </LizardDiv>
 
                 </LizardDiv>

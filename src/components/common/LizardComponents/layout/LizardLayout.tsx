@@ -71,10 +71,10 @@ export function LizardLayout() {
                 <LizardProfileCard
                     cardPosition={'absolute top-12 left-[0px]'}
                     animation={slideRight}
-                    selectedLogo={3}
+                    selectedLogo={5}
                     items={profile}
-                    logoFill="fill-[#E84A4A]    "
-                    logoPadding="p-2"
+                    logoFill="fill-none"
+                    logoPadding="p-1"
                     logoHeight="h-30"
                     logoWidth="w-30"
                     logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
@@ -85,10 +85,10 @@ export function LizardLayout() {
                 <Outlet />
                 <LizardProfileCard
                     animation={slideLeft}
-                    selectedLogo={2}
+                    selectedLogo={5}
                     items={tools}
                     logoFill=" fill-none"
-                    logoPadding="p-2"
+                    logoPadding="p-1"
                     logoHeight="h-30"
                     logoWidth="w-30"
                     cardPosition={'absolute top-12 right-[0px]'}

@@ -35,23 +35,23 @@ export { LizardCarousel } from "./LizardCarousel";
 export { LizardThumbnail } from "./LizardThumbnail";
 export { LizardTechStackLogos } from "./LizardTechStackLogos";
 
+export { LizardLogo } from "./LizardLogo";
+// import LizardTextLogo from "@/components/assets/text.svg";
+// import LizardLogoAndTitle from "@/components/assets/lizardinteractive.svg";
+// import LizardLogoSVG from "@/components/assets/lizardicon.svg";
+// import CoverSVG from "@/components/assets/cover.svg";
 
-import LizardTextLogo from "@/components/assets/text.svg";
-import LizardLogoAndTitle from "@/components/assets/lizardinteractive.svg";
-import LizardLogoSVG from "@/components/assets/lizardicon.svg";
-import CoverSVG from "@/components/assets/cover.svg";
+// export const LizardTitle = LizardTextLogo as unknown as React.FC<
+//   React.SVGProps<SVGSVGElement>
+// >;
 
-export const LizardTitle = LizardTextLogo as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
+// export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
+//   React.SVGProps<SVGSVGElement>
+// >;
 
-export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
-
-export const LizardLogo = LizardLogoSVG as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
-export const Cover = CoverSVG as unknown as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
+// export const LizardLogo = LizardLogoSVG as unknown as React.FC<
+//   React.SVGProps<SVGSVGElement>
+// >;
+// export const Cover = CoverSVG as unknown as React.FC<
+//   React.SVGProps<SVGSVGElement>
+// >;
