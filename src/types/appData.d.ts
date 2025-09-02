@@ -1,12 +1,6 @@
 // src/types/appData.d.ts
 
-export interface NavigationPanel {
-  key: string;
-  heading: string;
-  overview: string;
-  section: keyof AppData;
-  isActive?: boolean;
-}
+
 
 export interface Items {
   id?: number;

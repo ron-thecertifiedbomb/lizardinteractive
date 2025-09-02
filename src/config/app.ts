@@ -11,7 +11,7 @@ type AppConfigType = {
 };
 
 export const appConfig: AppConfigType = {
-  name: import.meta.env.VITE_APP_NAME ?? "Ronan Ramos Sibunga",
+  name: import.meta.env.VITE_APP_NAME ?? "Lizard Interactive",
   github: {
     title: "my_portfolio",
     url: "https://github.com/ron-thecertifiedbomb/react-vite-shadcn-ui-starter",

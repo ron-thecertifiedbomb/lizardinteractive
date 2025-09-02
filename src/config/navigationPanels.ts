@@ -1,4 +1,12 @@
-import type { NavigationPanel } from "@/types/appData";
+import { AppData } from "@/types/appData";
+
+export interface NavigationPanel {
+  key: string;
+  heading: string;
+  overview: string;
+  section: keyof AppData;
+  isActive?: boolean;
+}
 
 export const navigationPanels: NavigationPanel[] = [
   {
@@ -6,7 +14,7 @@ export const navigationPanels: NavigationPanel[] = [
     heading: "Overview",
     overview: "Lizard Interactive ocerview",
     section: "overview",
-    isActive: true,
+    isActive: false,
   },
   {
     key: "projects",
@@ -25,8 +33,7 @@ export const navigationPanels: NavigationPanel[] = [
   {
     key: "aboutme",
     heading: "About Me",
-    overview:
-      "About Lizard Interactive",
+    overview: "About Lizard Interactive",
     section: "aboutme",
     isActive: false,
   },

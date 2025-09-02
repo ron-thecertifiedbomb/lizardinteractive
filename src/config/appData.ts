@@ -121,9 +121,6 @@ export const appData: AppData = {
   },
 };
 
-
-
-
   export const profile = [
     {
       label: "corporation",
@@ -182,9 +179,6 @@ export const appData: AppData = {
       },
     },
   ];
-
-
-
 
     export const tools = [
       {
