@@ -21,23 +21,10 @@ export default function Home() {
 
 
   return (
-    <LizardDiv direction='row' className="flex w-full flex-1 mx-auto justify-center items-center ">
-      <LizardDiv className="flex flex-col flex-1 w-full items-center justify-center lg:px-10 max-w-[1400px]">
+    <LizardDiv direction='row' className="flex w-full flex-1 mx-auto justify-center items-center bg-[url('/assets/cover.svg')] bg-center bg-no-repeat ">
+      <LizardDiv className="flex flex-col flex-1 w-full max-w-[1100px] items-center justify-center lg:px-10 ">
         <LizardRenderScreen section={section} />
       </LizardDiv>
-
-
-      {/* {isDesktop && (
-        <LizardDiv animation={slideLeft} className=" pt-13 flex w-[10px] sm:w-[120px] lg:w-[140px] items-start">
-          <LizardInteractivePanel
-            disabled
-            items={panelData}
-            heading="Activity Quest"
-            cardClassName="h-auto w-full"
-          />
-        </LizardDiv>
-      )} */}
-
     </LizardDiv>
   )
 }

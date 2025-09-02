@@ -5,10 +5,10 @@ import { LizardDiv, LizardDateAndTime, LizardLogo } from ".";
 export function LizardHeader() {
 
     return (
-        <LizardDiv className="flex w-full max-w-[1700px] items-center  bg-black">
+        <LizardDiv className="flex w-full max-w-[1380px] items-center  bg-black">
             <LizardDiv direction="row" className="flex w-full justify-between items-center">
                 {/* Logo container */}
-                <LizardDiv className=" w-full flex items-center justify-center md:w-auto py-4  lg:w-auto">
+                <LizardDiv className=" w-full flex items-center justify-center md:w-auto py-1  lg:w-auto">
                     <LizardDiv >
 
                         {/* <LizardLogoContainer
@@ -17,7 +17,7 @@ export function LizardHeader() {
     [#88fb59ff] fill-[#88fb59ff] stroke-[#88fb59ff] text-center"
                         />
                      */}
-                        <LizardLogo selectedLogo={5} logoStroke="stroke-[#88fb59ff] stroke-[0.4]" logoWidth="w-15" logoHeight="h-15" />
+                        <LizardLogo selectedLogo={5} logoStroke="stroke-[#88fb59ff] stroke-[0.4]" logoWidth="w-18" logoHeight="h-18" />
                     </LizardDiv>
 
                 </LizardDiv>

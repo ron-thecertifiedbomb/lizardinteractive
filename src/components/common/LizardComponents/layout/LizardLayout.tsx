@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { LizardFooter, LizardHeader, LizardMainContainer, LizardProfileCard, LizardSubContainer } from "@/components/common/LizardComponents";
 import { LizardSplashScreen } from "../LizardSplashScreen";
 import { LizardLoadingBar } from "../LizardLoadingBar";
-import { slideLeft, slideRight, slideUp } from "@/lib/motionMode";
+import { slideLeft, slideRight} from "@/lib/motionMode";
 import { useScreenType } from "@/hooks/useScreenType";
 import { profile, tools } from "@/config/appData";
 
@@ -11,7 +11,7 @@ import { profile, tools } from "@/config/appData";
 
 export function LizardLayout() {
     const location = useLocation();
-    const { isMobile, isDesktop } = useScreenType();
+    const { isMobile } = useScreenType();
 
     // First-time splash screen
     const [firstLoad, setFirstLoad] = useState(() => {
@@ -66,10 +66,9 @@ export function LizardLayout() {
     return (
         <LizardMainContainer className="bg-black">
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1700px] relative bg-[url('/assets/cover.svg')] bg-center bg-no-repeat  overflow-hidden  ">
-
+            <LizardSubContainer className="flex-1 w-full max-w-[1380px] relative   overflow-hidden  ">
                 <LizardProfileCard
-                    cardPosition={'absolute top-12 left-[0px]'}
+                    cardPosition={'absolute top-14 left-[-170px]'}
                     animation={slideRight}
                     selectedLogo={5}
                     items={profile}
@@ -79,9 +78,8 @@ export function LizardLayout() {
                     logoWidth="w-30"
                     logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
                     cardWidth="w-40"
-                    transition='duration-500 ease-in-out left-[0px] '
+                    transition='duration-500 ease-in-out '
                 />
-
                 <Outlet />
                 <LizardProfileCard
                     animation={slideLeft}
@@ -91,7 +89,7 @@ export function LizardLayout() {
                     logoPadding="p-1"
                     logoHeight="h-30"
                     logoWidth="w-30"
-                    cardPosition={'absolute top-12 right-[0px]'}
+                    cardPosition={'absolute top-14 right-[-170px]'}
                     logoStroke=" stroke-[#E84A4A]  stroke-[0.3]"
                     cardWidth="w-40"
                     transition='duration-500 ease-in-out '
