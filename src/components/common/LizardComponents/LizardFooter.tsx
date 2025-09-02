@@ -8,14 +8,13 @@ import { HTMLMotionProps } from "framer-motion";
 
 
 type LizardFooterProps = {
-    screenType: boolean
     footerStyle: string
     animation?: HTMLMotionProps<"div">;
 }
 
 
 
-export function LizardFooter({ screenType, footerStyle, animation }: LizardFooterProps) {
+export function LizardFooter({  footerStyle, animation }: LizardFooterProps) {
     return (
 
 
@@ -27,14 +26,14 @@ export function LizardFooter({ screenType, footerStyle, animation }: LizardFoote
                 <LizardInteractivePanel cardClassName="w-full max-w-[230px]" />
             </LizardDiv>
 
-            {screenType && (
+
                 <LizardDiv
                     animation={animation}
                     className="flex justify-center w-full pointer-events-auto"
                 >
                     <LizardInteractiveNavigationControlSection />
                 </LizardDiv>
-            )}
+     
         </LizardDiv>
 
     );

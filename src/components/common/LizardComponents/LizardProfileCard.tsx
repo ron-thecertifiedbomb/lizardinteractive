@@ -25,11 +25,11 @@ interface LizardProfileCardProps {
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
     cardWidth?: string;
-    logoFill: string;
-    logoStroke: string;
-    logoPadding: string;
-    logoHeight: string;
-    logoWidth: string;
+    logoFill?: string;
+    logoStroke?: string;
+    logoPadding?: string;
+    logoHeight?: string;
+    logoWidth?: string;
     items: LizardCardItem[];
 }
 

@@ -1,4 +1,4 @@
-import {  LizardImage, LizardText } from "@/components/common/LizardComponents";
+import { LizardImage, LizardText } from "@/components/common/LizardComponents";
 
 import { navigationPanels } from "@/config/navigationPanels";
 
