@@ -69,7 +69,18 @@ export function LizardProfileCard({
                 bottomLeftVLength="20px"
             />
 
-            <LizardItemsList items={items} />
+            {/* Items list with holographic tint overlay */}
+            <LizardDiv className="relative mt-2 w-full">
+                {/* Sci-fi white tint overlay */}
+                <LizardDiv
+                    className="absolute inset-0 z-0 pointer-events-none
+      bg-white/7 rounded-sm
+   "
+                />
+
+                <LizardItemsList items={items} className="relative z-10 py-2 px-3" />
+            </LizardDiv>
         </LizardDiv>
+
     );
 }

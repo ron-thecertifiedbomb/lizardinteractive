@@ -71,9 +71,9 @@ export function LizardLayout() {
 
     const { showRightPanel, showLeftPanel } = useControlPanelStore()
     return (
-        <LizardMainContainer className="bg-black">
+        <LizardMainContainer className="bg-black justify-center items-center">
             <LizardHeader />
-            <LizardSubContainer className="flex-1 w-full max-w-[1380px] relative overflow-hidden  ">
+            <LizardSubContainer className="flex flex-1 w-full  max-w-[1380px] relative overflow-hidden">
                 <LizardProfileCard
                     cardPosition={`
        absolute top-14 left-4 z-50 top-14 left-4
@@ -88,11 +88,11 @@ export function LizardLayout() {
                     logoPadding=""
                     logoHeight="h-20"
                     logoWidth="w-20"
-                    logoStroke="stroke-[#E84A4A] stroke-[2]"
+                    logoStroke="stroke-[#00ff88] stroke-4"
                     cardWidth="w-40"
-                />
+                /> 
                 <Outlet />
-                <LizardProfileCard
+                 <LizardProfileCard
                     cardPosition={`
     absolute top-14 right-4
     transition-transform duration-900 ease-in-out
@@ -103,11 +103,11 @@ export function LizardLayout() {
                     items={profile}
                     logoFill="fill-none"
                     logoPadding=""
-                    logoHeight="h-30"
-                    logoWidth="w-40"
-                    logoStroke="stroke-[#E84A4A] stroke-[3]"
+                    logoHeight="h-20"
+                    logoWidth="w-20"
+                    logoStroke="stroke-[#00ff88] stroke-4"
                     cardWidth="w-40"
-                />
+                /> 
                 <LizardFooter animation={slideUp} footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' />
             </LizardSubContainer>
         </LizardMainContainer>

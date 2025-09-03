@@ -9,7 +9,7 @@ import { LizardLogoContainer } from "../LizardLogoContainer";
 export function LizardHeader() {
 
     return (
-        <LizardDiv className="flex w-full max-w-[1700px] items-center gap-4 bg-black">
+        <LizardDiv className="flex w-full max-w-[1700px] items-center gap-4 bg-transparent">
             <LizardDiv direction="row" className="flex w-full justify-between items-center">
                 <LizardDiv className=" w-full py-4 flex items-center justify-center md:w-auto  lg:w-auto">
                     <LizardDiv >
@@ -17,11 +17,11 @@ export function LizardHeader() {
                             svg={LizardTitle}
                             // logoWidth="w-80"
                             // logoHeight="h-10"
-                            logoStroke="stroke-[#E84A4A] stroke-4"
+                            logoStroke="stroke-[#00ff88] stroke-2"
                             logoFill=""
                             className="
-drop-shadow-[0_0_20px_#88fb59ff]
-    hover:drop-shadow-[0_0_25px_#88fb59ff]
+drop-shadow-[0_0_20px_#00ff88]
+    hover:drop-shadow-[0_0_25px_#00ff88]
     transition-all duration-300
     opacity-90
    

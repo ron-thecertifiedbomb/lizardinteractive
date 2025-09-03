@@ -1,7 +1,6 @@
 import { AppData } from "@/types/appData";
 
 export const appData: AppData = {
-  
   overview: {
     heading: "Overview",
     content:
@@ -122,122 +121,128 @@ export const appData: AppData = {
   },
 };
 
-  export const profile = [
-    {
-      label: "corporation",
-      value: "lizard interactive",
-      labelProps: { className: "text-[16px] uppercase ", children: "name" },
-      valueProps: {
-        className: " text-[12px] text-[#E84A4A] uppercase",
-        children: "name",
-      },
+export const profile = [
+  {
+    label: "corporation",
+    value: "lizard interactive",
+    labelProps: {
+      className: "text-[16px] uppercase  ",
+      children: "name",
     },
-
-    {
-      label: "category",
-      value: "Multimedia Solutions",
-      labelProps: { className: "text-[16px] uppercase ", children: "name" },
-      valueProps: {
-        className: " lg:text-[14px]   text-[#E84A4A] uppercase",
-        children: "category",
-      },
+    valueProps: {
+      className: " text-[12px] text-[#00ff88] uppercase",
+      children: "name",
     },
+  },
 
-    {
-      label: "Location",
-      value: "Philippines",
-      labelProps: { className: "text-[16px] uppercase ", children: "name" },
-      valueProps: {
-        className: "  text-[12px] text-[#E84A4A] uppercase",
-        children: "Location",
-      },
+  {
+    label: "category",
+    value: "Multimedia Solutions",
+    labelProps: {
+      className: "text-[16px]   uppercase ",
+      children: "name",
     },
-
-    {
-      label: "contact us",
-      value: "inquiry",
-      labelProps: {
-        className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ",
-        children: "availability",
-      },
-      valueProps: {
-        className:
-          " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1",
-        children: "availability",
-      },
+    valueProps: {
+      className: " lg:text-[14px]   text-[#00ff88] uppercase",
+      children: "category",
     },
-    {
-      label: "email",
-      value: "open connection",
-      labelProps: {
-        className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ",
-        children: "social",
-      },
-      valueProps: {
-        className:
-          " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1",
-        children: "social",
-      },
+  },
+
+  {
+    label: "Location",
+    value: "Philippines",
+    labelProps: {
+      className: "text-[16px] uppercase ",
+      children: "name",
     },
-  ];
+    valueProps: {
+      className: "  text-[12px] text-[#00ff88] uppercase",
+      children: "Location",
+    },
+  },
 
-    export const tools = [
-      {
-        label: "Maps",
-        value: "open map",
-        labelProps: { className: "text-[16px] uppercase ", children: "name" },
-        valueProps: {
-          className: " text-[12px] text-[#E84A4A] uppercase",
-          children: "name",
-        },
-      },
+  {
+    label: "contact us",
+    value: "inquiry",
+    labelProps: {
+      className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1   uppercase ",
+      children: "availability",
+    },
+    valueProps: {
+      className:
+        " lg:text-[14px]  inline-block border-2 bg-[#00ff88] text-black p-1 uppercase",
+      children: "availability",
+    },
+  },
+  {
+    label: "email",
+    value: "open connection",
+    labelProps: {
+      className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1  ",
+      children: "social",
+    },
+    valueProps: {
+      className:
+        " lg:text-[14px]  inline-block border-2 border-[#00ff88] p-1 uppercase",
+      children: "social",
+    },
+  },
+];
 
-      {
-        label: "category",
-        value: "Multimedia Solutions",
-        labelProps: { className: "text-[16px] uppercase ", children: "name" },
-        valueProps: {
-          className: " lg:text-[14px]   text-[#E84A4A] uppercase",
-          children: "category",
-        },
-      },
+export const tools = [
+  {
+    label: "Maps",
+    value: "open map",
+    labelProps: { className: "text-[16px] uppercase ", children: "name" },
+    valueProps: {
+      className: " text-[12px] text-[#E84A4A] uppercase",
+      children: "name",
+    },
+  },
 
-      {
-        label: "Location",
-        value: "Philippines",
-        labelProps: { className: "text-[16px] uppercase ", children: "name" },
-        valueProps: {
-          className: "  text-[12px] text-[#E84A4A] uppercase",
-          children: "Location",
-        },
-      },
+  {
+    label: "category",
+    value: "Multimedia Solutions",
+    labelProps: { className: "text-[16px] uppercase ", children: "name" },
+    valueProps: {
+      className: " lg:text-[14px]   text-[#E84A4A] uppercase",
+      children: "category",
+    },
+  },
 
-      {
-        label: "contact us",
-        value: "inquiry",
-        labelProps: {
-          className:
-            "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ",
-          children: "availability",
-        },
-        valueProps: {
-          className:
-            " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1",
-          children: "availability",
-        },
-      },
-      {
-        label: "email",
-        value: "open connection",
-        labelProps: {
-          className:
-            "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ",
-          children: "social",
-        },
-        valueProps: {
-          className:
-            " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1",
-          children: "social",
-        },
-      },
-    ];
+  {
+    label: "Location",
+    value: "Philippines",
+    labelProps: { className: "text-[16px] uppercase ", children: "name" },
+    valueProps: {
+      className: "  text-[12px] text-[#00ff88] uppercase",
+      children: "Location",
+    },
+  },
+
+  {
+    label: "contact us",
+    value: "inquiry",
+    labelProps: {
+      className: "text-[10px] sm:text-[14px] lg:text-[16px] mb-1  uppercase ",
+      children: "availability",
+    },
+    valueProps: {
+      className:
+        " lg:text-[14px]  inline-block border-2 bg-[#E84A4A] text-black p-1",
+      children: "availability",
+    },
+  },
+  {
+    label: "email",
+    value: "open connection",
+    labelProps: {
+      className: "text-[10px] sm:text-[14px] lg:text-[16px] uppercase mb-1 ",
+      children: "social",
+    },
+    valueProps: {
+      className: " lg:text-[14px]  inline-block border-2 border-[#E84A4A] p-1",
+      children: "social",
+    },
+  },
+];

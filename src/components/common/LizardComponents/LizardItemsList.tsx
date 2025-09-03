@@ -17,6 +17,7 @@ interface LizardItemsListProps {
 export function LizardItemsList({ items, className = "" }: LizardItemsListProps) {
     return (
         <LizardDiv className={className}>
+            
             {items.map((item, index) => (
                 <LizardDiv key={index} className="mb-2 sm:mb-3">
                     <LizardText

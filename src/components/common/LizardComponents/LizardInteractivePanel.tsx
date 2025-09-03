@@ -76,6 +76,11 @@ export function LizardInteractivePanel({
                   : ""}
     ${cardClassName || ""}
   `}
+            style={{
+              background: !disabled && !isDisabledCard && isActive
+                ? "radial-gradient(125% 125% at 50% 90%, #000000 40%, #072607 100%)"
+                : "radial-gradient(circle at top, #1c1c1c, #000000)",
+            }}
             onClick={() => {
               if (disabled || isDisabledCard) return;
 
@@ -95,9 +100,9 @@ export function LizardInteractivePanel({
                   </LizardDiv>
                 )
               ) : (
-                  <LizardDiv className="text-[12px] sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
+                <LizardDiv className="text-[12px] sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
-                  </LizardDiv>
+                </LizardDiv>
               )}
               <LizardImage
                 src="/assets/union.png"
@@ -130,7 +135,7 @@ export function LizardInteractivePanel({
                 ))}
               </LizardDiv>
             ) : (
-                <LizardDiv className="bg-black flex-1 flex px-1 lg:px-2">
+              <LizardDiv className="bg-black flex-1 flex px-1 lg:px-2">
                 {"overview" in panel && (
                   <LizardText
                     variant="p"
@@ -139,7 +144,7 @@ export function LizardInteractivePanel({
                     {panel.overview.toUpperCase()}
                   </LizardText>
                 )}
-                </LizardDiv>
+              </LizardDiv>
             )}
           </LizardDiv>
         );

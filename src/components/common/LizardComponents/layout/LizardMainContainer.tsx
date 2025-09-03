@@ -19,6 +19,9 @@ export function LizardMainContainer({ children, className = "" }: LizardMainCont
         "min-h-screen w-full flex flex-col items-center overflow-hidden scroll-smooth",
         className
       )}
+      style={{
+        background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #072607 100%)",
+      }}
     >
       {children}
     </main>

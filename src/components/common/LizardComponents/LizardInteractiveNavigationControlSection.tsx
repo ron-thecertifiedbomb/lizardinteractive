@@ -9,7 +9,7 @@ export function LizardInteractiveNavigationControlSection() {
   return (
 
     <LizardDiv className=" flex  mx-auto  p-1 lg:p-2">
-      <LizardInteractiveButton />
+      {/* <LizardInteractiveButton /> */}
     </LizardDiv>
 
   );
