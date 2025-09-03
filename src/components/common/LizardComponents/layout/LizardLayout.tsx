@@ -10,7 +10,7 @@ import { LizardMainContainer } from "./LizardMainContainer";
 import { LizardHeader } from "../LizardHeader";
 import { LizardSubContainer } from "./LizardSubContainer";
 import { LizardFooter } from "../LizardFooter";
-import { Lizard, LizardTitle } from "@/components/icons";
+import { Center, Cover, Lizard, LizardTitle } from "@/components/icons";
 import { useControlPanelStore } from "@/store/ControlPanelStore";
 
 
@@ -76,18 +76,19 @@ export function LizardLayout() {
             <LizardSubContainer className="flex-1 w-full max-w-[1380px] relative overflow-hidden  ">
                 <LizardProfileCard
                     cardPosition={`
-    absolute top-14 left-4
+       absolute top-14 left-4 z-50 top-14 left-4
     transition-transform duration-900 ease-in-out
     ${showRightPanel ? "translate-x-0" : "-translate-x-[210px]"}
   `}
                     animation={slideRight}
+                    thumbNailBg={Center}
                     svg={LizardTitle}
                     items={profile}
                     logoFill="fill-none"
                     logoPadding=""
-                    logoHeight="h-30"
-                    logoWidth="w-40"
-                    logoStroke="stroke-[#E84A4A] stroke-[3]"
+                    logoHeight="h-20"
+                    logoWidth="w-20"
+                    logoStroke="stroke-[#E84A4A] stroke-[2]"
                     cardWidth="w-40"
                 />
                 <Outlet />

@@ -1,5 +1,6 @@
 // components/common/LizardCardStyle.tsx
 import {
+    LizardAnimatedBackground,
     LizardCardBorder,
     LizardLogoContainer,
     LizardText,
@@ -18,6 +19,7 @@ interface LizardCardItem {
 
 interface LizardProfileCardProps {
     svg?: React.FC<React.SVGProps<SVGSVGElement>>;
+    thumbNailBg?: React.FC<React.SVGProps<SVGSVGElement>>; // optional SVG
     transition?: string;
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
@@ -32,6 +34,7 @@ interface LizardProfileCardProps {
 
 export function LizardProfileCard({
     svg,
+    thumbNailBg,
     cardPosition,
     animation,
     cardWidth,
@@ -58,6 +61,9 @@ export function LizardProfileCard({
                 bottomLeftHLength="40px"
                 bottomLeftVLength="20px">
                 <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
+                    <LizardDiv className="absolute inset-0 z-0">
+                        <LizardAnimatedBackground svg={thumbNailBg} className="w-full h-full pointer-events-none px-4 rounded-2xl" />
+                    </LizardDiv>
                     <LizardLogoContainer svg={svg} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
                 </LizardDiv>
             </LizardCardBorder>
