@@ -1,14 +1,11 @@
 // components/common/LizardCardStyle.tsx
-
 import {
     LizardCardBorder,
     LizardLogoContainer,
     LizardText,
 } from "@/components/common/LizardComponents";
-
 import { HTMLMotionProps } from "framer-motion";
 import { LizardDiv } from "./layout";
-import { Lizard } from "@/components/icons";
 
 
 interface LizardCardItem {
@@ -20,7 +17,7 @@ interface LizardCardItem {
 }
 
 interface LizardProfileCardProps {
-    svg: React.FC<React.SVGProps<SVGSVGElement>>;
+    svg?: React.FC<React.SVGProps<SVGSVGElement>>;
     transition?: string;
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
@@ -50,11 +47,24 @@ export function LizardProfileCard({
 
         <LizardDiv animation={animation} className={`className  ${cardPosition} ${cardWidth} ${transition}`} >
 
-            <LizardCardBorder className="mb-6 sm:mb-8">
+            <LizardCardBorder
+                borderColor="#00ff88"
+                borderStyle="solid"
+                topLeftHLength="40px"
+                topLeftVLength="20px"
+                topRightHLength="40px"
+                topRightVLength="20px"
+                bottomRightHLength="40px"
+                bottomRightVLength="20px"
+                bottomLeftHLength="40px"
+                bottomLeftVLength="20px">
                 <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
                     <LizardLogoContainer svg={svg} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
                 </LizardDiv>
             </LizardCardBorder>
+
+
+
             {items.map((item, index) => (
                 <LizardDiv key={index} className="mb-2 sm:mb-3">
                     <LizardText
