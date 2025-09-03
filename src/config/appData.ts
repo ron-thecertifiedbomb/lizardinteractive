@@ -126,11 +126,11 @@ export const profile = [
     label: "corporation",
     value: "lizard interactive",
     labelProps: {
-      className: "text-[16px] uppercase  ",
+      className: "text-[16px] uppercase  bg-black/70 px-2 py-1 ",
       children: "name",
     },
     valueProps: {
-      className: " text-[12px] text-[#00ff88] uppercase",
+      className: " text-[12px] text-[#00ff88]  bg-black/70 px-2 py-1 uppercase",
       children: "name",
     },
   },

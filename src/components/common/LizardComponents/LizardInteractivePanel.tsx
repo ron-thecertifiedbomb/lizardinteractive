@@ -114,7 +114,7 @@ export function LizardInteractivePanel({
 
             {/* Body */}
             {isDisabledCard ? (
-              <LizardDiv className="bg-black flex-1 flex flex-col px-3 py-2 min-h-[100px]">
+              <LizardDiv className="bg-transparent flex-1 flex flex-col px-3 py-2 min-h-[100px]">
                 {panel.items.map((item, index) => (
                   <LizardDiv key={index} className="mb-3">
                     <LizardText
@@ -135,7 +135,7 @@ export function LizardInteractivePanel({
                 ))}
               </LizardDiv>
             ) : (
-              <LizardDiv className="bg-black flex-1 flex px-1 lg:px-2">
+              <LizardDiv className="bg-black/40 flex-1 flex px-1 lg:px-2  border-t-1 border-l-1 rounded-sm">
                 {"overview" in panel && (
                   <LizardText
                     variant="p"

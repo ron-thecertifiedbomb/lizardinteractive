@@ -78,7 +78,7 @@ export function LizardProfileCard({
    "
                 />
 
-                <LizardItemsList items={items} className="relative z-10 py-2 px-3" />
+                <LizardItemsList items={items} className="relative z-10 py-2 px-1" />
             </LizardDiv>
         </LizardDiv>
 
