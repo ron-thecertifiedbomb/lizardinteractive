@@ -1,10 +1,7 @@
 
-
-import { LizardAnimatedBackground, LizardText } from '@/components/common/LizardComponents';
 import { LizardDiv } from '@/components/common/LizardComponents/layout/LizardDiv';
 import { LizardLogoContainer } from '@/components/common/LizardComponents/LizardLogoContainer';
-import { LizardRenderScreen } from '@/components/common/LizardComponents/screens';
-import { Cover, Lizard, LizardTitle } from '@/components/icons/svg';
+import {  Lizard, LizardTitle } from '@/components/icons/svg';
 import { bounceIn } from '@/lib/motionMode';
 import { useNavigationStore } from '@/store';
 import { useControlPanelStore } from '@/store/ControlPanelStore';
@@ -18,10 +15,12 @@ export default function Home() {
 
   return (
     <LizardDiv direction='row' className="relative flex w-full min-h-screen mx-auto overflow-hidden justify-center items-center">
-      <LizardDiv className="absolute inset-0 z-0">
+
+      {/* <LizardDiv className="absolute inset-0 z-0">
         <LizardAnimatedBackground svg={Cover} className="w-full h-full pointer-events-none px-4 rounded-2xl" />
       </LizardDiv>
-      <div className="relative z-10">
+       */}
+      <LizardDiv className="relative z-10">
         <LizardDiv
           animation={bounceIn}
           className="flex flex-col flex-1 w-full items-center justify-center lg:px-10 bg-transparent"
@@ -69,7 +68,7 @@ drop-shadow-[0_0_15px_#ffffff] hover:drop-shadow-[0_0_25px_#ffffff]
             />
           </LizardDiv>
         </LizardDiv>
-      </div>
+      </LizardDiv>
 
       {/* <LizardDiv>
          <LizardRenderScreen section={section} /> 

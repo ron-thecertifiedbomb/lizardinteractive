@@ -1,23 +1,16 @@
 
-import { slideUp } from "@/lib/motionMode";
-
 import { LizardInteractivePanel } from "./LizardInteractivePanel";
 import { LizardDiv } from "./layout/LizardDiv";
 import { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
 import { HTMLMotionProps } from "framer-motion";
-
 
 type LizardFooterProps = {
     footerStyle: string
     animation?: HTMLMotionProps<"div">;
 }
 
-
-
-export function LizardFooter({  footerStyle, animation }: LizardFooterProps) {
+export function LizardFooter({ footerStyle, animation }: LizardFooterProps) {
     return (
-
-
         <LizardDiv className={`w-full ${footerStyle} `}>
             <LizardDiv
                 animation={animation}
@@ -25,15 +18,13 @@ export function LizardFooter({  footerStyle, animation }: LizardFooterProps) {
             >
                 <LizardInteractivePanel cardClassName="w-full max-w-[230px]" />
             </LizardDiv>
+            <LizardDiv
+                animation={animation}
+                className="flex justify-center w-full pointer-events-auto"
+            >
+                <LizardInteractiveNavigationControlSection />
+            </LizardDiv>
 
-
-                <LizardDiv
-                    animation={animation}
-                    className="flex justify-center w-full pointer-events-auto"
-                >
-                    <LizardInteractiveNavigationControlSection />
-                </LizardDiv>
-     
         </LizardDiv>
 
     );

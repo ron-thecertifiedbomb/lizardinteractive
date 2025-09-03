@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { LizardImage, LizardText } from ".";
+import { LizardLogoContainer } from ".";
+import { LizardInteractive } from "@/components/icons";
+import { LizardDiv } from "./layout";
 
 
 interface LizardSplashScreenProps {
@@ -12,11 +14,9 @@ interface LizardSplashScreenProps {
 }
 
 export function LizardSplashScreen({
-  logoUrl,
-  text = "",
   className = "",
   onFinish,
-  duration = 10, // default 10 seconds
+  duration = 15, // default 10 seconds
 }: LizardSplashScreenProps) {
   useEffect(() => {
     if (onFinish) {
@@ -28,25 +28,18 @@ export function LizardSplashScreen({
   }, [onFinish, duration]);
 
   return (
-    <div
+    <LizardDiv
       className={`h-screen w-screen flex items-center justify-center ${className}`}
     >
       <motion.div
-        className="flex flex-col items-center justify-center gap-4 px-4"
+        className="flex flex-col items-center justify-center"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 1, scale: 2 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ type: "spring", stiffness: 120, damping: 12 }}
       >
-        {logoUrl && (
-          <LizardImage
-            src={logoUrl}
-            alt="logo"
-            className="w-15 max-w-[40vw] sm:w-18 sm:max-w-[25vw] h-auto object-contain"
-          />
-        )}
-        <LizardText variant="h2">{text}</LizardText>
+        <LizardLogoContainer svg={LizardInteractive} logoStroke="stroke-[#E84A4A] stroke-4" logoFill="fill-green" />
       </motion.div>
-    </div>
+    </LizardDiv>
   );
 }

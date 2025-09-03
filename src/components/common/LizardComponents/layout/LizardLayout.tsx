@@ -92,7 +92,6 @@ export function LizardLayout() {
                     cardWidth="w-40"
                 />
                 <Outlet />
-
                 <LizardProfileCard
                     cardPosition={`
     absolute top-14 right-4

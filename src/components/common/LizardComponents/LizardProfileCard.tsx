@@ -1,25 +1,23 @@
 // components/common/LizardCardStyle.tsx
 import {
-    LizardAnimatedBackground,
-    LizardCardBorder,
-    LizardLogoContainer,
+    LizardEmblem,
+    LizardItemsList,
     LizardText,
+
 } from "@/components/common/LizardComponents";
 import { HTMLMotionProps } from "framer-motion";
 import { LizardDiv } from "./layout";
 
-
 interface LizardCardItem {
     label: string;
     value: string;
-    valueClassName?: string;
     labelProps?: React.ComponentProps<typeof LizardText>;
     valueProps?: React.ComponentProps<typeof LizardText>;
 }
 
 interface LizardProfileCardProps {
     svg?: React.FC<React.SVGProps<SVGSVGElement>>;
-    thumbNailBg?: React.FC<React.SVGProps<SVGSVGElement>>; // optional SVG
+    thumbNailBg?: React.FC<React.SVGProps<SVGSVGElement>>; // optional background
     transition?: string;
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
@@ -35,10 +33,10 @@ interface LizardProfileCardProps {
 export function LizardProfileCard({
     svg,
     thumbNailBg,
-    cardPosition,
+    cardPosition = "",
     animation,
-    cardWidth,
-    transition,
+    cardWidth = "",
+    transition = "",
     logoFill,
     logoStroke,
     logoHeight,
@@ -47,9 +45,18 @@ export function LizardProfileCard({
     items,
 }: LizardProfileCardProps) {
     return (
-
-        <LizardDiv animation={animation} className={`className  ${cardPosition} ${cardWidth} ${transition}`} >
-            <LizardCardBorder
+        <LizardDiv
+            animation={animation}
+            className={`${cardPosition} ${cardWidth} ${transition}`}
+        >
+            <LizardEmblem
+                thumbNailBg={thumbNailBg}
+                svg={svg}
+                logoFill={logoFill}
+                logoStroke={logoStroke}
+                logoHeight={logoHeight}
+                logoWidth={logoWidth}
+                logoPadding={logoPadding}
                 borderColor="#00ff88"
                 borderStyle="solid"
                 topLeftHLength="40px"
@@ -59,37 +66,10 @@ export function LizardProfileCard({
                 bottomRightHLength="40px"
                 bottomRightVLength="20px"
                 bottomLeftHLength="40px"
-                bottomLeftVLength="20px">
-                <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
-                    <LizardDiv className="absolute inset-0 z-0">
-                        <LizardAnimatedBackground svg={thumbNailBg} className="w-full h-full pointer-events-none px-4 rounded-2xl" />
-                    </LizardDiv>
-                    <LizardLogoContainer svg={svg} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
-                </LizardDiv>
-            </LizardCardBorder>
+                bottomLeftVLength="20px"
+            />
 
-            {items.map((item, index) => (
-                <LizardDiv key={index} className="mb-2 sm:mb-3">
-                    <LizardText
-                        variant="h1"
-                        className={`text-[12px] sm:text-[14px] lg:text-[16px] uppercase w-full mb-1 ${item.labelProps?.className || ""
-                            }`}
-                        {...item.labelProps}
-                    >
-                        {item.label}
-                    </LizardText>
-                    <LizardText
-                        variant="p"
-                        className={`text-[12px] sm:text-[14px] md:text-[16px] uppercase text-[#E84A4A] w-full leading-none ${item.valueProps?.className || ""
-                            }`}
-                        {...item.valueProps}
-                    >
-                        {item.value}
-                    </LizardText>
-                </LizardDiv>
-            ))}
+            <LizardItemsList items={items} />
         </LizardDiv>
-
-
     );
 }
