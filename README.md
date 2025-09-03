@@ -1,13 +1,13 @@
 # 🌐 My Portfolio  
 
-Welcome to the repository for my **personal portfolio website**!  
+Welcome to the repository for my **lizard interactive portfolio website**!  
 Built with **React, TailwindCSS, and shadcn/ui**, this site showcases my work, skills, and experience as a developer.  
 
 ---
 
 ## 🚀 Features  
 
-- Modern **landing page** with clean design.  
+- Modern **landing page** with gaming ui design.  
 - **Responsive navigation bar** with Lucide icons.  
 - **Sections included**:  
   - 🏠 Home  

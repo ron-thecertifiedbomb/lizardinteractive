@@ -25,19 +25,19 @@
            id="path1" />
       </g>
       <path
-         style="fill:none;fill-opacity:1;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none"
          d="m 289.85849,67.177002 -9.00395,9.504928 h 15.15466 z"
          id="path2" />
     </g>
     <ellipse
-       style="display:inline;fill:none;fill-opacity:1;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:none;"
        cx="-266.67578"
        cy="110.30878"
        rx="71.652199"
        ry="73.865814"
        id="ellipse2" />
     <ellipse
-       style="display:inline;fill:none;fill-opacity:1;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:none;"
        cx="-266.67578"
        cy="110.30878"
        rx="62.582241"

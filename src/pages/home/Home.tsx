@@ -42,8 +42,8 @@ export default function Home() {
         className="flex flex-col flex-1 w-full items-center justify-center lg:px-10 bg-transparent"
       >
         <LizardLogoContainer
-          svg={LizardStroke}
-          logoStroke="stroke-[#88fb59ff] stroke-[2]"
+          svg={Lizard}
+          logoStroke="stroke-[#E84A4A] stroke-[1]"
           className={`
       drop-shadow-[0_0_15px_#E84A4A]
       hover:drop-shadow-[0_0_25px_#E84A4A]
