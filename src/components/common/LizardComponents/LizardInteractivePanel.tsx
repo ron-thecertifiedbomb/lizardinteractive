@@ -1,11 +1,7 @@
 import { LizardImage, LizardText } from "@/components/common/LizardComponents";
-
 import { navigationPanels } from "@/config/navigationPanels";
-
 import { useScreenType } from "@/hooks/useScreenType";
-
 import { useNavigationStore } from "@/store";
-
 import { AppData } from "@/types/appData";
 import { LizardDiv } from "./layout";
 
@@ -46,9 +42,6 @@ export function LizardInteractivePanel({
   const { activePanelKey, setSection, setActivePanel, showPanel, setShowPanel, } =
     useNavigationStore();
 
-
-
-
   const { isMobile } = useScreenType();
 
   const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
@@ -63,6 +56,8 @@ export function LizardInteractivePanel({
         ${positionClassName}
       `}
     >
+
+
       {panelsToRender.map((panel) => {
         const isDisabledCard = "items" in panel;
         const isActive = !isDisabledCard && activePanelKey === panel.key;
@@ -92,17 +87,17 @@ export function LizardInteractivePanel({
             }}
           >
             {/* Header */}
-            <div className="w-full relative overflow-hidden">
+            <LizardDiv className="w-full relative overflow-hidden">
               {isDisabledCard ? (
                 heading && (
-                  <div className="text-[14px] lg:text-[25px] pl-1 lg:pl-3 py-1 text-white font-light">
+                  <LizardDiv className="text-[14px] lg:text-[25px] pl-1 lg:pl-3 py-1 text-white font-light">
                     <LizardText variant="h1">{heading.toUpperCase()}</LizardText>
-                  </div>
+                  </LizardDiv>
                 )
               ) : (
-                <div className="text-[12px] sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
+                  <LizardDiv className="text-[12px] sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
-                </div>
+                  </LizardDiv>
               )}
               <LizardImage
                 src="/assets/union.png"
@@ -110,13 +105,13 @@ export function LizardInteractivePanel({
                 objectFit="contain"
                 className="h-15 w-15 absolute right-[-20px] top-[-3px] rotate-62 invert opacity-10"
               />
-            </div>
+            </LizardDiv>
 
             {/* Body */}
             {isDisabledCard ? (
-              <div className="bg-black flex-1 flex flex-col px-3 py-2 min-h-[100px]">
+              <LizardDiv className="bg-black flex-1 flex flex-col px-3 py-2 min-h-[100px]">
                 {panel.items.map((item, index) => (
-                  <div key={index} className="mb-3">
+                  <LizardDiv key={index} className="mb-3">
                     <LizardText
                       variant="h1"
                       className={`text-[16px] uppercase text-[#b3b3b3] w-full mb-1 ${item.labelProps?.className || ""}`}
@@ -131,11 +126,11 @@ export function LizardInteractivePanel({
                     >
                       {item.value}
                     </LizardText>
-                  </div>
+                  </LizardDiv>
                 ))}
-              </div>
+              </LizardDiv>
             ) : (
-              <div className="bg-black flex-1 flex px-1 lg:px-2">
+                <LizardDiv className="bg-black flex-1 flex px-1 lg:px-2">
                 {"overview" in panel && (
                   <LizardText
                     variant="p"
@@ -144,7 +139,7 @@ export function LizardInteractivePanel({
                     {panel.overview.toUpperCase()}
                   </LizardText>
                 )}
-              </div>
+                </LizardDiv>
             )}
           </LizardDiv>
         );

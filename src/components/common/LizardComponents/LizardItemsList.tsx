@@ -1,5 +1,4 @@
 // components/common/LizardItemsList.tsx
-
 import { LizardDiv } from "./layout";
 import { LizardText } from "./LizardText";
 

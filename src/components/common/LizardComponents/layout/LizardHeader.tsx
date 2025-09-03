@@ -2,9 +2,9 @@
 
 
 import { LizardTitle } from "@/components/icons";
-import { LizardDiv } from "./layout";
-import { LizardDateAndTime } from "./LizardDateAndTime";
-import { LizardLogoContainer } from "./LizardLogoContainer";
+import { LizardDiv } from ".";
+import { LizardDateAndTime } from "../LizardDateAndTime";
+import { LizardLogoContainer } from "../LizardLogoContainer";
 
 export function LizardHeader() {
 

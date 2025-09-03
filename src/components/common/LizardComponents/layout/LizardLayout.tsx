@@ -7,9 +7,9 @@ import { slideLeft, slideRight, slideUp } from "@/lib/motionMode";
 import { useScreenType } from "@/hooks/useScreenType";
 import { profile, tools } from "@/config/appData";
 import { LizardMainContainer } from "./LizardMainContainer";
-import { LizardHeader } from "../LizardHeader";
+import { LizardHeader } from "./LizardHeader";
 import { LizardSubContainer } from "./LizardSubContainer";
-import { LizardFooter } from "../LizardFooter";
+import { LizardFooter } from "./LizardFooter";
 import { Center, Cover, Lizard, LizardTitle } from "@/components/icons";
 import { useControlPanelStore } from "@/store/ControlPanelStore";
 

@@ -1,7 +1,7 @@
 
-import { LizardInteractivePanel } from "./LizardInteractivePanel";
-import { LizardDiv } from "./layout/LizardDiv";
-import { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
+import { LizardInteractivePanel } from "../LizardInteractivePanel";
+import { LizardDiv } from "./LizardDiv";
+import { LizardInteractiveNavigationControlSection } from "../LizardInteractiveNavigationControlSection";
 import { HTMLMotionProps } from "framer-motion";
 
 type LizardFooterProps = {

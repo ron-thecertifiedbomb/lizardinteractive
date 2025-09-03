@@ -1,7 +1,5 @@
 // src/types/appData.d.ts
 
-
-
 export interface Items {
   id?: number;
   type?: string;

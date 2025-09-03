@@ -1,6 +1,6 @@
 
 
-import { Lizard, LizardIcon, LizardStroke } from "@/components/icons/svg";
+import { LizardIcon, } from "@/components/icons/svg";
 import { LizardLogoContainer } from "./LizardLogoContainer";
 interface LizardInteractiveButtonProps {
   onClick?: () => void;

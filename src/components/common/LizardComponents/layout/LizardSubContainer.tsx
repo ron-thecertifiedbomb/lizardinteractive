@@ -18,9 +18,6 @@ export function LizardSubContainer({ children, className = "" }: LizardSubContai
         className
       )}
     >
-
-      {/* <div className="absolute inset-0 -z-10 w-full h-full bg-[url('/assets/cover.svg')] bg-cover bg-center" /> */}
-
       {children}
     </LizardDiv>
   );

@@ -12,7 +12,7 @@ export { LizardCoordinates } from "./LizardCoordinates";
 export { LizardCardHeader } from "./LizardCardHeader";
 export { LizardCardBorder } from "./LizardCardBorder";
 export { LizardProfileCard } from "./LizardProfileCard";
-export { LizardAnimatedBackground } from "./LizardAnimatedBackground";
+export { LizardAnimatedBackground } from "./layout/LizardAnimatedBackground";
 export { LizardMarquee } from "./LizardMarquee";
 export { LizardCarousel } from "./LizardCarousel";
 export { LizardThumbnail } from "./LizardThumbnail";
