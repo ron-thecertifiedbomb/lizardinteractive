@@ -46,7 +46,6 @@ export function LizardProfileCard({
     return (
 
         <LizardDiv animation={animation} className={`className  ${cardPosition} ${cardWidth} ${transition}`} >
-
             <LizardCardBorder
                 borderColor="#00ff88"
                 borderStyle="solid"
@@ -62,8 +61,6 @@ export function LizardProfileCard({
                     <LizardLogoContainer svg={svg} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />
                 </LizardDiv>
             </LizardCardBorder>
-
-
 
             {items.map((item, index) => (
                 <LizardDiv key={index} className="mb-2 sm:mb-3">

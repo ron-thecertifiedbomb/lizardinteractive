@@ -1,5 +1,6 @@
 // LizardCardBorder.tsx
 import React from "react";
+import { LizardDiv } from "./layout";
 
 interface LizardCardBorderProps {
     children: React.ReactNode;
@@ -64,34 +65,34 @@ export function LizardCardBorder({
         thickness !== "0" ? `${thickness} ${borderStyle} ${borderColor}` : "none";
 
     return (
-        <div className={`relative w-full flex items-center justify-center ${className ?? ""}`}>
+        <LizardDiv className={`relative w-full flex items-center justify-center ${className ?? ""}`}>
             {children}
 
-            <div className="pointer-events-none absolute inset-0">
+            <LizardDiv className="pointer-events-none absolute inset-0">
                 {/* Top Left */}
-                <div className="absolute top-0 left-0">
-                    <div style={{ width: topLeftHLength, borderTop: makeBorder(topLeftHThickness) }} />
-                    <div style={{ height: topLeftVLength, borderLeft: makeBorder(topLeftVThickness) }} />
-                </div>
+                <LizardDiv className="absolute top-0 left-0">
+                    <LizardDiv style={{ width: topLeftHLength, borderTop: makeBorder(topLeftHThickness) }} />
+                    <LizardDiv style={{ height: topLeftVLength, borderLeft: makeBorder(topLeftVThickness) }} />
+                </LizardDiv>
 
                 {/* Top Right */}
-                <div className="absolute top-0 right-0">
-                    <div style={{ width: topRightHLength, borderTop: makeBorder(topRightHThickness) }} />
-                    <div style={{ height: topRightVLength, borderRight: makeBorder(topRightVThickness) }} />
-                </div>
+                <LizardDiv className="absolute top-0 right-0">
+                    <LizardDiv style={{ width: topRightHLength, borderTop: makeBorder(topRightHThickness) }} />
+                    <LizardDiv style={{ height: topRightVLength, borderRight: makeBorder(topRightVThickness) }} />
+                </LizardDiv>
 
                 {/* Bottom Left */}
-                <div className="absolute bottom-0 left-0">
-                    <div style={{ height: bottomLeftVLength, borderLeft: makeBorder(bottomLeftVThickness) }} />
-                    <div style={{ width: bottomLeftHLength, borderBottom: makeBorder(bottomLeftHThickness) }} />
-                </div>
+                <LizardDiv className="absolute bottom-0 left-0">
+                    <LizardDiv style={{ height: bottomLeftVLength, borderLeft: makeBorder(bottomLeftVThickness) }} />
+                    <LizardDiv style={{ width: bottomLeftHLength, borderBottom: makeBorder(bottomLeftHThickness) }} />
+                </LizardDiv>
 
                 {/* Bottom Right */}
-                <div className="absolute bottom-0 right-0">
-                    <div style={{ height: bottomRightVLength, borderRight: makeBorder(bottomRightVThickness) }} />
-                    <div style={{ width: bottomRightHLength, borderBottom: makeBorder(bottomRightHThickness) }} />
-                </div>
-            </div>
-        </div>
+                <LizardDiv className="absolute bottom-0 right-0">
+                    <LizardDiv style={{ height: bottomRightVLength, borderRight: makeBorder(bottomRightVThickness) }} />
+                    <LizardDiv style={{ width: bottomRightHLength, borderBottom: makeBorder(bottomRightHThickness) }} />
+                </LizardDiv>
+            </LizardDiv>
+        </LizardDiv>
     );
 }
