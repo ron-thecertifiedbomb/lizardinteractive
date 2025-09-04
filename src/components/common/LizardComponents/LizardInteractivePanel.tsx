@@ -42,7 +42,7 @@ export function LizardInteractivePanel({
   const { activePanelKey, setSection, setActivePanel, showPanel, } =
     useNavigationStore();
 
-
+  console.log('showPanel',showPanel)
 
   const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
     disabled && items.length > 0
@@ -51,10 +51,11 @@ export function LizardInteractivePanel({
 
   return (
     <LizardDiv direction="row"
-      className={`overflow-hidden inline-flex justify-center gap-1 lg:gap-4 transition-transform duration-500 ease-in-out 
-
-        ${positionClassName}
-      `}
+      className={`overflow-hidden inline-flex justify-center gap-1 lg:gap-4 fixed left-0 w-full
+    transition-transform duration-500 ease-in-out
+    ${showPanel ? "translate-y-0 bottom-0" : "translate-y-full bottom-0"}
+    ${positionClassName}
+  `}
     >
 
       {panelsToRender.map((panel) => {
@@ -105,7 +106,7 @@ export function LizardInteractivePanel({
                     logoStroke="stroke-[#ffffff] stroke-[5]"
                     logoHeight="h-4"
                     logoWidth="w-4"
-                      logoFill="fill-[#ffffff]"
+                    logoFill="fill-[#ffffff]"
                     className="opacity-80"
                   />
 
