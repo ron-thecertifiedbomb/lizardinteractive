@@ -42,13 +42,11 @@ export function LizardControlButton() {
                 <LizardLogoContainer
                     svg={Lizard}
                     logoStroke="stroke-[#2aff2aff] stroke-[5]"
-                    logoHeight="h-[100px]"
-                    logoWidth="w-[100px]"
                     logoFill="fill-[#ffffff]"
                     className={`drop-shadow-[0_0_8px_rgba(255,255,255,3)] opacity-60 hover:drop-shadow-[0_0_10px_#ffffff]
     transition-[max-height,transform,opacity] duration-150 ease-in-out overflow-hidden
     ${hideControlPanelButton
-                            ? "max-h-20 scale-100 opacity-100"
+                            ? "max-h-20 scale-160 opacity-100"
                             : "max-h-0 scale-0 opacity-0"
                         }`}
                 />
