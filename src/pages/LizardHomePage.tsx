@@ -2,7 +2,8 @@ import { LizardAnimatedBackground } from "@/components/common/LizardComponents";
 import { LizardControlButton } from "@/components/common/LizardComponents/layout";
 import { LizardDiv } from "@/components/common/LizardComponents/layout/LizardDiv";
 import { LizardCenterScreen } from "@/components/common/LizardComponents/screens";
-import { Center } from "@/components/icons/svg";
+import { Center } from "@/components/icons";
+
 
 export function LizardHomePage() {
   return (
@@ -18,10 +19,10 @@ export function LizardHomePage() {
           pulse={true}
           animate={{ scale: [1, 1.02, 1] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          logoFill="#00ff88"
-          logoStroke="#00ffaa"
-          thumbNailHeight="h-full"
-          thumbNailWidth="w-full"
+          logoFill="#16a34a"
+          logoStroke="#16a34a"
+          thumbNailHeight="550"
+          thumbNailWidth="500"
         />
       </LizardDiv>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 interface LizardLogoContainerProps {
     logoFill?: string;
@@ -19,11 +19,32 @@ export function LizardLogoContainer({
     className,
     onClick,
 }: LizardLogoContainerProps) {
-    if (!SvgIcon) return null; // ✅ return nothing if no SVG passed
-    return (
-        <SvgIcon
-            onClick={onClick}
-            className={`${logoFill ?? ""} ${logoStroke ?? ""} ${logoWidth ?? ""} ${logoHeight ?? ""} ${className ?? ""} cursor-pointer`}
-        />
-    );
+   const svgRef = useRef<SVGSVGElement | null>(null);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+
+    svgRef.current.querySelectorAll("*").forEach((el: any) => {
+      if (logoFill) el.setAttribute("fill", logoFill);
+      if (logoStroke) el.setAttribute("stroke", logoStroke);
+      if (logoFill) el.style.fill = logoFill;
+      if (logoStroke) el.style.stroke = logoStroke;
+    });
+  }, [logoFill, logoStroke]);
+
+  if (!SvgIcon) return null;
+
+  return (
+    <SvgIcon
+      ref={svgRef}
+      onClick={onClick}
+      className={className}
+      style={{
+        width: logoWidth ?? "100%",
+        height: logoHeight ?? "100%",
+        display: "block",
+        cursor: "pointer",
+      }}
+    />
+  );
 }

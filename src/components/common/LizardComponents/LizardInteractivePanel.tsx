@@ -41,7 +41,7 @@ export function LizardInteractivePanel({
 
   const { activePanelKey, setSection, setActivePanel, showPanel, } =
     useNavigationStore();
-  
+
   const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
     disabled && items.length > 0
       ? [{ heading: "single-disabled", items, overview: "" }]
@@ -101,10 +101,11 @@ export function LizardInteractivePanel({
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
                   <LizardLogoContainer
                     svg={Lizard}
-                    logoStroke="stroke-[#ffffff] stroke-[5]"
-                    logoHeight="h-4"
-                    logoWidth="w-4"
-                    logoFill="fill-[#ffffff]"
+                      logoStroke="#fcd34d"
+                      
+                    logoHeight="20"
+                    logoWidth="20"
+                      logoFill="#7f1d1d"
                     className="opacity-80"
                   />
 

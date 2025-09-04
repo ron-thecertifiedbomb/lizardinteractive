@@ -40,14 +40,14 @@ export function LizardLayout() {
   `}
                     animation={slideRight}
                     thumbNailBg={Center}
-                    thumbNailWidth={'w-full'}
-                    thumbNailHeight={'h-full'}
+                    thumbNailWidth="100%"
+                    thumbNailHeight="100"
                     svg={LizardTitle}
                     items={profile}
                     logoFill="fill-none"
                     logoPadding=""
-                    logoHeight="h-20"
-                    logoWidth="w-20"
+                    logoHeight="100"
+                    logoWidth="150"
                     logoStroke="stroke-[#00ff88] stroke-4"
                     cardWidth="w-40"
                 />
