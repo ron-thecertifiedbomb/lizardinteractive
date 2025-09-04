@@ -21,6 +21,7 @@ export { LizardLogoContainer } from "./LizardLogoContainer";
 export { LizardEmblem } from "./LizardEmblem";
 export { LizardItemsList } from "./LizardItemsList";
 export { LizardUtilities } from "./LizardUtilities";
+export { LizardTailwindColors } from "./LizardTailwindColors";
 
 // export * from "./layout";
 // export * from "./cards";

@@ -1,21 +1,18 @@
-
-import {  LizardText } from "@/components/common/LizardComponents";
+import { LizardTailwindColors, LizardText } from "@/components/common/LizardComponents";
 import { LizardDiv } from "@/components/common/LizardComponents/layout";
-import { slideRight } from "@/lib/motionMode";
 
 export function PlayGround() {
-
-
   return (
     <>
-      <LizardDiv animation={slideRight} direction="column" className="p-4 gap-1">
-        <LizardText>
-          Lizard Interactive
+
+      <LizardDiv className="flex flex-col items-center w-full justify-center min-h-screen bg-transparent pt-20">
+        <LizardText className="text-4xl font-bold text-center mb-6 uppercase">
+          Tailwind Colors
         </LizardText>
-        <LizardText>
-          Lizard Interactive
-        </LizardText>
-     </LizardDiv>
+        <LizardDiv className="w-full max-w-7xl">
+          <LizardTailwindColors />
+        </LizardDiv>
+      </LizardDiv>
     </>
   );
 }
