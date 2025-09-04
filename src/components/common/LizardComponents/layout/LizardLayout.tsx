@@ -8,6 +8,7 @@ import { useControlPanelStore } from "@/store/ControlPanelStore";
 import { LizardProfileCard } from "../LizardProfileCard";
 import { slideRight, slideUp } from "@/lib/motionMode";
 import { Outlet } from "react-router-dom";
+import { LizardUtilities } from "../LizardUtilities";
 
 
 export function LizardLayout() {
@@ -49,21 +50,13 @@ export function LizardLayout() {
                     cardWidth="w-40"
                 />
                 <Outlet />
-                <LizardProfileCard
+                <LizardUtilities 
                     cardPosition={`
     absolute top-20 right-4
     transition-transform duration-900 ease-in-out
     ${showLeftPanel ? "translate-x-0" : "translate-x-[210px]"}
   `}
-                    animation={slideRight}
-                    svg={LizardTitle}
-                    items={profile}
-                    logoFill="fill-none"
-                    logoPadding=""
-                    logoHeight="h-20"
-                    logoWidth="w-20"
-                    logoStroke="stroke-[#00ff88] stroke-4"
-                    cardWidth="w-40"
+                 
                 />
                 <LizardFooter animation={slideUp} footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' />
             </LizardSubContainer>

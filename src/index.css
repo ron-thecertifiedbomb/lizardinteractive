@@ -49,7 +49,7 @@
   }
 
   * {
-  @apply border-border outline-none;
+    @apply border-border outline-none;
   }
 
   body {

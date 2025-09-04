@@ -20,6 +20,7 @@ export { LizardTechStackLogos } from "./LizardTechStackLogos";
 export { LizardLogoContainer } from "./LizardLogoContainer";
 export { LizardEmblem } from "./LizardEmblem";
 export { LizardItemsList } from "./LizardItemsList";
+export { LizardUtilities } from "./LizardUtilities";
 
 // export * from "./layout";
 // export * from "./cards";
