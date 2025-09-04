@@ -1,8 +1,9 @@
-import { LizardImage, LizardText } from "@/components/common/LizardComponents";
+import { LizardLogoContainer, LizardText } from "@/components/common/LizardComponents";
 import { navigationPanels } from "@/config/navigationPanels";
 import { useNavigationStore } from "@/store";
 import { AppData } from "@/types/appData";
 import { LizardDiv } from "./layout";
+import { Lizard } from "@/components/icons";
 
 type DisabledItem = {
   label: string;
@@ -99,16 +100,24 @@ export function LizardInteractivePanel({
                   </LizardDiv>
                 )
               ) : (
-                <LizardDiv className="text-[12px] sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 lg:pl-3 py-1 text-white font-light">
+                <LizardDiv direction="row" className="text-[12px] w-full justify-between sm:text-[18px] lg:text-[20px] sm:pl-2 pl-1 pr-1 lg:pl-2 lg:pr-3 py-1 text-white font-light ">
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
+                  <LizardLogoContainer
+                    svg={Lizard}
+                    logoStroke="stroke-[#ffffff] stroke-[5]"
+                    logoHeight="h-4"
+                    logoWidth="w-4"
+                    logoFill="fill-[#b3b3b3]"
+                    className="opacity-80"
+                  />
+
                 </LizardDiv>
               )}
-              <LizardImage
-                src="/assets/union.png"
-                alt="logo"
-                objectFit="contain"
-                className="h-15 w-15 absolute right-[-20px] top-[-3px] rotate-62 invert opacity-10"
-              />
+
+
+
+
+
             </LizardDiv>
 
             {/* Body */}
