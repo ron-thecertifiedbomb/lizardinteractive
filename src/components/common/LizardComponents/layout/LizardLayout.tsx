@@ -33,7 +33,7 @@ export function LizardLayout() {
             >
                 <LizardProfileCard
                     cardPosition={`
-       absolute top-14 left-4 z-50 top-14 left-4
+       absolute top-14 left-4 z-50 top-20 left-4
     transition-transform duration-900 ease-in-out
     ${showRightPanel ? "translate-x-0" : "-translate-x-[210px]"}
   `}
@@ -51,7 +51,7 @@ export function LizardLayout() {
                 <Outlet />
                 <LizardProfileCard
                     cardPosition={`
-    absolute top-14 right-4
+    absolute top-20 right-4
     transition-transform duration-900 ease-in-out
     ${showLeftPanel ? "translate-x-0" : "translate-x-[210px]"}
   `}

@@ -8,6 +8,8 @@ import { useNavigationStore } from "@/store";
 export function LizardControlButton() {
     const {
         hideControlPanelButton,
+        showHeaderPanel,
+        setShowHeaderPanel,
         showLeftPanel,
         showRightPanel,
         setHideControlPanelButton,
@@ -16,10 +18,6 @@ export function LizardControlButton() {
     } = useControlPanelStore();
 
     const { showPanel, setShowPanel, section } = useNavigationStore();
-
-
-
-    console.log('Section', section)
 
     if (section) {
         return null;
@@ -32,6 +30,7 @@ export function LizardControlButton() {
         >
             <LizardDiv
                 onClick={() => {
+                    setShowHeaderPanel(!showHeaderPanel)
                     setHideControlPanelButton(!hideControlPanelButton);
                     setShowRightPanel(!showRightPanel);
                     setShowLeftPanel(!showLeftPanel);

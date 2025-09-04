@@ -2,17 +2,26 @@
 import { create } from "zustand";
 
 interface ControlPanelStore {
+
+  showHeaderPanel: boolean;
+  setShowHeaderPanel: (value: boolean) => void;
+
+
   showLeftPanel: boolean;
   setShowLeftPanel: (value: boolean) => void;
 
   showRightPanel: boolean;
   setShowRightPanel: (value: boolean) => void;
 
+
   hideControlPanelButton: boolean;
   setHideControlPanelButton: (value: boolean) => void;
 }
 
 export const useControlPanelStore = create<ControlPanelStore>((set) => ({
+  showHeaderPanel: false,
+  setShowHeaderPanel: (value) => set({ showHeaderPanel: value }),
+
   // Left panel state
   showLeftPanel: false,
   setShowLeftPanel: (value) => set({ showLeftPanel: value }),

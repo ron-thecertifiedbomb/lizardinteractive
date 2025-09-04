@@ -3,13 +3,16 @@ import { LizardControlButton } from '@/components/common/LizardComponents/layout
 import { LizardDiv } from '@/components/common/LizardComponents/layout/LizardDiv';
 import { LizardCenterScreen } from '@/components/common/LizardComponents/screens';
 import { Center } from '@/components/icons/svg';
+import { useControlPanelStore } from '@/store/ControlPanelStore';
 
 
 
 export function LizardHomePage() {
 
+    const { showHeaderPanel } = useControlPanelStore()
 
 
+  console.log('showHeaderPanel', showHeaderPanel)
 
   return (
     <LizardDiv direction='row' className="relative flex w-full flex-1 mx-auto overflow-hidden justify-center items-center">
