@@ -27,8 +27,6 @@ export const Cover = CoverSVG as unknown as React.FC<
     React.SVGProps<SVGSVGElement>
     >;
 
-
-
 export const Center = CenterSVG as unknown as React.FC<
     React.SVGProps<SVGSVGElement>
 >;

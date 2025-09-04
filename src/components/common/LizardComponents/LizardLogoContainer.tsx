@@ -23,7 +23,7 @@ export function LizardLogoContainer({
     return (
         <SvgIcon
             onClick={onClick}
-            className={`${logoFill ?? ""} ${logoStroke ?? ""} ${logoWidth ?? ""} ${logoHeight ?? ""} ${className ?? ""} w-100% h-100% cursor-pointer`}
+            className={`${logoFill ?? ""} ${logoStroke ?? ""} ${logoWidth ?? ""} ${logoHeight ?? ""} ${className ?? ""} cursor-pointer`}
         />
     );
 }

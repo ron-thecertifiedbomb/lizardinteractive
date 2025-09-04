@@ -1,39 +1,61 @@
-import { motion } from "framer-motion";
+import { motion, MotionProps, Transition, TargetAndTransition } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { LizardLogoContainer } from "../LizardLogoContainer";
 
-interface LizardAnimatedBackgroundProps {
+interface LizardAnimatedBackgroundProps extends Omit<MotionProps, "animate" | "transition"> {
     className?: string;
     pulse?: boolean;
-    svg?: React.FC<React.SVGProps<SVGSVGElement>>; // optional SVG
-    onClick?: () => void; // ✅ added safely
+    svg?: React.FC<React.SVGProps<SVGSVGElement>>;
+    onClick?: () => void;
+    logoFill?: string;
+    logoStroke?: string;
+    logoPadding?: string;
+    logoHeight?: string;
+    logoWidth?: string;
+    animate?: TargetAndTransition; // Framer Motion animate prop type
+    transition?: Transition;       // Framer Motion transition type
 }
 
 export function LizardAnimatedBackground({
     className,
+    logoFill,
+    logoStroke,
+    logoHeight,
+    logoWidth,
     pulse = true,
     svg: SvgIcon,
     onClick,
+    animate,
+    transition,
+    ...rest
 }: LizardAnimatedBackgroundProps) {
+    const defaultAnimation: TargetAndTransition = pulse
+        ? {
+            filter: [
+                "drop-shadow(0 0 5px rgba(255,255,255,0.6))",
+                "drop-shadow(0 0 20px rgba(255,255,255,0.9))",
+                "drop-shadow(0 0 5px rgba(255,255,255,0.6))",
+            ],
+        }
+        : {};
+
+    const defaultTransition: Transition = { repeat: Infinity, duration: 3, ease: "easeInOut" };
+
     return (
         <motion.div
             className={cn("overflow-hidden", className)}
-            animate={
-                pulse
-                    ? {
-                        filter: [
-                            "drop-shadow(0 0 5px rgba(255,255,255,0.6))",
-                            "drop-shadow(0 0 20px rgba(255,255,255,0.9))",
-                            "drop-shadow(0 0 5px rgba(255,255,255,0.6))",
-                        ],
-                    }
-                    : {}
-            }
-            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            animate={animate || defaultAnimation}
+            transition={transition || defaultTransition}
+            {...rest}
         >
             {SvgIcon && (
-                <SvgIcon
+                <LizardLogoContainer
                     onClick={onClick}
-                    className={cn("w-full h-full cursor-pointer", className)}
+                    svg={SvgIcon}
+                    logoFill={logoFill}
+                    logoStroke={logoStroke}
+                    logoHeight={logoHeight}
+                    logoWidth={logoWidth}
                 />
             )}
         </motion.div>

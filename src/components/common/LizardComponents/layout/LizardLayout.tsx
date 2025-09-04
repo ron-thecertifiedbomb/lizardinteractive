@@ -50,14 +50,12 @@ export function LizardLayout() {
                     cardWidth="w-40"
                 />
                 <Outlet />
-                <LizardUtilities 
+                <LizardUtilities
                     cardPosition={`
     absolute top-20 right-4
     transition-transform duration-900 ease-in-out
     ${showLeftPanel ? "translate-x-0" : "translate-x-[210px]"}
-  `}
-                 
-                />
+  `}/>
                 <LizardFooter animation={slideUp} footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' />
             </LizardSubContainer>
         </LizardMainContainer>
