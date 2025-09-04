@@ -16,13 +16,13 @@ interface LizardSplashScreenProps {
 export function LizardSplashScreen({
   className = "",
   onFinish,
-  duration = 15, // default 10 seconds
+  duration = 15, 
 }: LizardSplashScreenProps) {
   useEffect(() => {
     if (onFinish) {
       const timer = setTimeout(() => {
         onFinish();
-      }, duration * 1000); // convert seconds to ms
+      }, duration * 1000); 
       return () => clearTimeout(timer);
     }
   }, [onFinish, duration]);

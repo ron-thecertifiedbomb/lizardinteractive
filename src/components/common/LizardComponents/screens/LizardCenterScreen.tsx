@@ -1,13 +1,11 @@
 import { AnimatePresence } from "framer-motion";
 import { LizardDiv } from '@/components/common/LizardComponents/layout/LizardDiv';
 import { LizardText } from '../LizardText';
-import { useNavigationStore, useSectionStore } from '@/store';
+import { useNavigationStore } from '@/store';
 
 export function LizardCenterScreen() {
-  const { currentSectionData } = useSectionStore();
-  const { section, setSection } = useNavigationStore();
 
-  console.log('currentSectionData', currentSectionData);
+  const { section, setSection } = useNavigationStore();
 
   return (
     <AnimatePresence>
