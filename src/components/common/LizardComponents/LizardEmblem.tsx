@@ -5,6 +5,8 @@ import { LizardDiv } from "./layout";
 export interface LizardEmblemProps {
     svg?: React.FC<React.SVGProps<SVGSVGElement>>;
     thumbNailBg?: React.FC<React.SVGProps<SVGSVGElement>>;
+    thumbNailWidth?: string;
+    thumbNailHeight?: string;
     logoFill?: string;
     logoStroke?: string;
     logoPadding?: string;
@@ -26,6 +28,8 @@ export interface LizardEmblemProps {
 export const LizardEmblem: React.FC<LizardEmblemProps> = ({
     svg: SvgIcon,
     thumbNailBg,
+    thumbNailWidth,
+    thumbNailHeight,
     logoFill,
     logoStroke,
     logoPadding,
@@ -56,7 +60,7 @@ export const LizardEmblem: React.FC<LizardEmblemProps> = ({
     >
         <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
             <LizardDiv className="absolute inset-0 z-0">
-                <LizardAnimatedBackground svg={thumbNailBg} className="w-full h-full pointer-events-none px-4 rounded-2xl" />
+                <LizardAnimatedBackground svg={thumbNailBg} thumbNailWidth={thumbNailWidth} thumbNailHeight={thumbNailHeight}  className="w-full h-full pointer-events-none px-4 rounded-2xl" />
             </LizardDiv>
             {SvgIcon && <LizardLogoContainer svg={SvgIcon} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />}
         </LizardDiv>

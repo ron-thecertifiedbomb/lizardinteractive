@@ -20,8 +20,8 @@ export function LizardHomePage() {
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           logoFill="#00ff88"
           logoStroke="#00ffaa"
-          logoHeight="h-full"
-          logoWidth="w-full"
+          thumbNailHeight="h-full"
+          thumbNailWidth="w-full"
         />
       </LizardDiv>
 

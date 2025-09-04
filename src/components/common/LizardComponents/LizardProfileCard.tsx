@@ -17,7 +17,9 @@ interface LizardCardItem {
 
 interface LizardProfileCardProps {
     svg?: React.FC<React.SVGProps<SVGSVGElement>>;
-    thumbNailBg?: React.FC<React.SVGProps<SVGSVGElement>>; // optional background
+    thumbNailBg?: React.FC<React.SVGProps<SVGSVGElement>>; 
+    thumbNailWidth?: string;
+    thumbNailHeight?: string;
     transition?: string;
     cardPosition?: string;
     animation?: HTMLMotionProps<"div">;
@@ -33,6 +35,8 @@ interface LizardProfileCardProps {
 export function LizardProfileCard({
     svg,
     thumbNailBg,
+    thumbNailWidth,
+    thumbNailHeight,
     cardPosition = "",
     animation,
     cardWidth = "",
@@ -51,6 +55,8 @@ export function LizardProfileCard({
         >
             <LizardEmblem
                 thumbNailBg={thumbNailBg}
+                thumbNailHeight={thumbNailHeight}
+                thumbNailWidth={thumbNailWidth}
                 svg={svg}
                 logoFill={logoFill}
                 logoStroke={logoStroke}

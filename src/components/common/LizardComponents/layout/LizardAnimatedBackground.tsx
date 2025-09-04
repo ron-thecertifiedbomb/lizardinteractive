@@ -10,8 +10,8 @@ interface LizardAnimatedBackgroundProps extends Omit<MotionProps, "animate" | "t
     logoFill?: string;
     logoStroke?: string;
     logoPadding?: string;
-    logoHeight?: string;
-    logoWidth?: string;
+    thumbNailHeight?: string;
+    thumbNailWidth?: string;
     animate?: TargetAndTransition; // Framer Motion animate prop type
     transition?: Transition;       // Framer Motion transition type
 }
@@ -20,8 +20,8 @@ export function LizardAnimatedBackground({
     className,
     logoFill,
     logoStroke,
-    logoHeight,
-    logoWidth,
+    thumbNailHeight,
+    thumbNailWidth,
     pulse = true,
     svg: SvgIcon,
     onClick,
@@ -54,8 +54,8 @@ export function LizardAnimatedBackground({
                     svg={SvgIcon}
                     logoFill={logoFill}
                     logoStroke={logoStroke}
-                    logoHeight={logoHeight}
-                    logoWidth={logoWidth}
+                    logoHeight={thumbNailHeight}
+                    logoWidth={thumbNailWidth}
                 />
             )}
         </motion.div>

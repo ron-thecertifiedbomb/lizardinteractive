@@ -40,6 +40,8 @@ export function LizardLayout() {
   `}
                     animation={slideRight}
                     thumbNailBg={Center}
+                    thumbNailWidth={'w-full'}
+                    thumbNailHeight={'h-full'}
                     svg={LizardTitle}
                     items={profile}
                     logoFill="fill-none"
@@ -55,7 +57,8 @@ export function LizardLayout() {
     absolute top-20 right-4
     transition-transform duration-900 ease-in-out
     ${showLeftPanel ? "translate-x-0" : "translate-x-[210px]"}
-  `}/>
+  `}
+                />
                 <LizardFooter animation={slideUp} footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' />
             </LizardSubContainer>
         </LizardMainContainer>
