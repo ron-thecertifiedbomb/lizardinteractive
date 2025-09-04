@@ -39,10 +39,10 @@ export function LizardInteractivePanel({
 
 
 
-  const { activePanelKey, setSection, setActivePanel, showPanel, setShowPanel, } =
+  const { activePanelKey, setSection, setActivePanel, showPanel, } =
     useNavigationStore();
 
-  const { isMobile } = useScreenType();
+
 
   const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
     disabled && items.length > 0

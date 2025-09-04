@@ -3,7 +3,7 @@ import { bounceIn } from "@/lib/motionMode";
 import { Lizard, LizardTitle } from "@/components/icons";
 import { LizardDiv } from "./LizardDiv";
 import { useControlPanelStore } from "@/store/ControlPanelStore";
-import { useNavigationStore, useSectionStore } from "@/store";
+import { useNavigationStore } from "@/store";
 
 export function LizardControlButton() {
     const {
@@ -21,7 +21,6 @@ export function LizardControlButton() {
 
     console.log('Section', section)
 
-    // 🔥 Hide component if currentSectionData is not null
     if (section) {
         return null;
     }
