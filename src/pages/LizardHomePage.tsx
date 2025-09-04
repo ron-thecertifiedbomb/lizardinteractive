@@ -1,13 +1,10 @@
-
 import { LizardAnimatedBackground } from '@/components/common/LizardComponents';
 import { LizardControlButton } from '@/components/common/LizardComponents/layout';
 import { LizardDiv } from '@/components/common/LizardComponents/layout/LizardDiv';
-import { Center} from '@/components/icons/svg';
+import { Center } from '@/components/icons/svg';
 
 
-export default function Home() {
-
-
+export function LizardHomePage() {
 
   return (
     <LizardDiv direction='row' className="relative flex w-full flex-1 mx-auto overflow-hidden justify-center items-center">
@@ -18,7 +15,7 @@ export default function Home() {
         />
       </LizardDiv>
       <LizardDiv className="relative z-10">
-       <LizardControlButton/>
+        <LizardControlButton />
       </LizardDiv>
     </LizardDiv>
   )

@@ -1,5 +1,3 @@
-
-
 import { profile} from "@/config/appData";
 import { LizardMainContainer } from "./LizardMainContainer";
 import { LizardHeader } from "./LizardHeader";
@@ -13,59 +11,6 @@ import { Outlet } from "react-router-dom";
 
 
 export function LizardLayout() {
-    // const location = useLocation();
-    // const { isMobile } = useScreenType();
-
-    // // First-time splash screen
-    // const [firstLoad, setFirstLoad] = useState(() => {
-    //     const splashShown = sessionStorage.getItem("splashShown");
-    //     return splashShown ? false : true;
-    // });
-
-    // // Route-change loading screen
-    // const [routeLoading, setRouteLoading] = useState(false);
-
-    // // Handle first-time splash
-    // useEffect(() => {
-    //     if (firstLoad) {
-    //         sessionStorage.setItem("splashShown", "true");
-    //         const timer = setTimeout(() => setFirstLoad(false), 10000); // 10s splash
-    //         return () => clearTimeout(timer);
-    //     }
-    // }, [firstLoad]);
-
-    // // Handle route-change loading (after first splash)
-    // useEffect(() => {
-    //     if (!firstLoad) {
-    //         setRouteLoading(true);
-    //         const timer = setTimeout(() => setRouteLoading(false), 2000); // 2s loading
-    //         return () => clearTimeout(timer);
-    //     }
-    // }, [location.pathname, firstLoad]);
-
-    // // Show first-time splash
-    // if (firstLoad) {
-    //     return (
-    //         <LizardSplashScreen
-    //             logoUrl="/assets/splash.png"
-    //             onFinish={() => setFirstLoad(false)}
-    //             duration={5}
-    //         />
-    //     );
-    // }
-
-    // // Show route-change loading
-    // if (routeLoading) {
-    //     return (
-    //         <LizardLoadingBar
-    //             logoUrl="/assets/lizardinteractive.png"
-    //             text="Loading..."
-    //             duration={1.5}
-    //             onFinish={() => setRouteLoading(false)}
-    //         />
-    //     );
-    // }
-
 
     const { showRightPanel, showLeftPanel } = useControlPanelStore()
     return (
