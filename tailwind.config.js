@@ -10,23 +10,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        iceland: ['"Iceland"', "sans-serif"], // must match @font-face name
+        iceland: ['"Iceland"', "sans-serif"], 
       },
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: "var(--primary)",
-        "primary-foreground": "var(--primary-foreground)",
-      },
-      borderRadius: {
-        sm: "var(--radius-sm)",
-        md: "var(--radius-md)",
-        lg: "var(--radius-lg)",
-        xl: "var(--radius-xl)",
-      },
-      backgroundImage: {
-        "lizard-cover": "url('/src/components/assets/cover.svg')",
-      },
+     
     },
   },
   plugins: [require("tailwindcss-animate")],
