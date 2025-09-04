@@ -86,9 +86,9 @@ export function LizardInteractivePanel({
 
               setSection(panel.heading as keyof AppData);
               setActivePanel(panel.key);
-              if (isMobile) {
-                setShowPanel(false);
-              }
+              // if (isMobile) {
+              //   setShowPanel(false);
+              // }
             }}
           >
             {/* Header */}

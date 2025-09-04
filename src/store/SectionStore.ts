@@ -33,6 +33,6 @@ export const useSectionStore = create<SectionStore>((set, get) => ({
 
   setCurrentSectionData: (heading: string) => {
     const section = get().getSectionByHeading(heading);
-    set({ currentSectionData: section }); // update store state
+    set({ currentSectionData: section }); 
   },
 }));
