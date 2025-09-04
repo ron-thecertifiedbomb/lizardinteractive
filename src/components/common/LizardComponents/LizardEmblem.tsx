@@ -1,5 +1,5 @@
 import React from "react";
-import { LizardCardBorder,  LizardLogoContainer, LizardAnimatedBackground } from "@/components/common/LizardComponents";
+import { LizardCardBorder, LizardLogoContainer, LizardAnimatedBackground } from "@/components/common/LizardComponents";
 import { LizardDiv } from "./layout";
 
 export interface LizardEmblemProps {
@@ -60,9 +60,10 @@ export const LizardEmblem: React.FC<LizardEmblemProps> = ({
     >
         <LizardDiv className={`border w-full justify-center items-center ${logoPadding}`}>
             <LizardDiv className="absolute inset-0 z-0">
-                <LizardAnimatedBackground svg={thumbNailBg} thumbNailWidth={thumbNailWidth} thumbNailHeight={thumbNailHeight}  className="w-full h-full pointer-events-none px-4 rounded-2xl" />
+                <LizardAnimatedBackground svg={thumbNailBg} thumbNailWidth={thumbNailWidth} thumbNailHeight={thumbNailHeight} className="w-full h-full pointer-events-none px-4 rounded-2xl" />
             </LizardDiv>
-            {SvgIcon && <LizardLogoContainer svg={SvgIcon} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />}
+            {SvgIcon && <LizardLogoContainer svg={SvgIcon} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} rotateIds={["path141", "path140"]}
+                rotateSpeed={180} />}
         </LizardDiv>
     </LizardCardBorder>
 );

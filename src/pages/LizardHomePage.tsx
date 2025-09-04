@@ -15,14 +15,12 @@ export function LizardHomePage() {
       <LizardDiv className="absolute z-0 flex-1 w-full justify-center items-center">
         <LizardAnimatedBackground
           svg={Center}
-          className="flex-1 pointer-events-none px-4 rounded-2xl"
-          pulse={true}
-          animate={{ scale: [1, 1.02, 1] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          logoFill="#16a34a"
-          logoStroke="#16a34a"
-          thumbNailHeight="550"
-          thumbNailWidth="500"
+          className="flex-1 flex justify-center pointer-events-none px-4 rounded-2xl"
+
+          logoFill="#4f46e5"
+          logoStroke="#4f46e5"
+          thumbNailHeight="70%"
+          thumbNailWidth="70%"
         />
       </LizardDiv>
 

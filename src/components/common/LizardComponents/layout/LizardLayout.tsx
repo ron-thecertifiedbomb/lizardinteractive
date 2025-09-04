@@ -41,7 +41,7 @@ export function LizardLayout() {
                     animation={slideRight}
                     thumbNailBg={Center}
                     thumbNailWidth="100%"
-                    thumbNailHeight="100"
+                    thumbNailHeight="100%"
                     svg={LizardTitle}
                     items={profile}
                     logoFill="fill-none"

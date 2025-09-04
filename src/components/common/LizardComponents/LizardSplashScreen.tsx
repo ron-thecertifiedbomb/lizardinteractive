@@ -38,7 +38,7 @@ export function LizardSplashScreen({
         exit={{ opacity: 0, scale: 0 }}
         transition={{ type: "spring", stiffness: 120, damping: 12 }}
       >
-        <LizardLogoContainer svg={LizardInteractive} logoStroke="stroke-[#E84A4A] stroke-4" logoFill="fill-green" logoWidth="w-40" />
+        <LizardLogoContainer svg={LizardInteractive} logoStroke="stroke-[#E84A4A] stroke-4" logoFill="fill-green" logoWidth="120" />
       </motion.div>
     </LizardDiv>
   );
