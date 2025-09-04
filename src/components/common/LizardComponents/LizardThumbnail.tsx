@@ -1,17 +1,17 @@
 import { LizardText } from "@/components/common/LizardComponents/LizardText";
 import { LizardLogoContainer } from "./LizardLogoContainer";
 
-import { HTMLMotionProps } from "framer-motion";
+
 import { Lizard } from "@/components/icons";
 
 
-interface LizardCardItem {
-  label: string;
-  value: string;
-  valueClassName?: string;
-  labelProps?: React.ComponentProps<typeof LizardText>;
-  valueProps?: React.ComponentProps<typeof LizardText>;
-}
+// interface LizardCardItem {
+//   label: string;
+//   value: string;
+//   valueClassName?: string;
+//   labelProps?: React.ComponentProps<typeof LizardText>;
+//   valueProps?: React.ComponentProps<typeof LizardText>;
+// }
 
 
 interface LizardThumbnailProps {

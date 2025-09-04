@@ -1,7 +1,7 @@
 // LizardInteractiveNavigationControlSection.tsx
 
 import { LizardDiv } from "./layout/LizardDiv";
-import { LizardInteractiveButton } from "./LizardInteractiveButton";
+
 
 
 export function LizardInteractiveNavigationControlSection() {

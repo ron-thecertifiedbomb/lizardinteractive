@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import { LizardProfileCard, } from "@/components/common/LizardComponents";
-import { LizardSplashScreen } from "../LizardSplashScreen";
-import { LizardLoadingBar } from "../LizardLoadingBar";
-import { slideLeft, slideRight, slideUp } from "@/lib/motionMode";
-import { useScreenType } from "@/hooks/useScreenType";
-import { profile, tools } from "@/config/appData";
+
+
+import { profile} from "@/config/appData";
 import { LizardMainContainer } from "./LizardMainContainer";
 import { LizardHeader } from "./LizardHeader";
 import { LizardSubContainer } from "./LizardSubContainer";
 import { LizardFooter } from "./LizardFooter";
-import { Center, Cover, Lizard, LizardTitle } from "@/components/icons";
+import { Center,  LizardTitle } from "@/components/icons";
 import { useControlPanelStore } from "@/store/ControlPanelStore";
+import { LizardProfileCard } from "../LizardProfileCard";
+import { slideRight, slideUp } from "@/lib/motionMode";
+import { Outlet } from "react-router-dom";
 
 
 export function LizardLayout() {
-    const location = useLocation();
-    const { isMobile } = useScreenType();
+    // const location = useLocation();
+    // const { isMobile } = useScreenType();
 
     // // First-time splash screen
     // const [firstLoad, setFirstLoad] = useState(() => {

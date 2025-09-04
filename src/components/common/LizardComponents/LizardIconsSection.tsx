@@ -1,7 +1,8 @@
 import Marquee from "react-fast-marquee";
 
 import { ReactNode } from "react";
-import { LizardDiv, LizardTechStackLogos } from ".";
+import {  LizardTechStackLogos } from ".";
+import { LizardDiv } from "./layout";
 
 interface Tech {
   label: string;
