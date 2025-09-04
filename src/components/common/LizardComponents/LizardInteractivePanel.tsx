@@ -41,9 +41,7 @@ export function LizardInteractivePanel({
 
   const { activePanelKey, setSection, setActivePanel, showPanel, } =
     useNavigationStore();
-
-  console.log('showPanel',showPanel)
-
+  
   const panelsToRender: (Panel | { heading: string; items: DisabledItem[]; overview?: string })[] =
     disabled && items.length > 0
       ? [{ heading: "single-disabled", items, overview: "" }]
