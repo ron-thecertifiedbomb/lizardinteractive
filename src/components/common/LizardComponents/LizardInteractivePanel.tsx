@@ -101,11 +101,10 @@ export function LizardInteractivePanel({
                   <LizardText variant="h1">{panel.heading.toUpperCase()}</LizardText>
                   <LizardLogoContainer
                     svg={Lizard}
-                      logoStroke="#fcd34d"
-                      
+                      logoStroke="#475569"
                     logoHeight="20"
                     logoWidth="20"
-                      logoFill="#7f1d1d"
+                      logoFill="#00FF88"
                     className="opacity-80"
                   />
 

@@ -17,8 +17,8 @@ export function LizardHomePage() {
           svg={Center}
           className="flex-1 flex justify-center pointer-events-none px-4 rounded-2xl"
 
-          logoFill="#4f46e5"
-          logoStroke="#4f46e5"
+          logoFill="#00FF88"
+          logoStroke="#00FF88"
           thumbNailHeight="70%"
           thumbNailWidth="70%"
         />

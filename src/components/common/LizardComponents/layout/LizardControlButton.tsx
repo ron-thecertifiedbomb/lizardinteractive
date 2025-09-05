@@ -42,9 +42,9 @@ export function LizardControlButton() {
                 <LizardLogoContainer
                     svg={Lizard}
                     logoFill="#fafaf9"
-                    logoStroke="#fafaf9"
-                    logoHeight="60"
-                    logoWidth="60"
+                    logoStroke="#00FF88"
+                    logoHeight="50"
+                    logoWidth="50"
                     className={`drop-shadow-[0_0_8px_rgba(255,255,255,3)] opacity-60 hover:drop-shadow-[0_0_10px_#ffffff]
     transition-[max-height,transform,opacity] duration-150 ease-in-out overflow-hidden
     ${hideControlPanelButton
@@ -55,9 +55,9 @@ export function LizardControlButton() {
                 {/* LizardTitle icon */}
                 <LizardLogoContainer
                     svg={LizardTitle}
-                    logoStroke="#fafaf9"
-                    logoHeight="210"
-                    logoWidth="210"
+                    logoStroke="#00FF88"
+                    logoHeight="200"
+                    logoWidth="200"
                     className={`absolute drop-shadow-[0_0_10px_#00ff88] hover:drop-shadow-[0_0_10px_#00ff88]
             transition-[max-height,transform,opacity] duration-1000 ease-in-out overflow-hidden
             ${hideControlPanelButton
