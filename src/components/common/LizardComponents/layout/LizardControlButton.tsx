@@ -39,32 +39,39 @@ export function LizardControlButton() {
                 className="cursor-pointer relative flex items-center justify-center"
             >
                 {/* Lizard icon */}
+         
                 <LizardLogoContainer
                     svg={Lizard}
                     logoFill="#fafaf9"
                     logoStroke="#00FF88"
                     logoHeight="50"
                     logoWidth="50"
-                    className={`drop-shadow-[0_0_8px_rgba(255,255,255,3)] opacity-60 hover:drop-shadow-[0_0_10px_#ffffff]
-    transition-[max-height,transform,opacity] duration-150 ease-in-out overflow-hidden
+                    className={`
+    drop-shadow-[0_0_8px_rgba(255,255,255,3)] opacity-60 hover:drop-shadow-[0_0_10px_#ffffff]
+    origin-center
+    transition-gradual delay-300
     ${hideControlPanelButton
-                            ? "max-h-20 scale-160 opacity-100"
-                            : "max-h-0 scale-0 opacity-0"
+                            ? "scale-150 opacity-100"
+                            : "scale-0 opacity-0"
                         }`}
                 />
+
                 {/* LizardTitle icon */}
                 <LizardLogoContainer
                     svg={LizardTitle}
                     logoStroke="#00FF88"
                     logoHeight="200"
                     logoWidth="200"
-                    className={`absolute drop-shadow-[0_0_10px_#00ff88] hover:drop-shadow-[0_0_10px_#00ff88]
-            transition-[max-height,transform,opacity] duration-1000 ease-in-out overflow-hidden
-            ${hideControlPanelButton
-                            ? "max-h-0 scale-0 opacity-0"
-                            : "max-h-20 scale-100 opacity-100"
+                    className={`
+    absolute drop-shadow-[0_0_10px_#00ff88] hover:drop-shadow-[0_0_10px_#00ff88]
+    origin-center
+    transition-[opacity,transform] duration-700 ease-in-out delay-400
+    ${hideControlPanelButton
+                            ? "scale-0 opacity-0"
+                            : "scale-100 opacity-100"
                         }`}
                 />
+
             </LizardDiv>
         </LizardDiv>
     );
