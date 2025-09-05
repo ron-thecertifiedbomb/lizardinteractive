@@ -21,7 +21,7 @@ export function LizardLogoContainer({
   className,
   onClick,
   rotateIds,
-  rotateSpeed = 4, // one full rotation in 4s
+  rotateSpeed = 0, // one full rotation in 4s
 }: LizardLogoContainerProps) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const animationRef = useRef<number | undefined>(undefined);

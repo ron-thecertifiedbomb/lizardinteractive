@@ -54,11 +54,11 @@ export function LizardLocator({ className }: LizardLocatorProps) {
     if (!position) return <div className={`flex-1 flex justify-center items-center ${className}`}>Locating...</div>;
 
     return (
-        <MapContainer
-            center={position as L.LatLngExpression}
-            zoom={14}
-            className={`w-full h-full ${className}`}
-        >
+    <MapContainer
+  center={position as L.LatLngExpression}
+  zoom={14}
+  className={`w-full h-full ${className}`}
+>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

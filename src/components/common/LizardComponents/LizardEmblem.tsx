@@ -62,8 +62,7 @@ export const LizardEmblem: React.FC<LizardEmblemProps> = ({
             <LizardDiv className="absolute inset-0 z-0">
                 <LizardAnimatedBackground svg={thumbNailBg} thumbNailWidth={thumbNailWidth} thumbNailHeight={thumbNailHeight} className="w-full h-full pointer-events-none px-4 rounded-2xl" />
             </LizardDiv>
-            {SvgIcon && <LizardLogoContainer svg={SvgIcon} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} rotateIds={["path141", "path140"]}
-                rotateSpeed={180} />}
+            {SvgIcon && <LizardLogoContainer svg={SvgIcon} logoFill={logoFill} logoStroke={logoStroke} logoHeight={logoHeight} logoWidth={logoWidth} />}
         </LizardDiv>
     </LizardCardBorder>
 );

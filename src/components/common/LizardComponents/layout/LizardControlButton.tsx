@@ -15,11 +15,12 @@ export function LizardControlButton() {
         setHideControlPanelButton,
         setShowRightPanel,
         setShowLeftPanel,
+        activeComponent
     } = useControlPanelStore();
 
-    const { showPanel, setShowPanel, section } = useNavigationStore();
+    const { showPanel, setShowPanel } = useNavigationStore();
 
-    if (section) {
+    if (activeComponent) {
         return null;
     }
 

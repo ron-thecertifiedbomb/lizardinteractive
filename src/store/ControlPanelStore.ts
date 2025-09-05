@@ -1,11 +1,11 @@
-// ControlPanelStore.ts
 import { create } from "zustand";
 
-interface ControlPanelStore {
+type ActiveComponent = "map" | "lizardinteractive" | "settings" | null;
 
+interface ControlPanelStore {
+  // Panels
   showHeaderPanel: boolean;
   setShowHeaderPanel: (value: boolean) => void;
-
 
   showLeftPanel: boolean;
   setShowLeftPanel: (value: boolean) => void;
@@ -13,12 +13,16 @@ interface ControlPanelStore {
   showRightPanel: boolean;
   setShowRightPanel: (value: boolean) => void;
 
-
   hideControlPanelButton: boolean;
   setHideControlPanelButton: (value: boolean) => void;
+
+  // NEW: Track which component is active
+  activeComponent: ActiveComponent;
+  setActiveComponent: (component: ActiveComponent) => void;
 }
 
 export const useControlPanelStore = create<ControlPanelStore>((set) => ({
+  // Header panel state
   showHeaderPanel: false,
   setShowHeaderPanel: (value) => set({ showHeaderPanel: value }),
 
@@ -33,4 +37,8 @@ export const useControlPanelStore = create<ControlPanelStore>((set) => ({
   // Hide/show control panel button
   hideControlPanelButton: false,
   setHideControlPanelButton: (value) => set({ hideControlPanelButton: value }),
+
+  // NEW: Which component is active
+  activeComponent: null,
+  setActiveComponent: (component) => set({ activeComponent: component }),
 }));

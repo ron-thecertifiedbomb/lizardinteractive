@@ -9,14 +9,13 @@ export function LizardHomePage() {
   return (
     <LizardDiv
       direction="row"
-      className="relative flex w-full flex-1 mx-auto overflow-hidden justify-center items-center"
+      className="relative flex w-full max-w-[1200px] flex-1 mx-auto overflow-hidden justify-center items-center "
     >
-      {/* Background animated SVG */}
+
       <LizardDiv className="absolute z-0 flex-1 w-full justify-center items-center">
         <LizardAnimatedBackground
           svg={Center}
           className="flex-1 flex justify-center pointer-events-none px-4 rounded-2xl"
-
           logoFill="#00FF88"
           logoStroke="#00FF88"
           thumbNailHeight="70%"
@@ -24,14 +23,16 @@ export function LizardHomePage() {
         />
       </LizardDiv>
 
-      {/* Foreground content */}
-      <LizardDiv className="relative z-10 flex items-center justify-center">
-        <LizardCenterScreen />
+      
 
+      <LizardDiv className="relative z-10 flex-1 w-full h-full flex items-center justify-center">
+        <LizardCenterScreen />
         <LizardDiv className="absolute inset-0 flex items-center justify-center z-10">
           <LizardControlButton />
         </LizardDiv>
       </LizardDiv>
+
+      
     </LizardDiv>
   );
 }

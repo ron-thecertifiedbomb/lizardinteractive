@@ -9,3 +9,4 @@ export { LizardHeader } from "./LizardHeader";
 export { LizardFooter } from "./LizardFooter";
 export { LizardAnimatedBackground } from "./LizardAnimatedBackground";
 export { LizardControlButton } from "./LizardControlButton";
+export { LizardOverlay } from "./LizardOverlay";

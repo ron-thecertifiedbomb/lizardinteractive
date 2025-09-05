@@ -1,15 +1,29 @@
-import { AnimatePresence } from "framer-motion";
-import { LizardDiv } from '@/components/common/LizardComponents/layout/LizardDiv';
-import { LizardText } from '../LizardText';
-import { useNavigationStore } from '@/store';
+  import { AnimatePresence } from "framer-motion";
+  import { LizardDiv } from "@/components/common/LizardComponents/layout/LizardDiv";
+  import { useControlPanelStore } from "@/store/ControlPanelStore";
+  import { LizardInteractive } from "./LizardInteractive";
+  import { LizardMap } from "./LizardMap";
 
-export function LizardCenterScreen() {
+  export function LizardCenterScreen() {
 
-  const { section, setSection } = useNavigationStore();
+    const { activeComponent, setActiveComponent } = useControlPanelStore();
 
-  return (
-    <AnimatePresence>
-      {section && (
+
+    const renderContent = () => {
+      switch (activeComponent) {
+        case "map":
+          return <LizardMap className="w-full h-[500px] xl:h-[700px] p-2" />;
+        case "lizardinteractive":
+          return <LizardInteractive className="w-full h-[500px] xl:h-[700px] p-2" />;
+        default:
+          return null;
+      }
+    };
+
+
+    return (
+      <AnimatePresence>
+
         <LizardDiv
           key="lizard-center"
           animation={{
@@ -17,30 +31,26 @@ export function LizardCenterScreen() {
             animate: { opacity: 1, scale: 1 },
             exit: { opacity: 0, scale: 0.9 },
             transition: {
-              duration: 1, // ⏩ slightly faster
+              duration: 0.6,
               ease: "easeInOut",
-              opacity: { duration: 0.15 },
-              scale: { duration: 0.2 },
+              opacity: { duration: 0.9 },
+              scale: { duration: 0.9 },
             },
           }}
-          className="relative z-20 flex flex-col w-full flex-1 mx-auto overflow-hidden justify-center items-center gap-2"
+          className="relative z-20 flex flex-col w-full h-full flex-1 mx-auto overflow-hidden justify-center items-center gap-4"
         >
-          <LizardText className="uppercase text-4xl">
-            Lizard Center Screen
-          </LizardText>
-          <LizardText className="uppercase">
-            Current Section Data: {section}
-          </LizardText>
+          {renderContent()}
 
-          {/* Reset button */}
-          <button
-            onClick={() => setSection(null)}
-            className="mt-4 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition cursor-pointer"
-          >
-            Reset Section
-          </button>
+          {activeComponent && (
+            <button
+              onClick={() => setActiveComponent(null)}
+              className="px-4 py-1 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition cursor-pointer"
+            >
+              Close
+            </button>
+          )}
         </LizardDiv>
-      )}
-    </AnimatePresence>
-  );
-}
+
+      </AnimatePresence>
+    );
+  }

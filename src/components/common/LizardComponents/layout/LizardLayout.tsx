@@ -13,7 +13,11 @@ import { LizardUtilities } from "../LizardUtilities";
 
 export function LizardLayout() {
 
-    const { showRightPanel, showLeftPanel } = useControlPanelStore()
+    const { showRightPanel, showLeftPanel, setActiveComponent } = useControlPanelStore()
+
+
+
+
     return (
         <LizardMainContainer className="bg-black justify-center items-center">
             <LizardHeader />
@@ -58,7 +62,9 @@ export function LizardLayout() {
     transition-transform duration-900 ease-in-out
     ${showLeftPanel ? "translate-x-0" : "translate-x-[210px]"}
   `}
+                    onClick={() => setActiveComponent("map")}
                 />
+
                 <LizardFooter animation={slideUp} footerStyle='absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none' />
             </LizardSubContainer>
         </LizardMainContainer>

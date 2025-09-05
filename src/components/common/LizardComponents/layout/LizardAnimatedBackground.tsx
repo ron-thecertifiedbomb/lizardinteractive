@@ -56,8 +56,6 @@ export function LizardAnimatedBackground({
                     logoStroke={logoStroke}
                     logoHeight={thumbNailHeight}
                     logoWidth={thumbNailWidth}
-               rotateIds={["path141", "path140", ]}
-                    rotateSpeed={0}
                 />
             )}
         </motion.div>

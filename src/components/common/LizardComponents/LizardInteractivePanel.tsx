@@ -4,6 +4,7 @@ import { useNavigationStore } from "@/store";
 import { AppData } from "@/types/appData";
 import { LizardDiv } from "./layout";
 import { Lizard } from "@/components/icons";
+import { useControlPanelStore } from "@/store/ControlPanelStore";
 
 type DisabledItem = {
   label: string;
@@ -37,7 +38,7 @@ export function LizardInteractivePanel({
   positionClassName = "",
 }: LizardInteractivePanelProps) {
 
-
+    const { setActiveComponent } = useControlPanelStore();
 
   const { activePanelKey, setSection, setActivePanel, showPanel, } =
     useNavigationStore();
@@ -82,7 +83,7 @@ export function LizardInteractivePanel({
             }}
             onClick={() => {
               if (disabled || isDisabledCard) return;
-
+              setActiveComponent('lizardinteractive')
               setSection(panel.heading as keyof AppData);
               setActivePanel(panel.key);
 
