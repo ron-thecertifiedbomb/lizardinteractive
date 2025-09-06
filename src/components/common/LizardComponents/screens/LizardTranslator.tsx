@@ -15,16 +15,16 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
     const [text, setText] = useState("");
     const [translated, setTranslated] = useState("");
     const [fromLang, setFromLang] = useState("en");
-    const [toLang, setToLang] = useState("es");
+    const [toLang, setToLang] = useState("tl");
     const [languages, setLanguages] = useState<Language[]>([]);
-    const [loading, setLoading] = useState(false);
+    const [loadingList, setLoadingList] = useState(false);
     const [error, setError] = useState("");
-
+    const [loadingTranslate, setLoadingTranslate] = useState(false);
 
     // Fetch languages from LibreTranslate API
     useEffect(() => {
         const fetchLanguages = async () => {
-            setLoading(true); // start loading
+            setLoadingList(true); // start loading
             try {
                 const res = await fetch("https://libretranslate.com/languages");
                 if (!res.ok) throw new Error("Failed to fetch languages");
@@ -40,7 +40,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
                 console.error("Failed to fetch languages:", err);
                 setError("Failed to load languages");
             } finally {
-                setLoading(false); // stop loading
+                setLoadingList(false); // stop loading
             }
         };
 
@@ -49,7 +49,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
 
     const translateText = async () => {
         if (!text) return;
-        setLoading(true);
+        setLoadingList(true);
         setError("");
         setTranslated("");
 
@@ -64,7 +64,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
             console.error(err);
             setError("Translation failed");
         } finally {
-            setLoading(false);
+            setLoadingTranslate(false);
         }
     };
 
@@ -89,9 +89,9 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
                     className="flex-1 border border-green-500 rounded bg-transparent text-green-500 p-1 outline-none"
                     value={fromLang}
                     onChange={(e) => setFromLang(e.target.value)}
-                    disabled={loading}
+                    disabled={loadingList}
                 >
-                    {loading ? (
+                    {loadingList ? (
                         <option>Loading...</option>
                     ) : (
                         languages.map((lang) => (
@@ -106,9 +106,9 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
                     className="flex-1 border border-green-500 rounded bg-transparent text-green-500 p-1 outline-none"
                     value={toLang}
                     onChange={(e) => setToLang(e.target.value)}
-                    disabled={loading}
+                    disabled={loadingList}
                 >
-                    {loading ? (
+                    {loadingList ? (
                         <option>Loading...</option>
                     ) : (
                         languages.map((lang) => (
@@ -122,10 +122,10 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
 
             <button
                 onClick={translateText}
-                disabled={loading || !text}
+                disabled={loadingTranslate || !text}
                 className="w-full py-2 bg-green-500 text-white rounded hover:bg-green-600 mb-2 disabled:opacity-60"
             >
-                {loading ? "Translating..." : "Translate"}
+                {loadingTranslate ? "Translating..." : "Translate"}
             </button>
 
             {error && <LizardText className="text-red-500 mb-2">{error}</LizardText>}
