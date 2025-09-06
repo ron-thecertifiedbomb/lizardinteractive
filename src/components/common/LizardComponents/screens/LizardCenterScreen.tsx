@@ -51,7 +51,7 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
           {activeComponent && (
             <button
               onClick={() => setActiveComponent(null)}
-              className="absolute top-2 right-4 z-700 px-3 py-1 text-[15px] sm:text-[18px] bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
+              className="absolute top-4 right-4 z-700 px-2 py-1 text-[13px] uppercase sm:text-[18px] border border-[#14532d] bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
             >
             close
             </button>

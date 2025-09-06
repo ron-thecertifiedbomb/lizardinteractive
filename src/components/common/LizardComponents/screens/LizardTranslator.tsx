@@ -70,7 +70,12 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
 
     return (
         <LizardDiv className={`px-4 py-8 border   border-green-500 bg-white/10 text-green-500 rounded w-full h-full   ${className} px-6 uppercase sm:p-10 justify-center`}>
-            <LizardText className="mb-2 font-bold">Lizard Interactive Translator</LizardText>
+            <LizardText
+                variant="h1"
+                className="mb-2 font-bold text-center text-[22px] shadow-lg p-2 rounded bg-white/10"
+            >
+                Lizard Interactive Translator
+            </LizardText>
 
             <textarea
                 className="border   border-green-500 text-green-500 p-2 rounded w-full mb-2"
@@ -125,7 +130,10 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
 
             {error && <LizardText className="text-red-500 mb-2">{error}</LizardText>}
 
-            <LizardText>Translated: {translated}</LizardText>
+            <LizardText
+              
+                className="mb-2 text-[18px] shadow-lg p-2 rounded bg-white/10"
+            >Translated: {translated}</LizardText>
         </LizardDiv>
     );
 }
