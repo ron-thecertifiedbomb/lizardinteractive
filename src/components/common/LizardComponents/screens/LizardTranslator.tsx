@@ -118,7 +118,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
             <button
                 onClick={translateText}
                 disabled={loading || !text}
-                className="px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700 mb-2 disabled:opacity-50  w-full max-w-[200px] mx-auto rounded-2xl"
+                className="px-4 py-1 bg-gray-800 text-white  hover:bg-gray-700 mb-2 disabled:opacity-50  w-full max-w-[200px] mx-auto rounded-2xl"
             >
                 {loading ? "Translating..." : "Translate"}
             </button>
