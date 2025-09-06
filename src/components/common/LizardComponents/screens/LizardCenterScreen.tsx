@@ -22,7 +22,7 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
         case "map":
           return <LizardMap className="w-full h-[500px] xl:h-[700px] p-2" />;
         case "translator":
-          return <LizardTranslator className="w-full  py-6" />;
+          return <LizardTranslator className="w-full h-[400px]  py-6" />;
         case "lizardinteractive":
           return <LizardInteractive className="w-full h-[500px] xl:h-[700px] p-2" />;
         default:
@@ -51,7 +51,7 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
           {activeComponent && (
             <button
               onClick={() => setActiveComponent(null)}
-              className="absolute top-3 right-4 z-700 px-3 py-1 bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
+              className="absolute top-2 right-4 z-700 px-3 py-1 text-[15px] sm:text-[18px] bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
             >
             close
             </button>

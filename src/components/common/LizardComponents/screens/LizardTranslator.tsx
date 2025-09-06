@@ -69,7 +69,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
     };
 
     return (
-        <LizardDiv className={`px-4 py-8 border   border-green-500 bg-white/10 text-green-500 rounded w-full max-w-md ${className} uppercase`}>
+        <LizardDiv className={`px-4 py-8 border   border-green-500 bg-white/10 text-green-500 rounded w-full h-full   ${className} px-6 uppercase sm:p-10 justify-center`}>
             <LizardText className="mb-2 font-bold">Lizard Interactive Translator</LizardText>
 
             <textarea
