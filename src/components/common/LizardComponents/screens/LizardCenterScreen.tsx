@@ -20,48 +20,48 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
     const renderContent = () => {
       switch (activeComponent) {
         case "home":
-          return <LizardWeather className="w-full h-[500px] xl:h-[700px] p-2" />;
+          return <LizardWeather className="w-full max-h-[640px] xl:max-h-[700px] p-2 overflow-y-auto" />
         case "map":
-          return <LizardMap className="w-full h-[500px] xl:h-[700px] p-2" />;
+          return <LizardMap className="w-full h-[500px] xl:h-[700px]" />;
         case "translator":
           return <LizardTranslator className="w-full h-[400px]  py-6" />;
         case "lizardinteractive":
           return <LizardInteractive className="w-full h-[500px] xl:h-[700px] p-2" />;
         case "currency":
-          return <LizardCurrencyConverter className="w-full  h-[400px] p-6" />;
+          return <LizardCurrencyConverter className="w-full  h-[500px] p-6" />;
         default:
           return null;
       }
     };
 
     return (
-      <AnimatePresence>
-        <LizardDiv
-          key="lizard-center"
-          animation={{
-            initial: { opacity: 0, scale: 0.9 },
-            animate: { opacity: 1, scale: 1 },
-            exit: { opacity: 0, scale: 0.9 },
-            transition: {
-              duration: 0.6,
-              ease: "easeInOut",
-              opacity: { duration: 0.9 },
-              scale: { duration: 0.9 },
-            },
-          }}
-          className={`relative ${className}`} 
-        >
-          {renderContent()}
-          {activeComponent && (
-            <button
-              onClick={() => setActiveComponent(null)}
-              className="absolute top-4 right-4 z-700 px-2 py-1 text-[13px] uppercase sm:text-[18px] border border-[#14532d] bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
-            >
-            close
-            </button>
-          )}
-        </LizardDiv>
-      </AnimatePresence>
+<AnimatePresence>
+  <LizardDiv
+    key="lizard-center"
+    animation={{
+      initial: { opacity: 0, scale: 0.9 },
+      animate: { opacity: 1, scale: 1 },
+      exit: { opacity: 0, scale: 0.9 },
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+        opacity: { duration: 0.9 },
+        scale: { duration: 0.9 },
+      },
+    }}
+    className={`relative  ${className}`}
+  >
+    {renderContent()}
+    {activeComponent && (
+      <button
+        onClick={() => setActiveComponent(null)}
+        className="absolute top-2 right-4 z-700 px-2 py-1 text-[10px] uppercase sm:text-[18px] border border-[#14532d] bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
+      >
+        close
+      </button>
+    )}
+  </LizardDiv>
+</AnimatePresence>
 
     );
   }

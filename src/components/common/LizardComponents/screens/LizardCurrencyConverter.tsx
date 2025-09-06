@@ -128,7 +128,7 @@ export function LizardCurrencyConverter({ className = "" }: LizardCurrencyConver
 
     return (
         <LizardDiv className={`p-4 border rounded shadow-md bg-white/10 ${className} justify-center`}>
-            <LizardText className="text-center font-bold text-lg mb-4 uppercase">
+            <LizardText className="text-center font-bold text-lg mb-4 uppercase  text-green-500">
                 Lizard Interactive Currency Converter
             </LizardText>
             <LizardDiv className="flex gap-2 mb-2">

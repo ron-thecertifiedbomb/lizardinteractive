@@ -55,8 +55,8 @@ export function LizardControlButton() {
                     svg={Lizard}
                     logoFill="#fafaf9"
                     logoStroke="#00FF88"
-                    logoHeight="70"
-                    logoWidth="70"
+                    logoHeight="55%"
+                    logoWidth="55%"
                     className={`
     drop-shadow-[0_0_8px_rgba(255,255,255,3)] opacity-60 hover:drop-shadow-[0_0_10px_#ffffff]
     origin-center
