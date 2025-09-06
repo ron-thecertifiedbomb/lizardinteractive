@@ -139,46 +139,46 @@ export function LizardLocator({ className }: LizardLocatorProps) {
     }
 
     // Find Near Me button
-    const handleFindNearMe = async () => {
-        if (!origin || !mapRef.current) return;
+const handleFindNearMe = async () => {
+    if (!origin || !mapRef.current) return;
 
-        mapRef.current.setView(origin, 14);
-        setDestination(null);
-        setRoute([]);
-        setDistance(null);
-        setShowModal(false);
-        setQuery("");
+    mapRef.current.setView(origin, 14);
+    setDestination(null);
+    setRoute([]);
+    setDistance(null);
+    setShowModal(false);
+    setQuery("");
 
-        try {
-            const [lat, lon] = origin;
-            const delta = 0.1; // smaller bounding box (~10 km)
-            const viewbox = `${lon - delta},${lat - delta},${lon + delta},${lat + delta}`;
+    try {
+        const [lat, lon] = origin;
+        const delta = 0.1; // smaller bounding box (~10 km)
+        const viewbox = `${lon - delta},${lat - delta},${lon + delta},${lat + delta}`;
 
-            const res = await fetch(
-                `https://nominatim.openstreetmap.org/search?format=json&q=&addressdetails=1&limit=10&viewbox=${viewbox}&bounded=1`,
-                {
-                    headers: {
-                        Accept: "application/json",
-                        "User-Agent": "YourAppNameHere",
-                    },
-                }
+        const res = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=&addressdetails=1&limit=10&viewbox=${viewbox}&bounded=1`,
+            {
+                headers: {
+                    Accept: "application/json",
+                    "User-Agent": "YourAppNameHere",
+                },
+            }
+        );
+
+        const results: Suggestion[] = await res.json();
+
+        // Filter results to be within 10 km
+        const nearby = results.filter((r) => {
+            const dist = L.latLng(origin[0], origin[1]).distanceTo(
+                L.latLng(parseFloat(r.lat), parseFloat(r.lon))
             );
+            return dist <= 10000; // only within 10 km
+        });
 
-            const results: Suggestion[] = await res.json();
-
-            // Filter results to be within 10 km
-            const nearby = results.filter((r) => {
-                const dist = L.latLng(origin[0], origin[1]).distanceTo(
-                    L.latLng(parseFloat(r.lat), parseFloat(r.lon))
-                );
-                return dist <= 10000; // only within 10 km
-            });
-
-            setSuggestions(nearby);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+        setSuggestions(nearby);
+    } catch (err) {
+        console.error(err);
+    }
+};
 
 
 
@@ -192,7 +192,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
     return (
         <LizardDiv className={`relative w-full h-full ${className}`}>
             {/* Search & Find Near Me */}
-            <LizardDiv className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] max-w-md z-[1000] flex space-x-2">
+            <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] max-w-md z-[1000] flex space-x-2">
                 <input
                     type="text"
                     value={query}
@@ -206,7 +206,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
                 >
                     Find Near Me
                 </button>
-            </LizardDiv>
+            </div>
 
             {/* Suggestions Dropdown */}
             {suggestions.length > 0 && (
