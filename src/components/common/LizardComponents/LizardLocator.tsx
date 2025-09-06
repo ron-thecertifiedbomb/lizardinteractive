@@ -192,7 +192,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
     return (
         <LizardDiv className={`relative w-full h-full ${className}`}>
             {/* Search & Find Near Me */}
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] max-w-md z-[1000] flex space-x-2">
+            <LizardDiv className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] max-w-md z-[1000] flex space-x-2">
                 <input
                     type="text"
                     value={query}
@@ -206,7 +206,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
                 >
                     Find Near Me
                 </button>
-            </div>
+            </LizardDiv>
 
             {/* Suggestions Dropdown */}
             {suggestions.length > 0 && (
