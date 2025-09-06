@@ -39,19 +39,19 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
               scale: { duration: 0.9 },
             },
           }}
-          className={`${className}`}
+          className={`relative ${className}`} // 👈 anchor for absolute children
         >
           {renderContent()}
           {activeComponent && (
             <button
               onClick={() => setActiveComponent(null)}
-              className="px-4 py-1 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition cursor-pointer"
+              className="absolute top-5 right-5 z-700 px-3 py-1 bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
             >
-              Close
+            close
             </button>
           )}
         </LizardDiv>
-
       </AnimatePresence>
+
     );
   }
