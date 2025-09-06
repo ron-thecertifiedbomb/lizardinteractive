@@ -7,13 +7,7 @@ import { useControlPanelStore } from "@/store/ControlPanelStore";
 export function LizardHeader() {
 
     const { showHeaderPanel } = useControlPanelStore()
-
-  
-
-
-
     return (
-
         <LizardDiv
             direction="row"
             className={`flex w-full  justify-between items-center absolute top-0 z-50
@@ -25,18 +19,15 @@ export function LizardHeader() {
                 <LizardDiv >
                     <LizardLogoContainer
                         svg={LizardTitle}
-                        // logoWidth="w-80"
-                        // logoHeight="h-10"
-                        logoStroke="stroke-[#00ff88] stroke-2"
-                        logoFill=""
+                        logoStroke="#00FF88"
                         className="
 drop-shadow-[0_0_20px_#00ff88]
     hover:drop-shadow-[0_0_25px_#00ff88]
     transition-all duration-300
     opacity-90
    
-  "
-                    /></LizardDiv>
+  "/>
+  </LizardDiv>
 
             </LizardDiv>
             <LizardDiv direction="row" className="hidden  sm:flex lg:flex gap-4 md:px-5 lg:px-5 2xl:px-20 lg:py-4">

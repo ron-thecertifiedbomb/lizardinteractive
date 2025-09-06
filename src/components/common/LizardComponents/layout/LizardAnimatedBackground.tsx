@@ -1,6 +1,8 @@
 import { motion, MotionProps, Transition, TargetAndTransition } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { LizardLogoContainer } from "../LizardLogoContainer";
+import { LizardDiv } from "./LizardDiv";
+import { fadeIn } from "@/lib/motionMode";
 
 interface LizardAnimatedBackgroundProps extends Omit<MotionProps, "animate" | "transition"> {
     className?: string;
@@ -42,6 +44,7 @@ export function LizardAnimatedBackground({
     const defaultTransition: Transition = { repeat: Infinity, duration: 3, ease: "easeInOut" };
 
     return (
+        <LizardDiv animate={fadeIn}>
         <motion.div
             className={cn("overflow-hidden", className)}
             animate={animate || defaultAnimation}
@@ -58,6 +61,7 @@ export function LizardAnimatedBackground({
                     logoWidth={thumbNailWidth}
                 />
             )}
-        </motion.div>
+            </motion.div>
+        </LizardDiv>
     );
 }

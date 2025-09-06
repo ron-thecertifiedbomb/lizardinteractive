@@ -39,7 +39,7 @@ export function LizardLayout() {
                 <LizardProfileCard
                     cardPosition={`
        absolute top-14 left-4 z-50 top-20 left-4
-    transition-transform duration-900 ease-in-out
+    transition-transform duration-1000 ease-in-out
     ${showRightPanel ? "translate-x-0" : "-translate-x-[210px]"}
   `}
                     animation={slideRight}
@@ -59,7 +59,7 @@ export function LizardLayout() {
                 <LizardUtilities
                     cardPosition={`
     absolute top-20 right-4
-    transition-transform duration-900 ease-in-out
+    transition-transform duration-1000 ease-in-out
     ${showLeftPanel ? "translate-x-0" : "translate-x-[210px]"}
   `}
                     onClick={() => setActiveComponent("map")}

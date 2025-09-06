@@ -7,6 +7,9 @@ interface ControlPanelStore {
   showHeaderPanel: boolean;
   setShowHeaderPanel: (value: boolean) => void;
 
+  showCenterLogo: boolean;
+  setShowCenterLogo: (value: boolean) => void;
+
   showLeftPanel: boolean;
   setShowLeftPanel: (value: boolean) => void;
 
@@ -22,6 +25,10 @@ interface ControlPanelStore {
 }
 
 export const useControlPanelStore = create<ControlPanelStore>((set) => ({
+  // Header panel state
+  showCenterLogo: false,
+  setShowCenterLogo: (value) => set({ showCenterLogo: value }),
+
   // Header panel state
   showHeaderPanel: false,
   setShowHeaderPanel: (value) => set({ showHeaderPanel: value }),

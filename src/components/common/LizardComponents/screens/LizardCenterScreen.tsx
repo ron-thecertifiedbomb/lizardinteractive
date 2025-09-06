@@ -4,10 +4,14 @@
   import { LizardInteractive } from "./LizardInteractive";
   import { LizardMap } from "./LizardMap";
 
-  export function LizardCenterScreen() {
+
+interface LizardCenterScreen {
+  className?: string;
+}
+
+export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
 
     const { activeComponent, setActiveComponent } = useControlPanelStore();
-
 
     const renderContent = () => {
       switch (activeComponent) {
@@ -20,10 +24,8 @@
       }
     };
 
-
     return (
       <AnimatePresence>
-
         <LizardDiv
           key="lizard-center"
           animation={{
@@ -37,10 +39,9 @@
               scale: { duration: 0.9 },
             },
           }}
-          className="relative z-20 flex flex-col w-full h-full flex-1 mx-auto overflow-hidden justify-center items-center gap-4"
+          className={`${className}`}
         >
           {renderContent()}
-
           {activeComponent && (
             <button
               onClick={() => setActiveComponent(null)}
