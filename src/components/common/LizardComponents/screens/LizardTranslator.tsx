@@ -123,7 +123,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
             <button
                 onClick={translateText}
                 disabled={loading || !text}
-                className="px-4 py-1 bg-gray-800 text-white  hover:bg-gray-700 mb-2 disabled:opacity-50  w-full max-w-[200px] mx-auto rounded-2xl"
+                className="w-full py-2 bg-green-500 text-white rounded hover:bg-green-600 mb-2 disabled:opacity-60"
             >
                 {loading ? "Translating..." : "Translate"}
             </button>
@@ -132,7 +132,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
 
             <LizardText
               
-                className="mb-2 text-[18px] shadow-lg p-2 rounded bg-white/10"
+                className="mb-2 text-[18px] shadow-lg py-2 px-3 rounded bg-black/40 text-[#a3e635]"
             >Translated: {translated}</LizardText>
         </LizardDiv>
     );

@@ -5,7 +5,7 @@ export type ActiveComponent =
   | "lizardinteractive"
   | "translator"
   | "home"
-  | "profile"
+  | "currency"
   | null;
 
 interface ControlPanelStore {

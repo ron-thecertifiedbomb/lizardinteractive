@@ -4,6 +4,7 @@
   import { LizardInteractive } from "./LizardInteractive";
   import { LizardMap } from "./LizardMap";
 import { LizardTranslator } from "./LizardTranslator";
+import { LizardCurrencyConverter } from "./LizardCurrencyConverter";
 
 
 interface LizardCenterScreen {
@@ -15,8 +16,6 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
   const { activeComponent, setActiveComponent } = useControlPanelStore();
   
 
-
-
     const renderContent = () => {
       switch (activeComponent) {
         case "map":
@@ -25,6 +24,8 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
           return <LizardTranslator className="w-full h-[400px]  py-6" />;
         case "lizardinteractive":
           return <LizardInteractive className="w-full h-[500px] xl:h-[700px] p-2" />;
+        case "currency":
+          return <LizardCurrencyConverter className="w-full  h-[400px] p-6" />;
         default:
           return null;
       }
@@ -45,7 +46,7 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
               scale: { duration: 0.9 },
             },
           }}
-          className={`relative ${className}`} // 👈 anchor for absolute children
+          className={`relative ${className}`} 
         >
           {renderContent()}
           {activeComponent && (

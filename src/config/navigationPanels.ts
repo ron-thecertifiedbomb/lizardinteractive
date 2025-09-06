@@ -70,9 +70,9 @@ export const navigationMobilePanels: NavigationPanelMobile[] = [
     isActive: false,
   },
   {
-    title: "Profile",
-    component: "profile",
-    icon: "profile",
+    title: "Currency",
+    component: "currency",
+    icon: "currency",
     isActive: false,
   },
 ];
