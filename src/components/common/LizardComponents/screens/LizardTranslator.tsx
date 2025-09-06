@@ -20,10 +20,11 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    // Fetch languages from LibreTranslate and add Filipino
+
+    // Fetch languages from LibreTranslate API
     useEffect(() => {
         const fetchLanguages = async () => {
-            setLoading(true);
+            setLoading(true); // start loading
             try {
                 const res = await fetch("https://libretranslate.com/languages");
                 if (!res.ok) throw new Error("Failed to fetch languages");
@@ -38,9 +39,8 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
             } catch (err) {
                 console.error("Failed to fetch languages:", err);
                 setError("Failed to load languages");
-                setLanguages([{ code: "en", name: "English" }, { code: "tl", name: "Filipino" }]); // fallback
             } finally {
-                setLoading(false);
+                setLoading(false); // stop loading
             }
         };
 
@@ -54,22 +54,12 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
         setTranslated("");
 
         try {
-            // Use LibreTranslate free instance
-            const res = await fetch("https://libretranslate.de/translate", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    q: text,
-                    source: fromLang,
-                    target: toLang,
-                    format: "text",
-                }),
-            });
-
+            const res = await fetch(
+                `https://lingva.ml/api/v1/${fromLang}/${toLang}/${encodeURIComponent(text)}`
+            );
             if (!res.ok) throw new Error("Failed to translate");
-
             const data = await res.json();
-            setTranslated(data.translatedText);
+            setTranslated(data.translation);
         } catch (err) {
             console.error(err);
             setError("Translation failed");
@@ -79,13 +69,11 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
     };
 
     return (
-        <LizardDiv
-            className={`px-4 py-8 border border-green-500 bg-white/10 text-green-500 rounded w-full max-w-md ${className} uppercase`}
-        >
+        <LizardDiv className={`px-4 py-8 border   border-green-500 bg-white/10 text-green-500 rounded w-full max-w-md ${className} uppercase`}>
             <LizardText className="mb-2 font-bold">Lizard Interactive Translator</LizardText>
 
             <textarea
-                className="border border-green-500 text-green-500 p-2 rounded w-full mb-2"
+                className="border   border-green-500 text-green-500 p-2 rounded w-full mb-2"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Type text here..."
@@ -130,7 +118,7 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
             <button
                 onClick={translateText}
                 disabled={loading || !text}
-                className="px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700 mb-2 w-full max-w-[200px] mx-auto rounded-2xl disabled:opacity-50"
+                className="px-4 py-1 bg-gray-800 text-white rounded hover:bg-gray-700 mb-2 disabled:opacity-50  w-full max-w-[200px] mx-auto rounded-2xl"
             >
                 {loading ? "Translating..." : "Translate"}
             </button>
