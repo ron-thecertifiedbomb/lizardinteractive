@@ -27,11 +27,13 @@ interface LizardLocatorProps {
 export function LizardLocator({ className }: LizardLocatorProps) {
     const [origin, setOrigin] = useState<[number, number] | null>(null);
     const [destination, setDestination] = useState<[number, number] | null>(null);
+    const [route, setRoute] = useState<[number, number][]>([]);
     const [distance, setDistance] = useState<number | null>(null);
     const [query, setQuery] = useState("");
     const [searching, setSearching] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
+    // Get user's location
     useEffect(() => {
         if (!navigator.geolocation) {
             alert("Geolocation is not supported by your browser");
@@ -50,6 +52,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
         );
     }, []);
 
+    // Center map when destination changes
     function CenterMap({ dest }: { dest: [number, number] | null }) {
         const map = useMap();
         useEffect(() => {
@@ -58,20 +61,14 @@ export function LizardLocator({ className }: LizardLocatorProps) {
         return null;
     }
 
+    // Handle clicking on the map
     function DestinationMarker() {
         useMapEvents({
             click(e) {
                 const { lat, lng } = e.latlng;
                 const coords: [number, number] = [lat, lng];
                 setDestination(coords);
-
-                if (origin) {
-                    const d = L.latLng(origin[0], origin[1]).distanceTo(
-                        L.latLng(lat, lng)
-                    );
-                    setDistance(d);
-                    setShowModal(true);
-                }
+                fetchRoute(coords);
             },
         });
         return destination ? (
@@ -81,6 +78,31 @@ export function LizardLocator({ className }: LizardLocatorProps) {
         ) : null;
     }
 
+    // Fetch route from OSRM
+    async function fetchRoute(dest: [number, number]) {
+        if (!origin) return;
+
+        try {
+            const res = await fetch(
+                `https://router.project-osrm.org/route/v1/driving/${origin[1]},${origin[0]};${dest[1]},${dest[0]}?overview=full&geometries=geojson`
+            );
+            const data = await res.json();
+
+            if (data.routes && data.routes.length > 0) {
+                const coords = data.routes[0].geometry.coordinates.map(
+                    ([lng, lat]: [number, number]) => [lat, lng]
+                ) as [number, number][];
+                setRoute(coords);
+                setDistance(data.routes[0].distance); // in meters
+                setShowModal(true);
+            }
+        } catch (err) {
+            console.error("Routing failed", err);
+            alert("Unable to calculate route");
+        }
+    }
+
+    // Handle search by address
     async function handleSearch(e: React.FormEvent) {
         e.preventDefault();
         if (!query.trim()) return;
@@ -95,14 +117,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
                 const { lat, lon } = results[0];
                 const coords: [number, number] = [parseFloat(lat), parseFloat(lon)];
                 setDestination(coords);
-
-                if (origin) {
-                    const d = L.latLng(origin[0], origin[1]).distanceTo(
-                        L.latLng(coords[0], coords[1])
-                    );
-                    setDistance(d);
-                    setShowModal(true);
-                }
+                fetchRoute(coords);
             } else {
                 alert("No results found");
             }
@@ -115,9 +130,9 @@ export function LizardLocator({ className }: LizardLocatorProps) {
 
     if (!origin)
         return (
-            <div className={`flex-1 flex justify-center items-center ${className}`}>
+            <LizardDiv className={`flex-1 flex justify-center items-center ${className}`}>
                 Locating...
-            </div>
+            </LizardDiv>
         );
 
     return (
@@ -125,14 +140,14 @@ export function LizardLocator({ className }: LizardLocatorProps) {
             {/* Search bar */}
             <form
                 onSubmit={handleSearch}
-                className="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] bg-white/90 rounded shadow-md flex items-center space-x-2 p-2 w-[80%] max-w-md"
+                className="absolute top-10 left-1/2 -translate-x-1/2 z-[1000] bg-[#065f46]/70 rounded shadow-md flex items-center space-x-2 p-2 w-[70%] max-w-md"
             >
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search destination..."
-                    className="flex-1 px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm text-emerald-500"
+                    className="flex-1 px-2 py-1 rounded border focus:outline-none focus:ring-[0.2px] focus:ring-[#f8fafc] text-[13px] text-[#f8fafc]"
                 />
                 <button
                     type="submit"
@@ -160,27 +175,29 @@ export function LizardLocator({ className }: LizardLocatorProps) {
                 <DestinationMarker />
                 <CenterMap dest={destination} />
 
-                {origin && destination && (
-                    <Polyline positions={[origin, destination]} color="green" />
-                )}
+                {/* Road/Path Polyline */}
+                {route.length > 0 && <Polyline positions={route} color="green" />}
             </MapContainer>
 
             {/* Distance Modal */}
             {showModal && distance && (
-                <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-black/80 text-white p-4 rounded shadow-md max-w-xs w-[90%] z-[1000]">
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <div className="font-semibold text-sm mb-1">Distance from me</div>
-                            <div className="text-lg">{(distance / 1000).toFixed(2)} km</div>
-                        </div>
-                        <button
-                            className="ml-4 text-white/70 hover:text-white"
-                            onClick={() => setShowModal(false)}
-                        >
-                            ✕
-                        </button>
-                    </div>
-                </div>
+                <LizardDiv className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-black/80 text-white p-4 shadow-md max-w-xs w-[90%] z-[1000] rounded-2xl ">
+                    <LizardDiv className="flex justify-between items-start gap-4">
+                        <LizardDiv className="w-full justify-end items-end">
+                            <button
+                                className=" text-white/50 hover:text-white bg-gray-700 p-1 px-2 rounded-2xl text-[10px]"
+                                onClick={() => setShowModal(false)}
+                            >
+                                close
+                            </button>
+                        </LizardDiv>
+                        <LizardDiv direction="row" className="justify-between w-full items-center">
+                            <LizardDiv className="text-1xl ">Distance from me</LizardDiv>
+                            <LizardDiv className="text-1xl">{(distance / 1000).toFixed(2)} km</LizardDiv>
+                        </LizardDiv>
+                    
+                    </LizardDiv>
+                </LizardDiv>
             )}
         </LizardDiv>
     );
