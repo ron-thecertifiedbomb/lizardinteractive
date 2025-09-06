@@ -46,10 +46,10 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
 
         fetchLanguages();
     }, []);
-
+    
     const translateText = async () => {
         if (!text) return;
-        setLoadingList(true);
+        setLoadingTranslate(true); // <-- start loading
         setError("");
         setTranslated("");
 
@@ -64,10 +64,9 @@ export function LizardTranslator({ className = "" }: LizardTranslatorProps) {
             console.error(err);
             setError("Translation failed");
         } finally {
-            setLoadingTranslate(false);
+            setLoadingTranslate(false); // <-- stop loading
         }
     };
-
     return (
         <LizardDiv className={`px-4 py-8 border   border-green-500 bg-white/10 text-green-500 rounded w-full h-full   ${className} px-6 uppercase sm:p-10 justify-center`}>
             <LizardText
