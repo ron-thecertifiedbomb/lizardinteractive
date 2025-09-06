@@ -25,9 +25,10 @@ drop-shadow-[0_0_20px_#00ff88]
     hover:drop-shadow-[0_0_25px_#00ff88]
     transition-all duration-300
     opacity-90
+    stroke-6
    
   "/>
-  </LizardDiv>
+                </LizardDiv>
 
             </LizardDiv>
             <LizardDiv direction="row" className="hidden  sm:flex lg:flex gap-4 md:px-5 lg:px-5 2xl:px-20 lg:py-4">
