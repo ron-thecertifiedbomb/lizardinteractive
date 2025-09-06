@@ -5,14 +5,9 @@ import { LizardCenterScreen } from "@/components/common/LizardComponents/screens
 import { Center } from "@/components/icons";
 import { useControlPanelStore } from "@/store/ControlPanelStore";
 
-
-
-
 export function LizardHomePage() {
+
   const { showCenterLogo } = useControlPanelStore()
-
-  console.log('showCenterLogo', showCenterLogo)
-
 
   return (
     <LizardDiv
@@ -44,7 +39,7 @@ export function LizardHomePage() {
         </LizardDiv>
       </LizardDiv>
 
-      
+
     </LizardDiv>
   );
 }

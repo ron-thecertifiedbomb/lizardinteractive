@@ -1,3 +1,4 @@
+import { ActiveComponent } from "@/store/ControlPanelStore";
 import { AppData } from "@/types/appData";
 
 export interface NavigationPanel {
@@ -35,6 +36,43 @@ export const navigationPanels: NavigationPanel[] = [
     heading: "About Me",
     overview: "About Lizard Interactive",
     section: "aboutme",
+    isActive: false,
+  },
+];
+
+
+
+
+export interface NavigationPanelMobile {
+  title: string;
+  component: ActiveComponent;
+  icon: string;
+  isActive: boolean;
+}
+
+export const navigationMobilePanels: NavigationPanelMobile[] = [
+  {
+    title: "Home",
+    component: "home",
+    icon: "home",
+    isActive: false,
+  },
+  {
+    title: "Maps",
+    component: "map",
+    icon: "map",
+    isActive: false,
+  },
+  {
+    title: "Settings",
+    component: "settings",
+    icon: "settings",
+    isActive: false,
+  },
+  {
+    title: "Profile",
+    component: "profile",
+    icon: "profile",
     isActive: false,
   },
 ];

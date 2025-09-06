@@ -11,7 +11,22 @@ interface LizardCenterScreen {
 
 export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
 
-    const { activeComponent, setActiveComponent } = useControlPanelStore();
+  const { activeComponent, setActiveComponent } = useControlPanelStore();
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
     const renderContent = () => {
       switch (activeComponent) {

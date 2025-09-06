@@ -4,6 +4,7 @@ import { Lizard, LizardTitle } from "@/components/icons";
 import { LizardDiv } from "./LizardDiv";
 import { useControlPanelStore } from "@/store/ControlPanelStore";
 import { useNavigationStore } from "@/store";
+import { useScreenType } from "@/hooks/useScreenType";
 
 export function LizardControlButton() {
     const {
@@ -15,13 +16,15 @@ export function LizardControlButton() {
         setHideControlPanelButton,
         setShowRightPanel,
         setShowLeftPanel,
-        activeComponent
+        activeComponent,
+        setShowLizardInteractiveMobilePanel,
+        showLizardInteractiveMobilePanel
     } = useControlPanelStore();
 
     const { showPanel, setShowPanel } = useNavigationStore();
 
     const { showCenterLogo, setShowCenterLogo } = useControlPanelStore()
-
+  const { isMobile } = useScreenType()
     if (activeComponent) {
         return null;
     }
@@ -33,12 +36,16 @@ export function LizardControlButton() {
         >
             <LizardDiv
                 onClick={() => {
-                    setShowHeaderPanel(!showHeaderPanel)
+                    setShowHeaderPanel(!showHeaderPanel);
                     setHideControlPanelButton(!hideControlPanelButton);
-                    setShowRightPanel(!showRightPanel);
-                    setShowLeftPanel(!showLeftPanel);
                     setShowPanel(!showPanel);
-                    setShowCenterLogo(!showCenterLogo)
+                    setShowCenterLogo(!showCenterLogo);
+                    setShowLizardInteractiveMobilePanel(!showLizardInteractiveMobilePanel)
+
+                    if (!isMobile) {
+                        setShowRightPanel(!showRightPanel);
+                        setShowLeftPanel(!showLeftPanel);
+                    }
                 }}
                 className="cursor-pointer relative flex items-center justify-center"
             >

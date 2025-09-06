@@ -22,6 +22,7 @@ export { LizardEmblem } from "./LizardEmblem";
 export { LizardItemsList } from "./LizardItemsList";
 export { LizardUtilities } from "./LizardUtilities";
 export { LizardTailwindColors } from "./LizardTailwindColors";
+export { LizardIcon } from "./LizardIcon";
 
 // export * from "./layout";
 // export * from "./cards";

@@ -1,6 +1,11 @@
 import { create } from "zustand";
 
-type ActiveComponent = "map" | "lizardinteractive" | "settings" | null;
+export type ActiveComponent =
+  | "map"
+  | "lizardinteractive"
+  | "settings"
+  | "home"
+  | "profile" | null;
 
 interface ControlPanelStore {
   // Panels
@@ -16,6 +21,9 @@ interface ControlPanelStore {
   showRightPanel: boolean;
   setShowRightPanel: (value: boolean) => void;
 
+  showLizardInteractiveMobilePanel: boolean;
+  setShowLizardInteractiveMobilePanel: (value: boolean) => void;
+
   hideControlPanelButton: boolean;
   setHideControlPanelButton: (value: boolean) => void;
 
@@ -25,7 +33,12 @@ interface ControlPanelStore {
 }
 
 export const useControlPanelStore = create<ControlPanelStore>((set) => ({
-  // Header panel state
+  // LizardInteractiveMobilePanel panel state
+  showLizardInteractiveMobilePanel: false,
+  setShowLizardInteractiveMobilePanel: (value) =>
+    set({ showLizardInteractiveMobilePanel: value }),
+
+  // CenterLogo panel state
   showCenterLogo: false,
   setShowCenterLogo: (value) => set({ showCenterLogo: value }),
 
