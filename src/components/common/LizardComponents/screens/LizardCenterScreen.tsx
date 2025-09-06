@@ -22,9 +22,9 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
         case "home":
           return <LizardWeather className="w-full max-h-[640px] xl:max-h-[700px] p-2 overflow-y-auto" />
         case "map":
-          return <LizardMap className="w-full h-[500px] xl:h-[700px]" />;
+          return <LizardMap className="w-full h-[400px] xl:h-[700px]" />;
         case "translator":
-          return <LizardTranslator className="w-full h-[400px]  py-6" />;
+          return <LizardTranslator className="w-full max-h-[400px] py-6 overflow-y-auto" />
         case "lizardinteractive":
           return <LizardInteractive className="w-full h-[500px] xl:h-[700px] p-2" />;
         case "currency":
@@ -50,8 +50,11 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
       },
     }}
     className={`relative  ${className}`}
-  >
-    {renderContent()}
+        >
+          
+          <LizardDiv className="flex flex-1 min-h-0 w-full">
+            {renderContent()}
+          </LizardDiv>
     {activeComponent && (
       <button
         onClick={() => setActiveComponent(null)}
