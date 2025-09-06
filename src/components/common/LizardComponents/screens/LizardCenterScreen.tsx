@@ -5,6 +5,7 @@
   import { LizardMap } from "./LizardMap";
 import { LizardTranslator } from "./LizardTranslator";
 import { LizardCurrencyConverter } from "./LizardCurrencyConverter";
+import { LizardWeather } from "./LizardWeather";
 
 
 interface LizardCenterScreen {
@@ -18,6 +19,8 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
 
     const renderContent = () => {
       switch (activeComponent) {
+        case "home":
+          return <LizardWeather className="w-full h-[500px] xl:h-[700px] p-2" />;
         case "map":
           return <LizardMap className="w-full h-[500px] xl:h-[700px] p-2" />;
         case "translator":
