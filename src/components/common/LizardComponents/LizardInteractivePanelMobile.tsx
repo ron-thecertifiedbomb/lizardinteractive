@@ -49,7 +49,7 @@ export function LizardInteractivePanelMobile({
                     <LizardDiv
                         key={i}
                         className={`cursor-pointer p-2 rounded flex items-center gap-2 transition
-              ${isActive ? "border-[#65a30d] text-[#4ade80]" : "hover:border-[#14532d] text-[#14532d]"} uppercase`}
+              ${isActive ? "border-[#65a30d] text-[#4ade80]" : "hover:border-[#14532d] text-[#14532d]"} text-[12px] sm:text-[18px] uppercase`}
                         onClick={() => setActiveComponent(item.component)}
                     >
                         {IconComponent && (
