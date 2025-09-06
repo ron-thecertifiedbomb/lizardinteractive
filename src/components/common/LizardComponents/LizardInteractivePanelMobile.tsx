@@ -1,7 +1,7 @@
 import { LizardDiv } from "./layout";
 import { LizardText } from "./LizardText";
 import { ActiveComponent, useControlPanelStore } from "@/store/ControlPanelStore";
-import { FaHome, FaMap, FaCog, FaUser } from "react-icons/fa";
+import { FaHome, FaMap, FaCog, FaUser, FaLanguage } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 interface NavigationPanelMobile {
@@ -29,8 +29,8 @@ export function LizardInteractivePanelMobile({
                 return FaHome;
             case "map":
                 return FaMap;
-            case "settings":
-                return FaCog;
+            case "translator":
+                return FaLanguage;
             case "profile":
                 return FaUser;
             default:

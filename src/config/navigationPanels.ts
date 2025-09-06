@@ -64,9 +64,9 @@ export const navigationMobilePanels: NavigationPanelMobile[] = [
     isActive: false,
   },
   {
-    title: "Settings",
-    component: "settings",
-    icon: "settings",
+    title: "Translator",
+    component: "translator",
+    icon: "translator",
     isActive: false,
   },
   {

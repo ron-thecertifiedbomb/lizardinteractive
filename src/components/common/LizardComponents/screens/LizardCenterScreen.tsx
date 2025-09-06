@@ -3,6 +3,7 @@
   import { useControlPanelStore } from "@/store/ControlPanelStore";
   import { LizardInteractive } from "./LizardInteractive";
   import { LizardMap } from "./LizardMap";
+import { LizardTranslator } from "./LizardTranslator";
 
 
 interface LizardCenterScreen {
@@ -16,22 +17,12 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-  
-
     const renderContent = () => {
       switch (activeComponent) {
         case "map":
           return <LizardMap className="w-full h-[500px] xl:h-[700px] p-2" />;
+        case "translator":
+          return <LizardTranslator className="w-full  py-6" />;
         case "lizardinteractive":
           return <LizardInteractive className="w-full h-[500px] xl:h-[700px] p-2" />;
         default:
@@ -60,7 +51,7 @@ export function LizardCenterScreen({ className= ""}: LizardCenterScreen ) {
           {activeComponent && (
             <button
               onClick={() => setActiveComponent(null)}
-              className="absolute top-5 right-5 z-700 px-3 py-1 bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
+              className="absolute top-3 right-4 z-700 px-3 py-1 bg-[#14532d] text-white rounded-4xl hover:bg-gray-700 transition cursor-pointer shadow-md"
             >
             close
             </button>

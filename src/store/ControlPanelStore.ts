@@ -3,9 +3,10 @@ import { create } from "zustand";
 export type ActiveComponent =
   | "map"
   | "lizardinteractive"
-  | "settings"
+  | "translator"
   | "home"
-  | "profile" | null;
+  | "profile"
+  | null;
 
 interface ControlPanelStore {
   // Panels
