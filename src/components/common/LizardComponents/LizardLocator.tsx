@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
     MapContainer,
     TileLayer,
@@ -38,6 +38,7 @@ export function LizardLocator({ className }: LizardLocatorProps) {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
     const [showModal, setShowModal] = useState(false);
+    const mapRef = useRef<L.Map | null>(null);
 
     // Get user's location
     useEffect(() => {
@@ -69,23 +70,27 @@ export function LizardLocator({ className }: LizardLocatorProps) {
         }
     }
 
-    // Fetch suggestions while typing
+    // Fetch suggestions while typing (bounded to user's location)
     useEffect(() => {
-        if (!query.trim()) {
+        if (!query.trim() || !origin) {
             setSuggestions([]);
             return;
         }
 
         const timeout = setTimeout(async () => {
             try {
+                const [lat, lon] = origin;
+                const delta = 0.5; // ~50 km bounding box
+                const viewbox = `${lon - delta},${lat - delta},${lon + delta},${lat + delta}`;
+
                 const res = await fetch(
                     `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
                         query
-                    )}&addressdetails=1&limit=5`,
+                    )}&addressdetails=1&limit=5&viewbox=${viewbox}&bounded=1`,
                     {
                         headers: {
-                            "Accept": "application/json",
-                            "User-Agent": "YourAppNameHere" // Nominatim requires User-Agent
+                            Accept: "application/json",
+                            "User-Agent": "YourAppNameHere",
                         },
                     }
                 );
@@ -94,10 +99,10 @@ export function LizardLocator({ className }: LizardLocatorProps) {
             } catch (err) {
                 console.error(err);
             }
-        }, 300); // debounce 300ms
+        }, 300);
 
         return () => clearTimeout(timeout);
-    }, [query]);
+    }, [query, origin]);
 
     const selectSuggestion = (lat: string, lon: string) => {
         const coords: [number, number] = [parseFloat(lat), parseFloat(lon)];
@@ -107,14 +112,17 @@ export function LizardLocator({ className }: LizardLocatorProps) {
         setSuggestions([]);
     };
 
+    // Center map
     function CenterMap({ dest }: { dest: [number, number] | null }) {
         const map = useMap();
+        mapRef.current = map;
         useEffect(() => {
             if (dest) map.setView(dest, 14);
         }, [dest, map]);
         return null;
     }
 
+    // Map click marker
     function DestinationMarker() {
         useMapEvents({
             click(e) {
@@ -130,6 +138,50 @@ export function LizardLocator({ className }: LizardLocatorProps) {
         ) : null;
     }
 
+    // Find Near Me button
+    const handleFindNearMe = async () => {
+        if (!origin || !mapRef.current) return;
+
+        mapRef.current.setView(origin, 14);
+        setDestination(null);
+        setRoute([]);
+        setDistance(null);
+        setShowModal(false);
+        setQuery("");
+
+        try {
+            const [lat, lon] = origin;
+            const delta = 0.1; // smaller bounding box (~10 km)
+            const viewbox = `${lon - delta},${lat - delta},${lon + delta},${lat + delta}`;
+
+            const res = await fetch(
+                `https://nominatim.openstreetmap.org/search?format=json&q=&addressdetails=1&limit=10&viewbox=${viewbox}&bounded=1`,
+                {
+                    headers: {
+                        Accept: "application/json",
+                        "User-Agent": "YourAppNameHere",
+                    },
+                }
+            );
+
+            const results: Suggestion[] = await res.json();
+
+            // Filter results to be within 10 km
+            const nearby = results.filter((r) => {
+                const dist = L.latLng(origin[0], origin[1]).distanceTo(
+                    L.latLng(parseFloat(r.lat), parseFloat(r.lon))
+                );
+                return dist <= 10000; // only within 10 km
+            });
+
+            setSuggestions(nearby);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+
+
     if (!origin)
         return (
             <LizardDiv className={`flex-1 flex justify-center items-center ${className}`}>
@@ -139,29 +191,37 @@ export function LizardLocator({ className }: LizardLocatorProps) {
 
     return (
         <LizardDiv className={`relative w-full h-full ${className}`}>
-            {/* Search Input */}
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] max-w-md z-[1000]">
+            {/* Search & Find Near Me */}
+            <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] max-w-md z-[1000] flex space-x-2">
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search destination..."
-                    className="w-full px-2 py-1 rounded border focus:outline-none text-[13px] bg-[#065f46]/70 text-[#f8fafc]"
+                    className="flex-1 px-2 py-1 rounded border focus:outline-none text-[13px] bg-[#065f46]/70 text-[#f8fafc]"
                 />
-                {suggestions.length > 0 && (
-                    <LizardDiv className="absolute top-full left-0 w-full bg-white shadow-md rounded-b-md max-h-52 overflow-auto z-[1001]">
-                        {suggestions.map((s, i) => (
-                            <LizardDiv
-                                key={i}
-                                className="px-2 py-1 hover:bg-green-100 cursor-pointer text-sm text-[#16a34a]"
-                                onClick={() => selectSuggestion(s.lat, s.lon)}
-                            >
-                                {s.display_name}
-                            </LizardDiv>
-                        ))}
-                    </LizardDiv>
-                )}
+                <button
+                    onClick={handleFindNearMe}
+                    className="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm"
+                >
+                    Find Near Me
+                </button>
             </div>
+
+            {/* Suggestions Dropdown */}
+            {suggestions.length > 0 && (
+                <LizardDiv className="absolute top-16 left-1/2 -translate-x-1/2 w-[70%] max-w-md bg-white shadow-md rounded-b-md max-h-52 overflow-auto z-[1001]  text-[#064e3b]">
+                    {suggestions.map((s, i) => (
+                        <LizardDiv
+                            key={i}
+                            className="px-2 py-1 hover:bg-green-100 cursor-pointer text-sm"
+                            onClick={() => selectSuggestion(s.lat, s.lon)}
+                        >
+                            {s.display_name}
+                        </LizardDiv>
+                    ))}
+                </LizardDiv>
+            )}
 
             {/* Map */}
             <MapContainer center={origin as L.LatLngExpression} zoom={14} className="w-full h-full">
@@ -181,11 +241,14 @@ export function LizardLocator({ className }: LizardLocatorProps) {
 
             {/* Distance Modal */}
             {showModal && distance && (
-                <LizardDiv className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/80 text-white p-2 shadow-md w-full max-w-[20%] z-[1000] rounded-2xl">
+                <LizardDiv className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-black/80 text-white p-4 shadow-md max-w-xs w-[90%] z-[1000] rounded-2xl">
                     <LizardDiv className="flex justify-between items-center">
-                        <LizardDiv>Distance from me</LizardDiv>
-                        <LizardDiv>{(distance / 1000).toFixed(2)} km</LizardDiv>
-                        <button onClick={() => setShowModal(false)} className="text-white/50 hover:text-white text-[10px] uppercase border px-1 mt-2">
+                        <div>Distance from me</div>
+                        <div>{(distance / 1000).toFixed(2)} km</div>
+                        <button
+                            onClick={() => setShowModal(false)}
+                            className="text-white/50 hover:text-white text-[10px]"
+                        >
                             close
                         </button>
                     </LizardDiv>
